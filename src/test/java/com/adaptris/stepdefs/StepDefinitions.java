@@ -78,9 +78,9 @@ public class StepDefinitions {
 
     @Then("^the user sees the auto discovered adapter$")
     public void sees_auto_discovered_adapter() throws InterruptedException {
-        Thread.sleep(2000);
         Assert.assertEquals("http://localhost:8080/interlok/dashboard/dashboard.html", driver.getCurrentUrl());
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText().contains("Local Adapter - "));
+        driver.quit();
     }
 
 }
