@@ -9,6 +9,12 @@ Feature: InterlokGuiTest
 
   @SuccessfulLogin
   Scenario: Login as an authenticated user
-    Given a user is on login page
+    Given on a login page
     When the user enters username and password
     Then the user reaches Dashboard
+
+  @DashboardBasics @AutoDiscoveredAdapterPresent
+  Scenario: Auto discovered adapter is present
+    Given on a login page
+    When the user enters username and password
+    Then the user sees the auto discovered adapter
