@@ -43,6 +43,7 @@
             <artifactId>cucumber-testng</artifactId>
             <version>4.2.3</version>
         </dependency>
+
         <!--************************************************-->
 
         <!-- Selenium dependencies -->
@@ -119,11 +120,22 @@
             <artifactId>cucumber-extentsreport</artifactId>
             <version>3.0.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>2.41.2</version>
+        </dependency>
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>3.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.1</version>
+            <type>maven-plugin</type>
         </dependency>
 
     </dependencies>
@@ -142,8 +154,32 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18</version>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.trivago.rta</groupId>
+                <artifactId>cluecumber-report-plugin</artifactId>
+                <version>1.7.0</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>reporting</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <customCss>custom/custom.css</customCss>
+                    <sourceJsonReportDirectory>${project.build.directory}/htmlreports</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/htmlreports</generatedHtmlReportDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>
