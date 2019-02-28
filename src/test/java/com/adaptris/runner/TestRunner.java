@@ -1,12 +1,8 @@
 package com.adaptris.runner;
 
-import com.cucumber.listener.Reporter;
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-import org.testng.annotations.AfterClass;
-
-import java.io.File;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -19,4 +15,3 @@ import java.io.File;
 public class TestRunner {
 
 }
-

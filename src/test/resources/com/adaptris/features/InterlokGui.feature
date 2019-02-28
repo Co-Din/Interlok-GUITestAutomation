@@ -17,4 +17,9 @@ Feature: InterlokGuiTest
   Scenario: Auto discovered adapter is present
     Given on a login page
     When the user enters username and password
-    Then the user sees the auto discovered adapter
+    Then sees the auto discovered adapter
+    And sees the adapters unique id
+    And sees the JMX URL address
+    And sees the adapter in 'Started' state
+    And sees a check icon
+

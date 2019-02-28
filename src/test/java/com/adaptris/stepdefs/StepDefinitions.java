@@ -1,7 +1,12 @@
 package com.adaptris.stepdefs;
 
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.en.And;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 //For FireFox driver uncomment below
 //import org.openqa.selenium.firefox.FirefoxDriver;
@@ -62,24 +67,50 @@ public class StepDefinitions {
     // Then Section
 
     @Then("^the user reaches the failed login page$")
-    public void reaches_the_failed_login_page() throws Throwable {
+    public void reaches_failed_login_page() throws Throwable {
         String ExpectedHeader = "Failed to authenticate user";
         Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("//*[@id=\"login_container\"]/div[1]/div/section/div/p")).getText());
         Assert.assertEquals("http://localhost:8080/interlok/login.html?failed=", driver.getCurrentUrl());
-        driver.quit();
+
     }
 
     @Then("^the user reaches Dashboard$")
     public void reaches_Dashboard() throws Throwable {
         String ExpectedHeader = "Interlok Dashboard";
         Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
-        driver.quit();
+
     }
 
-    @Then("^the user sees the auto discovered adapter$")
-    public void sees_auto_discovered_adapter() throws InterruptedException {
+    @Then("^sees the auto discovered adapter$")
+    public void auto_discovered_adapter() throws InterruptedException {
         Assert.assertEquals("http://localhost:8080/interlok/dashboard/dashboard.html", driver.getCurrentUrl());
+    }
+
+    @And("^sees the adapters unique id$")
+    public void adapters_unique_id() {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText().contains("Local Adapter - "));
+
+    }
+
+    @And("^sees the JMX URL address$")
+    public void JMX_URL_address() {
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/h4/span[4]/span")).getText().contains("service:jmx:jmxmp://"));
+
+    }
+
+    @And("^sees the adapter in 'Started' state$")
+    public void adapter_in_started_state() {
+        Assert.assertTrue(driver.findElement(By.id("container-state-label")).getText().contains("STARTED"));
+    }
+
+    @And("^sees a check icon$")
+    public void check_icon() {
+        Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[1]/div/div[1]/span/span/span/i")).getAttribute("class"));
+
+    }
+
+    @After
+    public void after(Scenario scenario){
         driver.quit();
     }
 
