@@ -5,8 +5,8 @@
 This project has been designed and implemented to learn the basics of Cucumber, Gherkin & Selenium in order to test the 'Interlok' GUI. 
 The initial test plan to be followed can be found at this URL: 
 [Interlok UI Test Plan Documents](https://reedelsevier.sharepoint.com/sites/OG-RBIAdaptris/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FOG%2DRBIAdaptris%2FShared%20Documents%2FInterlok%20UI%20Test%20Plan%20Documents)
-which requires appropriate credentials for access
-the documents found at this site have been authored by [HiggyFella](https://github.com/higgyfella).
+which requires appropriate credentials for access.
+The documents found at this site are authored by [HiggyFella](https://github.com/higgyfella).
 <br />
 ***
 ***
