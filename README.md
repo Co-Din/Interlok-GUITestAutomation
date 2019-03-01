@@ -26,7 +26,7 @@ the documents found at this site have been authored by [HiggyFella](https://gith
 
 ## Project Developers
 
-  * ####__[Co-Din](https://github.com/Co-Din)__
+  * __[Co-Din](https://github.com/Co-Din)__
   <br />
   
 ***
