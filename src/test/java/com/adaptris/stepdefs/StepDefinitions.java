@@ -3,6 +3,7 @@ package com.adaptris.stepdefs;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en_scouse.An;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -107,6 +108,13 @@ public class StepDefinitions {
     public void check_icon() {
         Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[1]/div/div[1]/span/span/span/i")).getAttribute("class"));
 
+    }
+
+    @And("sees {int} channels")
+    public void sees_channels(int channels) throws InterruptedException {
+
+        Thread.sleep(2000);
+        Assert.assertEquals(Integer.toString(channels), driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
     }
 
     @After

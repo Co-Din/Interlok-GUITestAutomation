@@ -22,4 +22,4 @@ Feature: InterlokGuiTest
     And sees the JMX URL address
     And sees the adapter in 'Started' state
     And sees a check icon
-
+    And sees 1 channels
