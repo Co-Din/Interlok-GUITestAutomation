@@ -3,11 +3,8 @@ package com.adaptris.stepdefs;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en_scouse.An;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 //For FireFox driver uncomment below
 //import org.openqa.selenium.firefox.FirefoxDriver;
@@ -79,7 +76,6 @@ public class StepDefinitions {
     public void reaches_Dashboard() throws Throwable {
         String ExpectedHeader = "Interlok Dashboard";
         Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
-
     }
 
     @Then("^sees the auto discovered adapter$")
@@ -90,7 +86,6 @@ public class StepDefinitions {
     @And("^sees the adapters unique id$")
     public void adapters_unique_id() {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText().contains("Local Adapter - "));
-
     }
 
     @And("^sees the JMX URL address$")
@@ -112,7 +107,6 @@ public class StepDefinitions {
 
     @And("sees {int} channels")
     public void sees_channels(int channels) throws InterruptedException {
-
         Thread.sleep(2000);
         Assert.assertEquals(Integer.toString(channels), driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
     }
