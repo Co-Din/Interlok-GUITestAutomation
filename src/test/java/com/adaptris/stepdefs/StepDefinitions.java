@@ -15,6 +15,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.springframework.boot.test.context.assertj.AssertableReactiveWebApplicationContext;
 
 public class StepDefinitions {
 
@@ -74,13 +75,12 @@ public class StepDefinitions {
 
     @Then("^the user reaches Dashboard$")
     public void reaches_Dashboard() throws Throwable {
-        String ExpectedHeader = "Interlok Dashboard";
-        Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
+        Assert.assertEquals("http://localhost:8080/interlok/dashboard/dashboard.html", driver.getCurrentUrl());
     }
 
     @Then("^sees the auto discovered adapter$")
-    public void auto_discovered_adapter() throws InterruptedException {
-        Assert.assertEquals("http://localhost:8080/interlok/dashboard/dashboard.html", driver.getCurrentUrl());
+    public void auto_discovered_adapter() {
+        Assert.assertTrue(driver.findElement(By.cssSelector(".panel-adapter")).isDisplayed());
     }
 
     @And("^sees the adapters unique id$")
@@ -105,13 +105,13 @@ public class StepDefinitions {
 
     }
 
-    @And("sees {int} started channels")
+    @And("^sees (.*) started channels$")
     public void sees__started_channels(String channels) throws InterruptedException {
         //Element refreshes and requires a wait
         Thread.sleep(2000);
         //Cannot select via xpath/ changes name each time a new adapter is created
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_301 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_301 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
     }
 
     @And("^sees UI version (.*)$")
@@ -130,6 +130,43 @@ public class StepDefinitions {
      public void failed_messages(String failedMessages) {
          Assert.assertEquals(failedMessages, driver.findElement(By.cssSelector("div.container-info-box:nth-child(4) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > span:nth-child(2)")).getText());
      }
+
+    @And("^sees (.*) in-flight messages$")
+    public void inFlight_messages(String msgsInFlight) {
+        Assert.assertEquals(msgsInFlight, driver.findElement(By.cssSelector(".badge-info")).getText());
+    }
+
+    @And("^sees the table mode button$")
+    public void table_mode_btn() {
+        Assert.assertTrue(driver.findElement(By.cssSelector(".col-md-12 > div:nth-child(1) > button:nth-child(1)")).isDisplayed());
+    }
+
+    @And("^sees the add adapter button$")
+    public void add_adapter_btn() {
+        Assert.assertTrue(driver.findElement(By.id("control-add-btn")).isDisplayed());
+    }
+
+    @And("^sees the 'Refresh' button$")
+    public void refresh_adapter_btn() {
+        Assert.assertTrue(driver.findElement(By.id("control-reload-btn")).isDisplayed());
+    }
+
+    @And("^sees the control bar$")
+    public void adapter_controlBar() {
+        Assert.assertTrue(driver.findElement(By.id("adapter-control-panel")).isDisplayed());
+    }
+
+    @And("^sees the error bar is blank$")
+    public void blank_errorBar() {
+         Assert.assertTrue(driver.findElement(By.cssSelector(".alert-box")).isDisplayed());
+         Assert.assertEquals("", driver.findElement(By.cssSelector(".alert-box")).getText());
+    }
+
+    @And("^sees the (.*) label$")
+    public void page_label(String pageLabel) {
+        Assert.assertEquals(pageLabel, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
+    }
+
 
     @After
     public void after(Scenario scenario){

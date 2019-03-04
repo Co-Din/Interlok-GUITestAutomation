@@ -25,3 +25,10 @@ Feature: InterlokGuiTest
     And sees 4 started channels
     And sees UI version Interlok UI  3.8.3-RELEASE
     And sees 0 failed messages
+    And sees 0 in-flight messages
+    And sees the table mode button
+    And sees the add adapter button
+    And sees the 'Refresh' button
+    And sees the control bar
+    And sees the error bar is blank
+    And sees the Interlok Dashboard label

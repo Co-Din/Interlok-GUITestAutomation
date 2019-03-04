@@ -1,5 +1,4 @@
 ![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg?label=Maven%20Central)
-
 # __A Salad Of Automation__
 
 ## Outline
@@ -27,6 +26,17 @@ The documents found at this site are authored by [HiggyFella](https://github.com
 
 <br />
 
+## Related Reading Materials
+<br />
+
+* __[Selenium cheatsheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
+
+
+<br />
+
+
+
+***
 ## Project Developers
 
   * __[Co-Din](https://github.com/Co-Din)__
