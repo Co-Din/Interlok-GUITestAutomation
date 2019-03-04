@@ -22,4 +22,6 @@ Feature: InterlokGuiTest
     And sees the JMX URL address
     And sees the adapter in 'Started' state
     And sees a check icon
-    And sees 1 channels
+    And sees 4 started channels
+    And sees UI version Interlok UI  3.8.3-RELEASE
+    And sees 0 failed messages

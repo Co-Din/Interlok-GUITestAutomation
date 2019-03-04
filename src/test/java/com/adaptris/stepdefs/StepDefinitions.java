@@ -105,11 +105,31 @@ public class StepDefinitions {
 
     }
 
-    @And("sees {int} channels")
-    public void sees_channels(int channels) throws InterruptedException {
+    @And("sees {int} started channels")
+    public void sees__started_channels(String channels) throws InterruptedException {
+        //Element refreshes and requires a wait
         Thread.sleep(2000);
-        Assert.assertEquals(Integer.toString(channels), driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+        //Cannot select via xpath/ changes name each time a new adapter is created
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_301 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_301 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
     }
+
+    @And("^sees UI version (.*)$")
+    public void ui_version(String uiVersion) {
+        Assert.assertEquals(uiVersion, driver.findElement(By.xpath("/html/body/footer/span/span[1]/a")).getText());
+    }
+
+     /* @And("^sees correct copyright date (.*)$")
+        public void correct_copyright_date(String date) throws InterruptedException {
+          Thread.sleep(2000);
+          Assert.assertEquals(date, driver.findElement(By.cssSelector("span.pull-left > span:nth-child(5) > a:nth-child(1) span:only-child")).getText());
+        }
+    */
+
+     @And("^sees (.*) failed messages$")
+     public void failed_messages(String failedMessages) {
+         Assert.assertEquals(failedMessages, driver.findElement(By.cssSelector("div.container-info-box:nth-child(4) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > span:nth-child(2)")).getText());
+     }
 
     @After
     public void after(Scenario scenario){
