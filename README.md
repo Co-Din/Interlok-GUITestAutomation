@@ -17,6 +17,7 @@ The documents found at this site are authored by [HiggyFella](https://github.com
 *_This Project was developed on Windows 10 using the [Intellij IDE](https://www.jetbrains.com/idea/download/#section=windows) and the following tech; <br />_*
 * *[Apache Maven 3.6.0](https://maven.apache.org/download.cgi)*<br />
 * *[Chrome Driver](http://chromedriver.chromium.org/)*<br />
+* *[Cluecumber](https://github.com/trivago/cluecumber-report-plugin)*<br />
 * *[Cucumber](https://cucumber.io/)*<br />
 * *[Interlok 3.8.3](https://development.adaptris.net/installers/Interlok/3.8.3/)*<br />
 * *_[Java 8 Open JDK 64-bit](https://www.azul.com/downloads/zulu/zulu-windows/)_*<br />
