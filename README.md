@@ -1,7 +1,6 @@
+![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg?label=Maven%20Central)
 
 # __A Salad Of Automation__
-
-![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg?label=Maven%20Central)
 
 ## Outline
 
