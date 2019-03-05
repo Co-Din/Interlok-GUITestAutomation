@@ -21,6 +21,7 @@ The documents found at this site are authored by [HiggyFella](https://github.com
 * *[Chrome Driver](http://chromedriver.chromium.org/)*<br />
 * *[Cluecumber](https://github.com/trivago/cluecumber-report-plugin)*<br />
 * *[Cucumber](https://cucumber.io/)*<br />
+* *[Cucumber Github](https://github.com/cucumber/cucumber)*<br />
 * *[Interlok 3.8.3](https://development.adaptris.net/installers/Interlok/3.8.3/)*<br />
 * *_[Java 8 Open JDK 64-bit](https://www.azul.com/downloads/zulu/zulu-windows/)_*<br />
 * *[Selenium](https://www.seleniumhq.org/)*<br />
@@ -30,12 +31,15 @@ The documents found at this site are authored by [HiggyFella](https://github.com
 ## Related Reading Materials
 <br />
 
+* __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
 * __[Selenium cheatsheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
-
 
 <br />
 
+* #### References
 
+    * __[Wikipedia: Cucumber](https://en.wikipedia.org/wiki/Cucumber_(software\))__
+<br />
 
 ***
 ## Project Developers

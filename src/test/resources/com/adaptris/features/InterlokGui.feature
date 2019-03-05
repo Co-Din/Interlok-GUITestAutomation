@@ -75,7 +75,3 @@ Feature: InterlokGuiTest
     And sees the total number of 4 adapter channels expected
     And sees the Down Time section
     And sees the Last Stopped section
-
-
-
-
