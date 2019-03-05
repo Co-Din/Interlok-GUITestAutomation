@@ -38,7 +38,7 @@ Feature: InterlokGuiTest
     And sees the Interlok Dashboard label
 
   @DashboardBasics @BasicAdapterOperations
-  Scenario:  Stop button functionality works
+  Scenario:  Control button functionality works
     Given the user enters username and password
     Then the user is on the Dashboard
     And sees 4 started channels
@@ -49,6 +49,33 @@ Feature: InterlokGuiTest
     And sees the total number of 4 adapter channels expected
     And sees the Down Time section
     And sees the Last Stopped section
+    Then clicks the start button
+    And sees 4 started channels
+    And sees the Up Time section
+    And sees the Last Started section
+    Then clicks the pause button
+    And sees 0 started channels
+    And sees the total number of 4 adapter channels expected
+    And sees the Down Time section
+    And sees the Last Stopped section
+    Then clicks the start button
+    And sees 4 started channels
+    And sees the Up Time section
+    And sees the Last Started section
+    Then clicks the stop button
+    Then clicks the pause button
+    And sees 0 started channels
+    And sees the total number of 4 adapter channels expected
+    And sees the Down Time section
+    And sees the Last Stopped section
+    Then clicks the start button
+    Then clicks the control bar drop down menu
+    Then clicks the 'Force-Stop' button
+    And sees 0 started channels
+    And sees the total number of 4 adapter channels expected
+    And sees the Down Time section
+    And sees the Last Stopped section
+
 
 
 
