@@ -38,7 +38,7 @@ The documents found at this site are authored by [HiggyFella](https://github.com
 
 * #### References
 
-    * __[Wikipedia: Cucumber](https://en.wikipedia.org/wiki/Cucumber_(software\))__
+    * __[Wikipedia: Cucumber](https://en.wikipedia.org/wiki/Cucumber_\(software\))__
 <br />
 
 ***
