@@ -94,6 +94,13 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.cssSelector(".panel-adapter")).isDisplayed());
     }
 
+    @Then("^clicks the stop button$")
+    public void controlBar_stopButton_click() {
+        driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/div")).click();
+    }
+
+    // And Section
+
     @And("^sees the adapters unique id$")
     public void adapters_unique_id() {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText().contains("Local Adapter - "));
@@ -117,12 +124,30 @@ public class StepDefinitions {
     }
 
     @And("^sees (.*) started channels$")
-    public void sees__started_channels(String channels) throws InterruptedException {
+    public void sees_started_channels(String channels) throws InterruptedException {
         //Element refreshes and requires a wait
         Thread.sleep(2000);
         //Cannot select via xpath/ changes name each time a new adapter is created
         Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+    }
+
+    @And("^sees the total number of (.*) adapter channels expected$")
+    public void total_adapted_channels(String channels) throws InterruptedException {
+        Thread.sleep(1000);
         Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
+    }
+
+    @And("^sees the Up Time section$")
+    public void upTime_container() {
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[6]/div/div[1]/div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[6]/div/div[1]/div")).getText().contains("Up Time"));
+    }
+
+    @And("^sees the Last Started section$")
+    public void lastStarted_container() {
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[6]/div/div[2]/div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[6]/div/div[2]/div")).getText().contains("Last Started"));
+
     }
 
     @And("^sees UI version (.*)$")
@@ -199,6 +224,18 @@ public class StepDefinitions {
     @And("^sees the (.*) label$")
     public void page_label(String pageLabel) {
         Assert.assertEquals(pageLabel, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
+    }
+
+    @And("^sees the Down Time section$")
+    public void downTime_container() {
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[7]/div/div[1]/div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[7]/div/div[1]/div")).getText().contains("Down Time"));
+    }
+
+    @And("^sees the Last Stopped section$")
+    public void lastStopped_container() {
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[7]/div/div[2]/div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[7]/div/div[2]/div")).getText().contains("Last Stopped"));
     }
 
 

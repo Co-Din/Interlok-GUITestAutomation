@@ -23,6 +23,9 @@ Feature: InterlokGuiTest
     And sees the adapter in 'Started' state
     And sees a check icon
     And sees 4 started channels
+    And sees the total number of 4 adapter channels expected
+    And sees the Up Time section
+    And sees the Last Started section
     And sees UI version Interlok UI  3.8.3-RELEASE
     And sees 0 failed messages
     And sees 0 in-flight messages
@@ -35,10 +38,17 @@ Feature: InterlokGuiTest
     And sees the Interlok Dashboard label
 
   @DashboardBasics @BasicAdapterOperations
-  Scenario:  Control button functionality works
+  Scenario:  Stop button functionality works
     Given the user enters username and password
     Then the user is on the Dashboard
+    And sees 4 started channels
     And sees the control bar
     And sees the control-bar buttons
+    Then clicks the stop button
+    And sees 0 started channels
+    And sees the total number of 4 adapter channels expected
+    And sees the Down Time section
+    And sees the Last Stopped section
+
 
 
