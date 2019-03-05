@@ -70,6 +70,7 @@ Feature: InterlokGuiTest
     And sees the Last Stopped section
     Then clicks the start button
     Then clicks the control bar drop down menu
+    And sees the dropdown menu buttons and icons
     Then clicks the 'Force-Stop' button
     And sees 0 started channels
     And sees the total number of 4 adapter channels expected
