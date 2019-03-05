@@ -11,7 +11,7 @@ Feature: InterlokGuiTest
   Scenario: Login as an authenticated user
     Given on a login page
     When the user enters username and password
-    Then the user reaches Dashboard
+    Then the user is on the Dashboard
 
   @DashboardBasics @AutoDiscoveredAdapterPresent
   Scenario: Auto discovered adapter is present
@@ -30,5 +30,15 @@ Feature: InterlokGuiTest
     And sees the add adapter button
     And sees the 'Refresh' button
     And sees the control bar
+    And sees the control-bar buttons
     And sees the error bar is blank
     And sees the Interlok Dashboard label
+
+  @DashboardBasics @BasicAdapterOperations
+  Scenario:  Control button functionality works
+    Given the user enters username and password
+    Then the user is on the Dashboard
+    And sees the control bar
+    And sees the control-bar buttons
+
+

@@ -2,6 +2,7 @@ package com.adaptris.stepdefs;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -40,11 +41,21 @@ public class StepDefinitions {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    @Before
+    public void before(Scenario scenario) {
+        driverInit();
+    }
+
+    @After
+    public void after(Scenario scenario) {
+        driver.quit();
+    }
+
     // Given section
 
     @Given("^on a login page$")
     public void given_on_a_login() {
-        driverInit();
+        Assert.assertEquals("http://localhost:8080/interlok/login.html", driver.getCurrentUrl());
     }
 
     // When section
@@ -66,15 +77,15 @@ public class StepDefinitions {
     // Then Section
 
     @Then("^the user reaches the failed login page$")
-    public void reaches_failed_login_page() throws Throwable {
+    public void reaches_failed_login_page() {
         String ExpectedHeader = "Failed to authenticate user";
         Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("//*[@id=\"login_container\"]/div[1]/div/section/div/p")).getText());
         Assert.assertEquals("http://localhost:8080/interlok/login.html?failed=", driver.getCurrentUrl());
 
     }
 
-    @Then("^the user reaches Dashboard$")
-    public void reaches_Dashboard() throws Throwable {
+    @Then("^the user is on the Dashboard$")
+    public void reaches_Dashboard() {
         Assert.assertEquals("http://localhost:8080/interlok/dashboard/dashboard.html", driver.getCurrentUrl());
     }
 
@@ -154,6 +165,29 @@ public class StepDefinitions {
     @And("^sees the control bar$")
     public void adapter_controlBar() {
         Assert.assertTrue(driver.findElement(By.id("adapter-control-panel")).isDisplayed());
+        }
+
+    @And("^sees the control-bar buttons$")
+    public void controlBar_btns() {
+        Assert.assertTrue(driver.findElement(By.id("show-channel-label")).isDisplayed());
+        Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[2]")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]")).isDisplayed());
+        Assert.assertEquals("fa fa-info-circle", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[2]")).isDisplayed());
+        Assert.assertEquals("fa fa-code", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[2]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/a")).isDisplayed());
+        Assert.assertEquals("fa fa-wrench", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/a/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[3]")).isDisplayed());
+        Assert.assertEquals("fa fa-play", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[3]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[4]")).isDisplayed());
+        Assert.assertEquals("fa fa-pause", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[4]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/div")).isDisplayed());
+        Assert.assertEquals("fa fa-stop", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/div/button[1]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[5]")).isDisplayed());
+        Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[5]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[6]")).isDisplayed());
+        Assert.assertEquals("fa fa-times", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[6]/i")).getAttribute("class"));
+
     }
 
     @And("^sees the error bar is blank$")
@@ -167,10 +201,5 @@ public class StepDefinitions {
         Assert.assertEquals(pageLabel, driver.findElement(By.xpath("/html/body/section/div[1]/h2")).getText());
     }
 
-
-    @After
-    public void after(Scenario scenario){
-        driver.quit();
-    }
 
 }
