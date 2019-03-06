@@ -124,6 +124,16 @@ public class StepDefinitions {
         driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]")).click();
     }
 
+    @Then("^clicks the close button to shut the 'Adapter Information' modal$")
+    public void infoModal_shut() {
+        driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]")).click();
+    }
+
+    @Then("^clicks the dismiss button to shut the 'Adapter Information' modal$")
+    public void infoModal_dismiss() {
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).click();
+    }
+
     // And Section
 
     @And("^sees the adapters unique id$")
@@ -188,12 +198,12 @@ public class StepDefinitions {
     */
 
      @And("^sees (.*) failed messages$")
-     public void failed_messages(String failedMessages) {
+     public void failed_msgs(String failedMessages) {
          Assert.assertEquals(failedMessages, driver.findElement(By.cssSelector("div.container-info-box:nth-child(4) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > span:nth-child(2)")).getText());
      }
 
     @And("^sees (.*) in-flight messages$")
-    public void inFlight_messages(String msgsInFlight) {
+    public void inFlight_msgs(String msgsInFlight) {
         Assert.assertEquals(msgsInFlight, driver.findElement(By.cssSelector(".badge-info")).getText());
     }
 
@@ -323,6 +333,16 @@ public class StepDefinitions {
 
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[2]/span")).isDisplayed());
       Assert.assertEquals("Europe/London", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[2]/span")).getText());
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/button")).isDisplayed());
+      Assert.assertEquals("Close", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/button")).getText());
+    }
+
+    @And("^sees the 'Adapter Information' modal has been shut$")
+    public void adapterInfo_modal_shut() throws InterruptedException {
+        Thread.sleep(2000);
+        Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[5]/div")).isDisplayed());
     }
 
 }

@@ -80,4 +80,10 @@ Feature: InterlokGuiTest
     Then clicks the information button
     And sees the 'Adapter Information' modal
     And sees the Adapter details
+    Then clicks the close button to shut the 'Adapter Information' modal
+    And sees the 'Adapter Information' modal has been shut
+    Then clicks the information button
+    Then clicks the dismiss button to shut the 'Adapter Information' modal
+    And sees the 'Adapter Information' modal has been shut
+
 
