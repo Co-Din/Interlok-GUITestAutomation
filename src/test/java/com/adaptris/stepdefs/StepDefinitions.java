@@ -4,19 +4,25 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en_scouse.An;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //For FireFox driver uncomment below
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.util.concurrent.TimeUnit;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.springframework.boot.test.context.assertj.AssertableReactiveWebApplicationContext;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class StepDefinitions {
 
@@ -40,6 +46,8 @@ public class StepDefinitions {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
+
 
     @Before
     public void before(Scenario scenario) {
@@ -125,12 +133,14 @@ public class StepDefinitions {
     }
 
     @Then("^clicks the close button to shut the 'Adapter Information' modal$")
-    public void infoModal_shut() {
-        driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]")).click();
+    public void infoModal_shut() throws InterruptedException {
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/button")).click();
     }
 
     @Then("^clicks the dismiss button to shut the 'Adapter Information' modal$")
-    public void infoModal_dismiss() {
+    public void infoModal_dismiss() throws InterruptedException {
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).click();
     }
 
@@ -303,34 +313,64 @@ public class StepDefinitions {
     }
 
     @And("^sees the Adapter details$")
-    public void adapterInfo_modal_details() {
+    public void adapterInfo_modal_details() throws IOException, SAXException, ParserConfigurationException {
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3")).isDisplayed());
       Assert.assertEquals(" Adapter Information", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3")).getText());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3/i")).isDisplayed());
       Assert.assertEquals("fa fa-info-circle", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3/i")).getAttribute("class"));
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Unique Id:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(GUIDetailsMatcher.searchFileDetails("C:/Workspace/Programs/Adaptris/Interlok3.8.3/config", "adapter.xml", "unique-id"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Build Version:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).getText());
+//      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+//      Assert.assertEquals(, driver.findElement(By.xpath("")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[3]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Module Versions:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[3]/td[1]/span/b")).getText());
+//      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+//      Assert.assertEquals(, driver.findElement(By.xpath("")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[4]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Java Version:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[4]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[4]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("java.version"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[4]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Java VM Vendor:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("java.vm.vendor"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[5]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Java VM Name:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("java.vm.name"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[6]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[7]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Java VM Runtime Arguments:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[7]/td[1]/span/b")).getText());
+//      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+//      Assert.assertEquals(, driver.findElement(By.xpath("")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[8]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Operating System Architecture:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[8]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[8]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("os.arch"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[8]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Operating System Name:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("os.name"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[9]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[10]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Operating System Version:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[10]/td[1]/span/b")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[10]/td[2]/span")).isDisplayed());
+      Assert.assertEquals(System.getProperty("os.version"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[10]/td[2]/span")).getText());
+
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Time Zone:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[1]/span/b")).getText());
-
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[2]/span")).isDisplayed());
       Assert.assertEquals("Europe/London", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[11]/td[2]/span")).getText());
 
@@ -344,5 +384,11 @@ public class StepDefinitions {
         Thread.sleep(2000);
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[5]/div")).isDisplayed());
     }
+
+//    Using this method as a testing ground
+//    @And("^testing search details$")
+//    public void please_search() {
+//
+//    }
 
 }

@@ -1,3 +1,4 @@
+![Interlok](https://img.shields.io/github/tag/adaptris/interlok.svg) 
 ![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg?label=Maven%20Central)
 ![](https://img.shields.io/github/languages/top/Co-Din/ASaladOfAutomation.svg)
 # __A Salad Of Automation__
