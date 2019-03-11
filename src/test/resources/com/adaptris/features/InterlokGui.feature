@@ -86,4 +86,22 @@ Feature: InterlokGuiTest
     Then clicks the dismiss button to shut the 'Adapter Information' modal
     And sees the 'Adapter Information' modal has been shut
 
+   @WidgetBasics
+   Scenario: Changes config and runs widget tests
+     Given the user enters username and password
+     And the user is on the Dashboard
+     Then navigates to the config page
+     And reaches the config page
+     And sees the Open config button
+     Then clicks the 'Open Config' button
+     And sees the 'Config Modal' and its options
+     Then clicks the 'Saved Project' tile
+     And sees the 'Interlok Container Saved Config Projects' modal
+     Then selects the 'config-002-generates-dumb-data-with-fs' config
+     And sees the 'Active Adapters' modal
+     Then selects option config-001-basic-components in 'Adapter Instance' in the 'Active Adapters' modal to apply the config to
+     And selects the No Variable Set 'Variable-Set' in the 'Active Adapters' modal to apply with the config
+     And clicks Ok to apply the config
+
+
 

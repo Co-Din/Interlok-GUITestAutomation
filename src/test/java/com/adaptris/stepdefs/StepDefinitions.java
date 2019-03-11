@@ -4,7 +4,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en_scouse.An;
+import cucumber.api.java8.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,8 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
 import java.util.concurrent.TimeUnit;
 
 import cucumber.api.java.en.Given;
@@ -144,11 +142,58 @@ public class StepDefinitions {
         driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).click();
     }
 
+    @Then("^navigates to the config page$")
+    public void nav_toConfigPage() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/header/div[2]/ul/li[3]/a[1]")).click();
+    }
+
+    @Then("^clicks the 'Open Config' button$")
+    public void openConfig_btn_click() {
+        driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).click();
+    }
+
+    @Then("^clicks the 'Saved Project' tile$")
+    public void savedProject_click() {
+        driver.findElement(By.xpath("//*[@id=\"open-config\"]/div/div[2]/div[1]/div[4]/div")).click();
+    }
+
+    @Then("^selects the 'config-002-generates-dumb-data-with-fs' config$")
+    public void selects_config() throws InterruptedException {
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div[1]/div/div[3]/div[3]/div[4]/div/a[2]")).click();
+
+    }
+
+    @Then("^selects option (.*) in 'Adapter Instance' in the 'Active Adapters' modal to apply the config to$")
+    public void select_adapterInstance(String option) {
+        String selectOption = String.format("/html/body/div[5]/div/div/div[2]/div[2]/select/option[text() = '%s']", option);
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/select")).click();
+        driver.findElement(By.xpath(selectOption)).click();
+
+    }
+
+    @Then("^selects the (.*) 'Variable-Set' in the 'Active Adapters' modal to apply with the config$")
+    public void select_variableSet(String option) {
+        String selectOption = String.format("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select/option[text() = '%s']", option);
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select")).click();
+        driver.findElement(By.xpath(selectOption)).click();
+
+    }
+
+    @Then("^clicks Ok to apply the config$")
+    public void clicks_ok_to_applyConfig() {
+        driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]")).click();
+    }
+
+
+
+
     // And Section
 
     @And("^sees the adapters unique id$")
-    public void adapters_unique_id() {
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText().contains("Local Adapter - "));
+    public void adapters_unique_id() throws IOException, SAXException, ParserConfigurationException {
+        Assert.assertEquals(" " + GUIDetailsMatcher.searchFileDetails("C:/Workspace/Programs/Adaptris/Interlok3.8.3/config", "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
     }
 
     @And("^sees the JMX URL address$")
@@ -173,13 +218,13 @@ public class StepDefinitions {
         //Element refreshes and requires a wait
         Thread.sleep(2000);
         //Cannot select via xpath/ changes name each time a new adapter is created
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_504 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
     }
 
     @And("^sees the total number of (.*) adapter channels expected$")
     public void total_adapted_channels(String channels) throws InterruptedException {
         Thread.sleep(1000);
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_401 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_504 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
     }
 
     @And("^sees the Up Time section$")
@@ -385,10 +430,145 @@ public class StepDefinitions {
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[5]/div")).isDisplayed());
     }
 
+    @And("^reaches the config page$")
+    public void reached_configPage(){
+        Assert.assertTrue(driver.getCurrentUrl().contains("interlok/config/config.html"));
+    }
+
+    @And("^sees the Open config button$")
+    public void openConfig_btn() throws InterruptedException {
+        Thread.sleep(2000);
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).isDisplayed());
+        Assert.assertEquals("Open config", driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).getText());
+    }
+
+    @And("^sees the 'Config Modal' and its options$")
+    public void sees_openConfig_modal() throws InterruptedException {
+         Thread.sleep(2000);
+         Assert.assertTrue(driver.findElement(By.id("open-config")).isDisplayed());
+         Assert.assertEquals("Open Interlok Container Config", driver.findElement(By.xpath("//*[@id=\"open-config\"]/div/div[1]/h3/span")).getText());
+
+        //Active Adapter
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]")).isDisplayed());
+        Assert.assertEquals("Active Adapter", driver.findElement(By.xpath("//*[@id=\"open-config\"]/div/div[2]/div[1]/div[1]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div/div[1]")).getAttribute("class"));
+
+        //New
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[2]")).isDisplayed());
+        Assert.assertEquals("New", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[2]/div/div[1]")).getAttribute("class"));
+
+        //File System
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]")).isDisplayed());
+        Assert.assertEquals("File System", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div/div[1]")).getAttribute("class"));
+
+        //Saved Project
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[4]")).isDisplayed());
+        Assert.assertEquals("Saved Project", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[4]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[4]/div/div[1]")).getAttribute("class"));
+
+        //Auto Saved
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[5]")).isDisplayed());
+        Assert.assertEquals("Auto Saved", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[5]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[5]/div/div[1]")).getAttribute("class"));
+
+        //Use Template
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[6]")).isDisplayed());
+        Assert.assertEquals("Use Template", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[6]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[6]/div/div[1]")).getAttribute("class"));
+
+        //Swagger
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[7]")).isDisplayed());
+        Assert.assertEquals("Swagger", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[7]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[7]/div/div[1]")).getAttribute("class"));
+
+        //Version Control
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[8]")).isDisplayed());
+        Assert.assertEquals("Version Control", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[8]/div/div[2]/h4")).getText());
+        Assert.assertEquals("card-header card-img-top choice-card-img", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[8]/div/div[1]")).getAttribute("class"));
+
+    }
+
+    @And("^sees the 'Interlok Container Saved Config Projects' modal$")
+    public void interlok_savedConfig_projectsModal() throws InterruptedException {
+         Thread.sleep(2000);
+
+         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"modal-list-configs-modal\"]")).isDisplayed());
+         Assert.assertEquals("fa fa-th-list", driver.findElement(By.xpath("//*[@id=\"open-config\"]/div/div[1]/h3/i")).getAttribute("class"));
+
+         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/h3/span")).isDisplayed());
+         Assert.assertEquals("Interlok Container Saved Config Projects", driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/h3/span")).getText());
+
+         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/a")).isDisplayed());
+         Assert.assertEquals("×", driver.findElement(By.xpath("/html/body/div[3]/div/div/div[1]/a")).getText());
+
+         Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"upload-config\"]")).isDisplayed());
+         Assert.assertEquals("fa fa-upload action-button-normal", driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/a/i[1]")).getAttribute("class"));
+         Assert.assertEquals("Upload", driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/a/span")).getText());
+
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button")).isDisplayed());
+        Assert.assertEquals("Close", driver.findElement(By.xpath("/html/body/div[3]/div/div/div[3]/button")).getText());
+
+    }
+
+    @And("^sees the 'Active Adapters' modal$")
+    public void activeAdapter_modal() throws InterruptedException {
+
+         Thread.sleep(2000);
+
+         String varInfo = " If you select a variable set, the Interlok UI will do the replacement before applying the XML. The Adapter variable substitution pre-processors is not used.\n" +
+                            "If you don't select any variable set the default values from the configuration will be used.";
+
+      //Modal appears
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div")).isDisplayed());
+
+      //Active Adapter header and icon
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3/span")).isDisplayed());
+      Assert.assertEquals("Active Adapters", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3/span")).getText());
+      Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/h3/i")).getAttribute("class"));
+
+      //Select an Adapter Instance and icons
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/label")).isDisplayed());
+      Assert.assertEquals(" Select an Adapter Instance", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/label")).getText());
+      Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/label/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/select")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[2]/select")).getText().contains("Select an Adapter Instance..."));
+      Assert.assertEquals(" Select an adapter to apply the configuration to and click Ok to confirm.", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[1]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[1]/span")).isDisplayed());
+      Assert.assertEquals("fa fa-info-circle", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[1]/span/i")).getAttribute("class"));
+
+      //Variable Sets and icons
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/label")).isDisplayed());
+      Assert.assertEquals("Variable Sets - Optional", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/label")).getText());
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select")).getText().contains("No Variable Set"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select")).getText().contains("default"));
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[3]/span/i")).isDisplayed());
+      Assert.assertEquals("fa fa-info-circle", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[3]/span/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[3]/span")).isDisplayed());
+      Assert.assertEquals(varInfo, driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/p[3]/span")).getText());
+
+      //Cancel Button
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[1]")).isDisplayed());
+      Assert.assertEquals(" Cancel", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[1]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-times", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[1]/i")).getAttribute("class"));
+
+      //Ok Button
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]")).isDisplayed());
+      Assert.assertEquals(" Ok", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-check", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]/i")).getAttribute("class"));
+
+    }
+
+
 //    Using this method as a testing ground
 //    @And("^testing search details$")
 //    public void please_search() {
-//
 //    }
 
 }
