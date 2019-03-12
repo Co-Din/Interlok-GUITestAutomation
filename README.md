@@ -74,16 +74,35 @@ confirm there is a blank error bar to begin with.
  ```
  
  > This is the techincal side, the non-technical/ human readable side that will be used in the feature file
- is whatever we place in the first set of brackets after the annotation.
+ is whatever we place in the first set of brackets after the annotation so the feature file will contain a 
+ simple command such as _"**And** sees the error bar is blank"_.
  
  The final piece of the puzzle is the '_Runner_' file this is where Cucumber is run from and options 
  are set so that Cucumber knows where in the project to look for the corresponding files as well as 
  which tests and plugins we would like to use while doing so.
+ <br /> Example:
+ ```
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        tags = "@FunctionalTests",
+        features = "src/test/resources/com/adaptris/features/",
+        glue = { "com/adaptris/stepdefs/" },
+        plugin = { "json:src/resources/htmlreports/cucumber.json" }
+)
+ ```
 
 </p>
 
 * __* __Limitations__ *__
-<br /><p></p>
+<br /><p>
+    * Neither Cucumber nor Selenium have their own ability to perform snapshot testing
+    * Selenium's web-drivers are strictly limited to the manner in which we target a web element and that in itself can prove finnicky. 
+    CssSelectors and Xpaths were not always accessible to selenium and manual deletion and creation of the adapters' would change the elements path/location.
+    * Support for Firefox's web driver in Selenium is now provided by third-party and flagged numerous bugs while running.
+    * Selenium's wait function was not functional and numerous element need time to render before being interacted with, the fallback is Thread.sleep.
+    * Cucumber's native reporting was over simplified even though it stored all the data from tests however this was improved by using Trivagos '_Cluecumber_' reporting tool.
+
+</p>
     
 
 <br />
