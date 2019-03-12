@@ -51,7 +51,7 @@ public class StepDefinitions {
 
     @Before
     public void before(Scenario scenario) {
-        driverInit(LOGIN_PAGE);
+      driverInit(LOGIN_PAGE);
     }
 
     @After
@@ -189,8 +189,6 @@ public class StepDefinitions {
     }
 
 
-
-
     // And Section
 
     @And("^sees the adapters unique id$")
@@ -201,7 +199,6 @@ public class StepDefinitions {
     @And("^sees the JMX URL address$")
     public void JMX_URL_address() {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/h4/span[4]/span")).getText().contains("service:jmx:jmxmp://"));
-
     }
 
     @And("^sees the adapter in 'Started' state$")
@@ -212,7 +209,6 @@ public class StepDefinitions {
     @And("^sees a check icon$")
     public void check_icon() {
         Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[1]/div/div[1]/span/span/span/i")).getAttribute("class"));
-
     }
 
     @And("^sees (.*) started channels$")
@@ -271,7 +267,7 @@ public class StepDefinitions {
 
     @And("^sees the add adapter button$")
     public void add_adapter_btn() {
-        Assert.assertTrue(driver.findElement(By.id("control-add-btn")).isDisplayed());
+       Assert.assertTrue(driver.findElement(By.id("control-add-btn")).isDisplayed());
     }
 
     @And("^sees the 'Refresh' button$")
@@ -282,7 +278,7 @@ public class StepDefinitions {
     @And("^sees the control bar$")
     public void adapter_controlBar() {
         Assert.assertTrue(driver.findElement(By.id("adapter-control-panel")).isDisplayed());
-        }
+    }
 
     @And("^sees the control-bar buttons$")
     public void controlBar_btns() {
@@ -424,6 +420,7 @@ public class StepDefinitions {
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).isDisplayed());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/button")).isDisplayed());
       Assert.assertEquals("Close", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/button")).getText());
+
     }
 
     @And("^sees the 'Adapter Information' modal has been shut$")
@@ -516,10 +513,9 @@ public class StepDefinitions {
 
     @And("^sees the 'Active Adapters' modal$")
     public void activeAdapter_modal() throws InterruptedException {
+        Thread.sleep(3000);
 
-         Thread.sleep(3000);
-
-         String varInfo = " If you select a variable set, the Interlok UI will do the replacement before applying the XML. The Adapter variable substitution pre-processors is not used.\n" +
+        String varInfo = " If you select a variable set, the Interlok UI will do the replacement before applying the XML. The Adapter variable substitution pre-processors is not used.\n" +
                             "If you don't select any variable set the default values from the configuration will be used.";
 
       //Modal appears
