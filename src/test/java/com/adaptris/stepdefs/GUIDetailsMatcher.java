@@ -24,9 +24,4 @@ public class GUIDetailsMatcher {
         return nNode.getFirstChild().getNodeValue();
     }
 
-//    protected static String searchFile(String directoryPath, String fileName) {
-//
-//        return;
-//    }
-
 }

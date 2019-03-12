@@ -1,0 +1,253 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 16461009000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Changes config and runs widget tests",
+        "description": "",
+        "id": "widget-basics;changes-config-and-runs-widget-tests",
+        "after": [
+          {
+            "result": {
+              "duration": 1147520000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1122854400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters username and password",
+            "match": {
+              "location": "StepDefinitions.enters_username_and_password()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 230309600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is on the Dashboard",
+            "match": {
+              "location": "StepDefinitions.reaches_Dashboard()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3165082100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "navigates to the config page",
+            "match": {
+              "location": "StepDefinitions.nav_toConfigPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 5873200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "reaches the config page",
+            "match": {
+              "location": "StepDefinitions.reached_configPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2066872300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "sees the Open config button",
+            "match": {
+              "location": "StepDefinitions.openConfig_btn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 83716500,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "clicks the \u0027Open Config\u0027 button",
+            "match": {
+              "location": "StepDefinitions.openConfig_btn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2695238400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "sees the \u0027Config Modal\u0027 and its options",
+            "match": {
+              "location": "StepDefinitions.sees_openConfig_modal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 115744600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "clicks the \u0027Saved Project\u0027 tile",
+            "match": {
+              "location": "StepDefinitions.savedProject_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2339827200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "sees the \u0027Interlok Container Saved Config Projects\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.interlok_savedConfig_projectsModal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2076978400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "selects the \u0027config-002-generates-dumb-data-with-fs\u0027 config",
+            "match": {
+              "location": "StepDefinitions.selects_config()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3734071100,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "sees the \u0027Active Adapters\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.activeAdapter_modal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 153204500,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "selects option config-001-basic-components in \u0027Adapter Instance\u0027 in the \u0027Active Adapters\u0027 modal to apply the config to",
+            "match": {
+              "arguments": [
+                {
+                  "val": "config-001-basic-components",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinitions.select_adapterInstance(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 247427800,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "selects the default \u0027Variable-Set\u0027 in the \u0027Active Adapters\u0027 modal to apply with the config",
+            "match": {
+              "arguments": [
+                {
+                  "val": "default",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinitions.select_variableSet(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 148115000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "clicks Ok to apply the config",
+            "match": {
+              "location": "StepDefinitions.clicks_ok_to_applyConfig()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@WidgetBasics"
+          },
+          {
+            "name": "@AddWidgets"
+          }
+        ]
+      }
+    ],
+    "name": "Widget Basics",
+    "description": "",
+    "id": "widget-basics",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/com/adaptris/features/WidgetBasics.feature",
+    "tags": [
+      {
+        "name": "@FunctionalTests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@WidgetBasics",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      }
+    ]
+  }
+]

@@ -4,7 +4,6 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import cucumber.api.java8.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,16 +21,19 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import static com.adaptris.stepdefs.EnvVar.*;
+
 public class StepDefinitions {
 
     public static WebDriver driver;
+    private String configAddress = "interlok/config/config.html";
 
-    public void driverInit() {
+    public void driverInit(String domainUrl) {
 //	For FireFox driver uncomment below
-//	    System.setProperty("webdriver.gecko.driver", "C:\\Workspace\\ProjectHome\\selenium\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+//	    System.setProperty("webdriver.gecko.driver", "src/resources/geckodriver.exe");
 
 //	For Chrome leave the below uncommented, significantly fewer bugs.
-        System.setProperty("webdriver.chrome.driver", "C:\\Workspace\\ProjectHome\\selenium\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver.exe");
 
 //	For FireFox driver uncomment below
 //	    driver = new FirefoxDriver();
@@ -40,7 +42,7 @@ public class StepDefinitions {
         driver = new ChromeDriver();
 
 //	Opens page in full size and waits 10 secs before t-out
-        driver.get("http://localhost:8080/interlok/login.html");
+        driver.get(domainUrl);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -49,7 +51,7 @@ public class StepDefinitions {
 
     @Before
     public void before(Scenario scenario) {
-        driverInit();
+        driverInit(LOGIN_PAGE);
     }
 
     @After
@@ -193,7 +195,7 @@ public class StepDefinitions {
 
     @And("^sees the adapters unique id$")
     public void adapters_unique_id() throws IOException, SAXException, ParserConfigurationException {
-        Assert.assertEquals(" " + GUIDetailsMatcher.searchFileDetails("C:/Workspace/Programs/Adaptris/Interlok3.8.3/config", "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
+        Assert.assertEquals(" " + GUIDetailsMatcher.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
     }
 
     @And("^sees the JMX URL address$")
@@ -367,7 +369,7 @@ public class StepDefinitions {
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Unique Id:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).getText());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).isDisplayed());
-      Assert.assertEquals(GUIDetailsMatcher.searchFileDetails("C:/Workspace/Programs/Adaptris/Interlok3.8.3/config", "adapter.xml", "unique-id"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).getText());
+      Assert.assertEquals(GUIDetailsMatcher.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).getText());
 
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Build Version:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).getText());
@@ -432,7 +434,7 @@ public class StepDefinitions {
 
     @And("^reaches the config page$")
     public void reached_configPage(){
-        Assert.assertTrue(driver.getCurrentUrl().contains("interlok/config/config.html"));
+        Assert.assertTrue(driver.getCurrentUrl().contains(configAddress));
     }
 
     @And("^sees the Open config button$")
@@ -515,7 +517,7 @@ public class StepDefinitions {
     @And("^sees the 'Active Adapters' modal$")
     public void activeAdapter_modal() throws InterruptedException {
 
-         Thread.sleep(2000);
+         Thread.sleep(3000);
 
          String varInfo = " If you select a variable set, the Interlok UI will do the replacement before applying the XML. The Adapter variable substitution pre-processors is not used.\n" +
                             "If you don't select any variable set the default values from the configuration will be used.";

@@ -183,9 +183,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <customCss>custom/custom.css</customCss>
-                    <sourceJsonReportDirectory>${project.build.directory}/htmlreports</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>${project.build.directory}/htmlreports</generatedHtmlReportDirectory>
+                    <sourceJsonReportDirectory>src/resources/htmlreports</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>src/resources/htmlreports</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
         </plugins>
