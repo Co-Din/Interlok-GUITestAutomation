@@ -1,6 +1,7 @@
 @FunctionalTests @LoginTests
 Feature: Login Tests
   Verify if user is able to Login in to the site
+
   @FailedLogin
   Scenario: Attempt login with false credentials
     Given on a login page

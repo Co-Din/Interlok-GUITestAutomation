@@ -1,9 +1,12 @@
 @FunctionalTests @DashboardBasics
 Feature: Dashboard Basics
-  @AutoDiscoveredAdapterPresent
-  Scenario: Auto discovered adapter is present
+  Background: User is Logged In
     Given on a login page
     When the user enters username and password
+    Then the user is on the Dashboard
+
+  @AutoDiscoveredAdapterPresent
+  Scenario: Auto discovered adapter is present
     Then sees the auto discovered adapter
     And sees the adapters unique id
     And sees the JMX URL address
@@ -26,8 +29,6 @@ Feature: Dashboard Basics
 
   @BasicAdapterOperations
   Scenario:  Control button functionality works
-    Given the user enters username and password
-    Then the user is on the Dashboard
     And sees 4 started channels
     And sees the control bar
     And sees the control-bar buttons

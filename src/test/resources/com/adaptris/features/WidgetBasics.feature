@@ -1,5 +1,6 @@
 @FunctionalTests @WidgetBasics
 Feature: Widget Basics
+
   @AddWidgets
   Scenario: Changes config and runs widget tests
     Given the user enters username and password
