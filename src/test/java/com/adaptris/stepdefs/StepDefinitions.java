@@ -67,6 +67,18 @@ public class StepDefinitions {
         Assert.assertEquals("http://localhost:8080/interlok/login.html", driver.getCurrentUrl());
     }
 
+    @Given("^the user clicks the 'Widgets' button$")
+    public void clicks_widgetsBtn() throws InterruptedException {
+      Thread.sleep(2000);
+      driver.findElement(By.id("widgets-navigation-button")).click();
+    }
+
+    @Given("^the user navigates to the config page$")
+    public void nav_toConfigPage() throws InterruptedException {
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("/html/body/header/div[2]/ul/li[3]/a[1]")).click();
+    }
+
     // When section
 
     @When("^the user enters username and password$")
@@ -81,6 +93,16 @@ public class StepDefinitions {
         driver.findElement(By.name("username")).sendKeys("Foo");
         driver.findElement(By.name("password")).sendKeys("Bar");
         driver.findElement(By.xpath("/html/body/section/div[2]/div[2]/section/div[2]/div/div/form/fieldset/div/div[3]/div/div[1]/button")).click();
+    }
+
+    @When("^the user lands on the ''Widgets' page$")
+    public void lands_on_widgetsPage() {
+      Assert.assertEquals("http://localhost:8080/interlok/runtime/runtime.html", driver.getCurrentUrl());
+    }
+
+    @When("^the user reaches the config page$")
+    public void reached_configPage(){
+      Assert.assertTrue(driver.getCurrentUrl().contains(configAddress));
     }
 
     // Then Section
@@ -145,10 +167,50 @@ public class StepDefinitions {
         driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/a")).click();
     }
 
-    @Then("^navigates to the config page$")
-    public void nav_toConfigPage() throws InterruptedException {
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/header/div[2]/ul/li[3]/a[1]")).click();
+    @Then("^the user sees the 'Widgets Modal'$")
+    public void widgets_modal_isDisplayed() {
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).isDisplayed());
+      Assert.assertEquals("fa fa-bar-chart-o", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3")).isDisplayed());
+      Assert.assertEquals("Add a Runtime Widget", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3")).getText());
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[1]/div/div/label")).isDisplayed());
+      Assert.assertEquals("checkbox-label", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[1]/div/div/label")).getAttribute("class"));
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/span/i")).isDisplayed());
+      Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/span/i")).getAttribute("class"));
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/i")).isDisplayed());
+      Assert.assertEquals("fa fa-code", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[3]/a/i")).isDisplayed());
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[3]/a/i")).getAttribute("class"));
+
+      Assert.assertEquals("Custom", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/h4")).getText());
+      Assert.assertEquals("Platform", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/h5/span")).getText());
+
+
+    }
+
+    @Then("^selects the (.*) in the 'Widgets Modal'$")
+    public void select_adapter_for_widgets(String adapterName) {
+      String selectOption = String.format("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select/option[text() = '%s']", adapterName);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select")).click();
+      driver.findElement(By.xpath(selectOption)).click();
+
+    }
+
+    @Then("^selects the 'Summary Details' tile$")
+    public void select_summaryDetail_tile() {
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
+    }
+
+    @Then("^the user sees the Open config button$")
+    public void openConfig_btn() throws InterruptedException {
+      Thread.sleep(2000);
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).isDisplayed());
+      Assert.assertEquals("Open config", driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).getText());
     }
 
     @Then("^clicks the 'Open Config' button$")
@@ -428,18 +490,6 @@ public class StepDefinitions {
     public void adapterInfo_modal_shut() throws InterruptedException {
         Thread.sleep(2000);
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/div[5]/div")).isDisplayed());
-    }
-
-    @And("^reaches the config page$")
-    public void reached_configPage(){
-        Assert.assertTrue(driver.getCurrentUrl().contains(configAddress));
-    }
-
-    @And("^sees the Open config button$")
-    public void openConfig_btn() throws InterruptedException {
-        Thread.sleep(2000);
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).isDisplayed());
-        Assert.assertEquals("Open config", driver.findElement(By.xpath("/html/body/section/div[2]/section[5]/div[1]/div[2]/div/div[1]/button[1]")).getText());
     }
 
     @And("^sees the 'Config Modal' and its options$")
