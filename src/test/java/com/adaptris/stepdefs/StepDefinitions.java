@@ -4,6 +4,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
+import cucumber.api.java8.Th;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -193,10 +194,12 @@ public class StepDefinitions {
 
     }
 
-    @Then("^selects the (.*) in the 'Widgets Modal'$")
-    public void select_adapter_for_widgets(String adapterName) {
+    @Then("^selects the (.*) adapter in the 'Widgets Modal'$")
+    public void select_adapter_for_widgets(String adapterName) throws InterruptedException {
+      Thread.sleep(1000);
       String selectOption = String.format("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select/option[text() = '%s']", adapterName);
       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select")).click();
+      Thread.sleep(1000);
       driver.findElement(By.xpath(selectOption)).click();
 
     }

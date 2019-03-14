@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 10799400,
+              "duration": 7541200,
               "status": "passed"
             },
             "line": 4,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 1881341100,
+              "duration": 1217758400,
               "status": "passed"
             },
             "line": 5,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 43895800,
+              "duration": 167856500,
               "status": "passed"
             },
             "line": 6,
@@ -51,7 +51,7 @@
         "before": [
           {
             "result": {
-              "duration": 4816465400,
+              "duration": 5309556200,
               "status": "passed"
             },
             "match": {
@@ -66,7 +66,7 @@
         "after": [
           {
             "result": {
-              "duration": 1152306800,
+              "duration": 727653700,
               "status": "passed"
             },
             "match": {
@@ -79,7 +79,7 @@
         "steps": [
           {
             "result": {
-              "duration": 493639600,
+              "duration": 58839700,
               "status": "passed"
             },
             "line": 10,
@@ -91,7 +91,7 @@
           },
           {
             "result": {
-              "duration": 527255400,
+              "duration": 341340500,
               "status": "passed"
             },
             "line": 11,
@@ -103,7 +103,7 @@
           },
           {
             "result": {
-              "duration": 96814900,
+              "duration": 54398100,
               "status": "passed"
             },
             "line": 12,
@@ -115,7 +115,7 @@
           },
           {
             "result": {
-              "duration": 68702100,
+              "duration": 61688100,
               "status": "passed"
             },
             "line": 13,
@@ -127,7 +127,7 @@
           },
           {
             "result": {
-              "duration": 42869700,
+              "duration": 36159800,
               "status": "passed"
             },
             "line": 14,
@@ -139,8 +139,9 @@
           },
           {
             "result": {
-              "duration": 2056479700,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#channels-state-gauge_504 \u003e svg:nth-child(1) \u003e text:nth-child(5) \u003e tspan:first-child\"}\n  (Session info: chrome\u003d73.0.3683.75)\n  (Driver info: chromedriver\u003d2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027LHRL32254\u0027, ip: \u0027172.26.236.145\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_192\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\\Users\\stolakd\\AppData\\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59312}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.75, webStorageEnabled: true}\nSession ID: 725dfcee68021f51cc084c6dc9228fb6\n*** Element info: {Using\u003dcss selector, value\u003d#channels-state-gauge_504 \u003e svg:nth-child(1) \u003e text:nth-child(5) \u003e tspan:first-child}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:416)\r\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\r\n\tat com.adaptris.stepdefs.StepDefinitions.sees_started_channels(StepDefinitions.java:285)\r\n\tat ✽.sees 4 started channels(file:src/test/resources/com/adaptris/features/DashboardBasics.feature:15)\r\n",
+              "duration": 12041381200,
+              "status": "failed"
             },
             "line": 15,
             "name": "sees 4 started channels",
@@ -157,8 +158,8 @@
           },
           {
             "result": {
-              "duration": 1050839300,
-              "status": "passed"
+              "duration": 9300,
+              "status": "skipped"
             },
             "line": 16,
             "name": "sees the total number of 4 adapter channels expected",
@@ -175,8 +176,8 @@
           },
           {
             "result": {
-              "duration": 99241800,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 17,
             "name": "sees the Up Time section",
@@ -187,8 +188,8 @@
           },
           {
             "result": {
-              "duration": 107068900,
-              "status": "passed"
+              "duration": 3800,
+              "status": "skipped"
             },
             "line": 18,
             "name": "sees the Last Started section",
@@ -199,8 +200,8 @@
           },
           {
             "result": {
-              "duration": 55918500,
-              "status": "passed"
+              "duration": 3300,
+              "status": "skipped"
             },
             "line": 19,
             "name": "sees UI version Interlok UI  3.8.3-RELEASE",
@@ -217,8 +218,8 @@
           },
           {
             "result": {
-              "duration": 54742700,
-              "status": "passed"
+              "duration": 6500,
+              "status": "skipped"
             },
             "line": 20,
             "name": "sees 0 failed messages",
@@ -235,8 +236,8 @@
           },
           {
             "result": {
-              "duration": 48071800,
-              "status": "passed"
+              "duration": 4300,
+              "status": "skipped"
             },
             "line": 21,
             "name": "sees 0 in-flight messages",
@@ -253,8 +254,8 @@
           },
           {
             "result": {
-              "duration": 42103100,
-              "status": "passed"
+              "duration": 3400,
+              "status": "skipped"
             },
             "line": 22,
             "name": "sees the table mode button",
@@ -265,8 +266,8 @@
           },
           {
             "result": {
-              "duration": 62801700,
-              "status": "passed"
+              "duration": 3300,
+              "status": "skipped"
             },
             "line": 23,
             "name": "sees the add adapter button",
@@ -277,8 +278,8 @@
           },
           {
             "result": {
-              "duration": 65607000,
-              "status": "passed"
+              "duration": 3200,
+              "status": "skipped"
             },
             "line": 24,
             "name": "sees the \u0027Refresh\u0027 button",
@@ -289,8 +290,8 @@
           },
           {
             "result": {
-              "duration": 227024400,
-              "status": "passed"
+              "duration": 3100,
+              "status": "skipped"
             },
             "line": 25,
             "name": "sees the control bar",
@@ -301,8 +302,8 @@
           },
           {
             "result": {
-              "duration": 1533364800,
-              "status": "passed"
+              "duration": 3200,
+              "status": "skipped"
             },
             "line": 26,
             "name": "sees the control-bar buttons",
@@ -313,8 +314,8 @@
           },
           {
             "result": {
-              "duration": 84668000,
-              "status": "passed"
+              "duration": 3100,
+              "status": "skipped"
             },
             "line": 27,
             "name": "sees the error bar is blank",
@@ -325,8 +326,8 @@
           },
           {
             "result": {
-              "duration": 52025200,
-              "status": "passed"
+              "duration": 3100,
+              "status": "skipped"
             },
             "line": 28,
             "name": "sees the Interlok Dashboard label",
@@ -363,7 +364,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7079100,
+              "duration": 6660500,
               "status": "passed"
             },
             "line": 4,
@@ -375,7 +376,7 @@
           },
           {
             "result": {
-              "duration": 1317828100,
+              "duration": 1236008500,
               "status": "passed"
             },
             "line": 5,
@@ -387,7 +388,7 @@
           },
           {
             "result": {
-              "duration": 250385000,
+              "duration": 167642800,
               "status": "passed"
             },
             "line": 6,
@@ -403,7 +404,7 @@
         "before": [
           {
             "result": {
-              "duration": 4210587600,
+              "duration": 3972273400,
               "status": "passed"
             },
             "match": {
@@ -418,7 +419,7 @@
         "after": [
           {
             "result": {
-              "duration": 875090500,
+              "duration": 721089700,
               "status": "passed"
             },
             "match": {
@@ -431,8 +432,9 @@
         "steps": [
           {
             "result": {
-              "duration": 2028952400,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#channels-state-gauge_504 \u003e svg:nth-child(1) \u003e text:nth-child(5) \u003e tspan:first-child\"}\n  (Session info: chrome\u003d73.0.3683.75)\n  (Driver info: chromedriver\u003d2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform\u003dWindows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.14.0\u0027, revision: \u0027aacccce0\u0027, time: \u00272018-08-02T20:19:58.91Z\u0027\nSystem info: host: \u0027LHRL32254\u0027, ip: \u0027172.26.236.145\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_192\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\\Users\\stolakd\\AppData\\Lo...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59335}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 73.0.3683.75, webStorageEnabled: true}\nSession ID: cbc4e3bfd8efedd9f3586a206fae9dd5\n*** Element info: {Using\u003dcss selector, value\u003d#channels-state-gauge_504 \u003e svg:nth-child(1) \u003e text:nth-child(5) \u003e tspan:first-child}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:416)\r\n\tat org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\r\n\tat com.adaptris.stepdefs.StepDefinitions.sees_started_channels(StepDefinitions.java:285)\r\n\tat ✽.sees 4 started channels(file:src/test/resources/com/adaptris/features/DashboardBasics.feature:32)\r\n",
+              "duration": 12057720100,
+              "status": "failed"
             },
             "line": 32,
             "name": "sees 4 started channels",
@@ -449,8 +451,8 @@
           },
           {
             "result": {
-              "duration": 24968400,
-              "status": "passed"
+              "duration": 18800,
+              "status": "skipped"
             },
             "line": 33,
             "name": "sees the control bar",
@@ -461,8 +463,8 @@
           },
           {
             "result": {
-              "duration": 612933400,
-              "status": "passed"
+              "duration": 7000,
+              "status": "skipped"
             },
             "line": 34,
             "name": "sees the control-bar buttons",
@@ -473,8 +475,8 @@
           },
           {
             "result": {
-              "duration": 69720600,
-              "status": "passed"
+              "duration": 6000,
+              "status": "skipped"
             },
             "line": 35,
             "name": "clicks the stop button",
@@ -485,8 +487,8 @@
           },
           {
             "result": {
-              "duration": 2043379600,
-              "status": "passed"
+              "duration": 5800,
+              "status": "skipped"
             },
             "line": 36,
             "name": "sees 0 started channels",
@@ -503,8 +505,8 @@
           },
           {
             "result": {
-              "duration": 1037295400,
-              "status": "passed"
+              "duration": 6100,
+              "status": "skipped"
             },
             "line": 37,
             "name": "sees the total number of 4 adapter channels expected",
@@ -521,8 +523,8 @@
           },
           {
             "result": {
-              "duration": 49609400,
-              "status": "passed"
+              "duration": 5900,
+              "status": "skipped"
             },
             "line": 38,
             "name": "sees the Down Time section",
@@ -533,8 +535,8 @@
           },
           {
             "result": {
-              "duration": 51571400,
-              "status": "passed"
+              "duration": 5800,
+              "status": "skipped"
             },
             "line": 39,
             "name": "sees the Last Stopped section",
@@ -545,8 +547,8 @@
           },
           {
             "result": {
-              "duration": 69075500,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 40,
             "name": "clicks the start button",
@@ -557,8 +559,8 @@
           },
           {
             "result": {
-              "duration": 2026253000,
-              "status": "passed"
+              "duration": 5700,
+              "status": "skipped"
             },
             "line": 41,
             "name": "sees 4 started channels",
@@ -575,8 +577,8 @@
           },
           {
             "result": {
-              "duration": 54652300,
-              "status": "passed"
+              "duration": 5500,
+              "status": "skipped"
             },
             "line": 42,
             "name": "sees the Up Time section",
@@ -587,8 +589,8 @@
           },
           {
             "result": {
-              "duration": 60005000,
-              "status": "passed"
+              "duration": 5400,
+              "status": "skipped"
             },
             "line": 43,
             "name": "sees the Last Started section",
@@ -599,8 +601,8 @@
           },
           {
             "result": {
-              "duration": 77969600,
-              "status": "passed"
+              "duration": 5500,
+              "status": "skipped"
             },
             "line": 44,
             "name": "clicks the pause button",
@@ -611,8 +613,8 @@
           },
           {
             "result": {
-              "duration": 2094262900,
-              "status": "passed"
+              "duration": 20700,
+              "status": "skipped"
             },
             "line": 45,
             "name": "sees 0 started channels",
@@ -629,8 +631,8 @@
           },
           {
             "result": {
-              "duration": 1029215500,
-              "status": "passed"
+              "duration": 5800,
+              "status": "skipped"
             },
             "line": 46,
             "name": "sees the total number of 4 adapter channels expected",
@@ -647,8 +649,8 @@
           },
           {
             "result": {
-              "duration": 46311500,
-              "status": "passed"
+              "duration": 13500,
+              "status": "skipped"
             },
             "line": 47,
             "name": "sees the Down Time section",
@@ -659,8 +661,8 @@
           },
           {
             "result": {
-              "duration": 42479200,
-              "status": "passed"
+              "duration": 8300,
+              "status": "skipped"
             },
             "line": 48,
             "name": "sees the Last Stopped section",
@@ -671,8 +673,8 @@
           },
           {
             "result": {
-              "duration": 59675700,
-              "status": "passed"
+              "duration": 9500,
+              "status": "skipped"
             },
             "line": 49,
             "name": "clicks the start button",
@@ -683,8 +685,8 @@
           },
           {
             "result": {
-              "duration": 2035044800,
-              "status": "passed"
+              "duration": 6000,
+              "status": "skipped"
             },
             "line": 50,
             "name": "sees 4 started channels",
@@ -701,8 +703,8 @@
           },
           {
             "result": {
-              "duration": 38706200,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 51,
             "name": "sees the Up Time section",
@@ -713,8 +715,8 @@
           },
           {
             "result": {
-              "duration": 39297700,
-              "status": "passed"
+              "duration": 8200,
+              "status": "skipped"
             },
             "line": 52,
             "name": "sees the Last Started section",
@@ -725,8 +727,8 @@
           },
           {
             "result": {
-              "duration": 50123500,
-              "status": "passed"
+              "duration": 6300,
+              "status": "skipped"
             },
             "line": 53,
             "name": "clicks the stop button",
@@ -737,8 +739,8 @@
           },
           {
             "result": {
-              "duration": 83450500,
-              "status": "passed"
+              "duration": 5900,
+              "status": "skipped"
             },
             "line": 54,
             "name": "clicks the pause button",
@@ -749,8 +751,8 @@
           },
           {
             "result": {
-              "duration": 2038407000,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 55,
             "name": "sees 0 started channels",
@@ -767,8 +769,8 @@
           },
           {
             "result": {
-              "duration": 1031180300,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 56,
             "name": "sees the total number of 4 adapter channels expected",
@@ -785,8 +787,8 @@
           },
           {
             "result": {
-              "duration": 39438200,
-              "status": "passed"
+              "duration": 6700,
+              "status": "skipped"
             },
             "line": 57,
             "name": "sees the Down Time section",
@@ -797,8 +799,8 @@
           },
           {
             "result": {
-              "duration": 37851400,
-              "status": "passed"
+              "duration": 7800,
+              "status": "skipped"
             },
             "line": 58,
             "name": "sees the Last Stopped section",
@@ -809,8 +811,8 @@
           },
           {
             "result": {
-              "duration": 57461100,
-              "status": "passed"
+              "duration": 7800,
+              "status": "skipped"
             },
             "line": 59,
             "name": "clicks the start button",
@@ -821,8 +823,8 @@
           },
           {
             "result": {
-              "duration": 116426800,
-              "status": "passed"
+              "duration": 16100,
+              "status": "skipped"
             },
             "line": 60,
             "name": "clicks the control bar drop down menu",
@@ -833,8 +835,8 @@
           },
           {
             "result": {
-              "duration": 454613100,
-              "status": "passed"
+              "duration": 15700,
+              "status": "skipped"
             },
             "line": 61,
             "name": "sees the dropdown menu buttons and icons",
@@ -845,8 +847,8 @@
           },
           {
             "result": {
-              "duration": 91567900,
-              "status": "passed"
+              "duration": 20200,
+              "status": "skipped"
             },
             "line": 62,
             "name": "clicks the \u0027Force-Stop\u0027 button",
@@ -857,8 +859,8 @@
           },
           {
             "result": {
-              "duration": 2037448000,
-              "status": "passed"
+              "duration": 21000,
+              "status": "skipped"
             },
             "line": 63,
             "name": "sees 0 started channels",
@@ -875,8 +877,8 @@
           },
           {
             "result": {
-              "duration": 1042413400,
-              "status": "passed"
+              "duration": 28700,
+              "status": "skipped"
             },
             "line": 64,
             "name": "sees the total number of 4 adapter channels expected",
@@ -893,8 +895,8 @@
           },
           {
             "result": {
-              "duration": 36609900,
-              "status": "passed"
+              "duration": 8000,
+              "status": "skipped"
             },
             "line": 65,
             "name": "sees the Down Time section",
@@ -905,8 +907,8 @@
           },
           {
             "result": {
-              "duration": 35154900,
-              "status": "passed"
+              "duration": 8700,
+              "status": "skipped"
             },
             "line": 66,
             "name": "sees the Last Stopped section",
@@ -917,8 +919,8 @@
           },
           {
             "result": {
-              "duration": 45219800,
-              "status": "passed"
+              "duration": 6000,
+              "status": "skipped"
             },
             "line": 67,
             "name": "clicks the start button",
@@ -929,8 +931,8 @@
           },
           {
             "result": {
-              "duration": 90156700,
-              "status": "passed"
+              "duration": 5700,
+              "status": "skipped"
             },
             "line": 68,
             "name": "clicks the information button",
@@ -941,8 +943,8 @@
           },
           {
             "result": {
-              "duration": 2032538500,
-              "status": "passed"
+              "duration": 6000,
+              "status": "skipped"
             },
             "line": 69,
             "name": "sees the \u0027Adapter Information\u0027 modal",
@@ -953,8 +955,8 @@
           },
           {
             "result": {
-              "duration": 1144087500,
-              "status": "passed"
+              "duration": 5700,
+              "status": "skipped"
             },
             "line": 70,
             "name": "sees the Adapter details",
@@ -965,8 +967,8 @@
           },
           {
             "result": {
-              "duration": 1102898600,
-              "status": "passed"
+              "duration": 5400,
+              "status": "skipped"
             },
             "line": 71,
             "name": "clicks the close button to shut the \u0027Adapter Information\u0027 modal",
@@ -977,8 +979,8 @@
           },
           {
             "result": {
-              "duration": 2020009700,
-              "status": "passed"
+              "duration": 5800,
+              "status": "skipped"
             },
             "line": 72,
             "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
@@ -989,8 +991,8 @@
           },
           {
             "result": {
-              "duration": 49303700,
-              "status": "passed"
+              "duration": 5500,
+              "status": "skipped"
             },
             "line": 73,
             "name": "clicks the information button",
@@ -1001,8 +1003,8 @@
           },
           {
             "result": {
-              "duration": 1067116000,
-              "status": "passed"
+              "duration": 5600,
+              "status": "skipped"
             },
             "line": 74,
             "name": "clicks the dismiss button to shut the \u0027Adapter Information\u0027 modal",
@@ -1013,8 +1015,8 @@
           },
           {
             "result": {
-              "duration": 2063287200,
-              "status": "passed"
+              "duration": 5400,
+              "status": "skipped"
             },
             "line": 75,
             "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
@@ -1068,7 +1070,7 @@
         "before": [
           {
             "result": {
-              "duration": 4169167900,
+              "duration": 4100313200,
               "status": "passed"
             },
             "match": {
@@ -1083,7 +1085,7 @@
         "after": [
           {
             "result": {
-              "duration": 798600300,
+              "duration": 737639200,
               "status": "passed"
             },
             "match": {
@@ -1096,7 +1098,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5430700,
+              "duration": 7235300,
               "status": "passed"
             },
             "line": 7,
@@ -1108,7 +1110,7 @@
           },
           {
             "result": {
-              "duration": 425847300,
+              "duration": 489473200,
               "status": "passed"
             },
             "line": 8,
@@ -1120,7 +1122,7 @@
           },
           {
             "result": {
-              "duration": 46419200,
+              "duration": 58452000,
               "status": "passed"
             },
             "line": 9,
@@ -1147,7 +1149,7 @@
         "before": [
           {
             "result": {
-              "duration": 4188971800,
+              "duration": 4085717200,
               "status": "passed"
             },
             "match": {
@@ -1162,7 +1164,7 @@
         "after": [
           {
             "result": {
-              "duration": 926100800,
+              "duration": 738997300,
               "status": "passed"
             },
             "match": {
@@ -1175,7 +1177,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6396600,
+              "duration": 5283700,
               "status": "passed"
             },
             "line": 13,
@@ -1187,7 +1189,7 @@
           },
           {
             "result": {
-              "duration": 1580006200,
+              "duration": 1198519700,
               "status": "passed"
             },
             "line": 14,
@@ -1199,7 +1201,7 @@
           },
           {
             "result": {
-              "duration": 311005700,
+              "duration": 20543000,
               "status": "passed"
             },
             "line": 15,
@@ -1259,7 +1261,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5657600,
+              "duration": 5429400,
               "status": "passed"
             },
             "line": 4,
@@ -1271,7 +1273,7 @@
           },
           {
             "result": {
-              "duration": 1820995400,
+              "duration": 1113367000,
               "status": "passed"
             },
             "line": 5,
@@ -1283,7 +1285,7 @@
           },
           {
             "result": {
-              "duration": 284571400,
+              "duration": 22450200,
               "status": "passed"
             },
             "line": 6,
@@ -1299,7 +1301,7 @@
         "before": [
           {
             "result": {
-              "duration": 4946155400,
+              "duration": 3999748500,
               "status": "passed"
             },
             "match": {
@@ -1314,7 +1316,7 @@
         "after": [
           {
             "result": {
-              "duration": 922962900,
+              "duration": 722272700,
               "status": "passed"
             },
             "match": {
@@ -1327,7 +1329,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2626627300,
+              "duration": 2607915000,
               "status": "passed"
             },
             "line": 10,
@@ -1339,7 +1341,7 @@
           },
           {
             "result": {
-              "duration": 3528600,
+              "duration": 7181600,
               "status": "passed"
             },
             "line": 11,
@@ -1351,8 +1353,8 @@
           },
           {
             "result": {
-              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat com.adaptris.stepdefs.StepDefinitions.widgets_modal_isDisplayed(StepDefinitions.java:172)\r\n\tat ✽.the user sees the \u0027Widgets Modal\u0027(file:src/test/resources/com/adaptris/features/WidgetBasics.feature:12)\r\n",
-              "duration": 62290100,
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat com.adaptris.stepdefs.StepDefinitions.widgets_modal_isDisplayed(StepDefinitions.java:173)\r\n\tat ✽.the user sees the \u0027Widgets Modal\u0027(file:src/test/resources/com/adaptris/features/WidgetBasics.feature:12)\r\n",
+              "duration": 37892100,
               "status": "failed"
             },
             "line": 12,
@@ -1364,7 +1366,7 @@
           },
           {
             "result": {
-              "duration": 10700,
+              "duration": 27400,
               "status": "skipped"
             },
             "line": 13,
@@ -1382,7 +1384,7 @@
           },
           {
             "result": {
-              "duration": 5400,
+              "duration": 6200,
               "status": "skipped"
             },
             "line": 14,
@@ -1390,7 +1392,7 @@
             "match": {
               "arguments": [
                 {
-                  "val": "config-001-basic-components adapter",
+                  "val": "config-001-basic-components",
                   "offset": 12
                 }
               ],
@@ -1400,7 +1402,7 @@
           },
           {
             "result": {
-              "duration": 4000,
+              "duration": 4600,
               "status": "skipped"
             },
             "line": 15,
@@ -1412,7 +1414,7 @@
           },
           {
             "result": {
-              "duration": 2600,
+              "duration": 5200,
               "status": "skipped"
             },
             "line": 16,
@@ -1424,7 +1426,7 @@
           },
           {
             "result": {
-              "duration": 2300,
+              "duration": 4800,
               "status": "skipped"
             },
             "line": 17,
@@ -1436,7 +1438,7 @@
           },
           {
             "result": {
-              "duration": 5000,
+              "duration": 4100,
               "status": "skipped"
             },
             "line": 18,
@@ -1448,7 +1450,7 @@
           },
           {
             "result": {
-              "duration": 2900,
+              "duration": 4000,
               "status": "skipped"
             },
             "line": 19,
@@ -1472,7 +1474,7 @@
           },
           {
             "result": {
-              "duration": 3800,
+              "duration": 4700,
               "status": "skipped"
             },
             "line": 21,
@@ -1484,7 +1486,7 @@
           },
           {
             "result": {
-              "duration": 3800,
+              "duration": 4000,
               "status": "skipped"
             },
             "line": 22,
@@ -1496,7 +1498,7 @@
           },
           {
             "result": {
-              "duration": 3800,
+              "duration": 4000,
               "status": "skipped"
             },
             "line": 23,
@@ -1508,7 +1510,7 @@
           },
           {
             "result": {
-              "duration": 3600,
+              "duration": 4600,
               "status": "skipped"
             },
             "line": 24,
@@ -1520,7 +1522,7 @@
           },
           {
             "result": {
-              "duration": 22100,
+              "duration": 3900,
               "status": "skipped"
             },
             "line": 25,
@@ -1538,7 +1540,7 @@
           },
           {
             "result": {
-              "duration": 6500,
+              "duration": 3900,
               "status": "skipped"
             },
             "line": 26,
@@ -1556,7 +1558,7 @@
           },
           {
             "result": {
-              "duration": 4000,
+              "duration": 3700,
               "status": "skipped"
             },
             "line": 27,
