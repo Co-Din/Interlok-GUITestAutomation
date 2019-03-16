@@ -5,8 +5,11 @@ Feature: Dashboard Basics
     When the user enters username and password
     Then the user is on the Dashboard
 
+
   @AutoDiscoveredAdapterPresent
   Scenario: Auto discovered adapter is present
+    Then the user sees the 'Welcome Modal'
+    Then the user dismisses the 'Welcome Modal'
     Then sees the auto discovered adapter
     And sees the adapters unique id
     And sees the JMX URL address

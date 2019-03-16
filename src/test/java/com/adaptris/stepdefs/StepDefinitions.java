@@ -4,7 +4,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import cucumber.api.java8.Th;
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,8 +48,6 @@ public class StepDefinitions {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-
-
     @Before
     public void before(Scenario scenario) {
       driverInit(LOGIN_PAGE);
@@ -71,7 +69,7 @@ public class StepDefinitions {
     @Given("^the user clicks the 'Widgets' button$")
     public void clicks_widgetsBtn() throws InterruptedException {
       Thread.sleep(2000);
-      driver.findElement(By.id("widgets-navigation-button")).click();
+      driver.findElement(By.xpath("/html/body/header/div[2]/ul/li[2]/a[1]")).click();
     }
 
     @Given("^the user navigates to the config page$")
@@ -96,7 +94,7 @@ public class StepDefinitions {
         driver.findElement(By.xpath("/html/body/section/div[2]/div[2]/section/div[2]/div/div/form/fieldset/div/div[3]/div/div[1]/button")).click();
     }
 
-    @When("^the user lands on the ''Widgets' page$")
+    @When("^the user lands on the 'Widgets' page$")
     public void lands_on_widgetsPage() {
       Assert.assertEquals("http://localhost:8080/interlok/runtime/runtime.html", driver.getCurrentUrl());
     }
@@ -114,6 +112,49 @@ public class StepDefinitions {
         Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("//*[@id=\"login_container\"]/div[1]/div/section/div/p")).getText());
         Assert.assertEquals("http://localhost:8080/interlok/login.html?failed=", driver.getCurrentUrl());
 
+    }
+
+    @Then("^the user sees the 'Welcome Modal'$")
+    public void welcome_one_and_all_to_the_show() throws InterruptedException {
+      Thread.sleep(2000);
+      Assert.assertTrue(driver.findElement(By.id("modal-welcome-splash")).isDisplayed());
+
+      //Header
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[1]/div/h1")).isDisplayed());
+      Assert.assertEquals("welcome", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[1]/div")).getAttribute("class"));
+
+      //Sections
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[2]/div/div/div")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[1]/span[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-home", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[1]/span[1]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[1]/span[1]")).isDisplayed());
+      Assert.assertEquals("Manage", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[1]/span[1]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[2]/span[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-tasks", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[2]/span[1]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[2]/span[1]")).isDisplayed());
+      Assert.assertEquals("Monitor", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[2]/span[1]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[3]/span[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-wrench", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[3]/span[1]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[3]/span[1]")).isDisplayed());
+      Assert.assertEquals("Config", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[2]/div/div/div[1]/div/div[3]/span[1]")).getText());
+
+      //Buttons
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[1]")).isDisplayed());
+      Assert.assertEquals("Give me a Tour", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[1]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[2]")).isDisplayed());
+      Assert.assertEquals("Got it, Thanks", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[2]")).getText());
+
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div/label/i[2]")).isDisplayed());
+      Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div/label/i[2]")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.id("welcome-dismis-label")).isDisplayed());
+      Assert.assertEquals(" Don't show me this again",driver.findElement(By.id("welcome-dismis-label")).getText());
+
+    }
+
+    @Then("^the user dismisses the 'Welcome Modal'$")
+    public void dismiss_welcomeModal() throws InterruptedException {
+      driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div")).click();
+      driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[2]")).click();
     }
 
     @Then("^the user is on the Dashboard$")
@@ -169,7 +210,8 @@ public class StepDefinitions {
     }
 
     @Then("^the user sees the 'Widgets Modal'$")
-    public void widgets_modal_isDisplayed() {
+    public void widgets_modal_isDisplayed() throws InterruptedException {
+      Thread.sleep(2000);
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div")).isDisplayed());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).isDisplayed());
       Assert.assertEquals("fa fa-bar-chart-o", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).getAttribute("class"));
@@ -196,10 +238,10 @@ public class StepDefinitions {
 
     @Then("^selects the (.*) adapter in the 'Widgets Modal'$")
     public void select_adapter_for_widgets(String adapterName) throws InterruptedException {
-      Thread.sleep(1000);
+      Thread.sleep(2000);
       String selectOption = String.format("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select/option[text() = '%s']", adapterName);
       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select")).click();
-      Thread.sleep(1000);
+      Thread.sleep(2000);
       driver.findElement(By.xpath(selectOption)).click();
 
     }
@@ -259,7 +301,7 @@ public class StepDefinitions {
 
     @And("^sees the adapters unique id$")
     public void adapters_unique_id() throws IOException, SAXException, ParserConfigurationException {
-        Assert.assertEquals(" " + GUIDetailsMatcher.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
+        Assert.assertEquals(" Local Adapter - " + GUIDirectoryTools.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
     }
 
     @And("^sees the JMX URL address$")
@@ -282,13 +324,13 @@ public class StepDefinitions {
         //Element refreshes and requires a wait
         Thread.sleep(2000);
         //Cannot select via xpath/ changes name each time a new adapter is created
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_504 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
     }
 
     @And("^sees the total number of (.*) adapter channels expected$")
     public void total_adapted_channels(String channels) throws InterruptedException {
         Thread.sleep(1000);
-        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_504 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
+        Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(8) > tspan:first-child")).getText());
     }
 
     @And("^sees the Up Time section$")
@@ -431,7 +473,7 @@ public class StepDefinitions {
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Unique Id:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[1]/span/b")).getText());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).isDisplayed());
-      Assert.assertEquals(GUIDetailsMatcher.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).getText());
+      Assert.assertEquals(GUIDirectoryTools.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[1]/td[2]/span")).getText());
 
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).isDisplayed());
       Assert.assertEquals("Adapter Build Version:", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div/table/tbody/tr[2]/td[1]/span/b")).getText());
