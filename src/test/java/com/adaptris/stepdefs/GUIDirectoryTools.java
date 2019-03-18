@@ -1,5 +1,6 @@
 package com.adaptris.stepdefs;
 
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -11,8 +12,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 
 import static com.adaptris.stepdefs.EnvVar.ADAPTER_STARTUP;
@@ -39,7 +38,6 @@ public class GUIDirectoryTools {
         Node nNode = nList.item(0);
         return nNode.getFirstChild().getNodeValue();
     }
-
 
     public static void adapterIdReset(File adapterDBLocation) throws IOException {
 

@@ -153,7 +153,7 @@ public class StepDefinitions {
 
     @Then("^the user dismisses the 'Welcome Modal'$")
     public void dismiss_welcomeModal() throws InterruptedException {
-      Thread.sleep(1000);
+      Thread.sleep(2000);
       driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div")).click();
       driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[2]")).click();
     }
@@ -249,114 +249,226 @@ public class StepDefinitions {
 
     //Adapter Widget tiles
 
+    @Then("^clicks the 'Add Widget' button$")
+    public void add_widget_btn() throws InterruptedException {
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+    }
+
+    @Then("^bulk adds all the widgets bar 'Consumer Messages Remaining'$")
+    public void adds_all_widgets_except_consumerMessages_remaining() throws InterruptedException {
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();Thread.sleep(2000);
+      Thread.sleep(2000);
+      driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div")).click();
+    }
+
     @Then("^selects the 'Summary Details' tile$")
-    public void select_summaryDetail_tile() {
+    public void select_summaryDetail_tile() throws InterruptedException {
+      Thread.sleep(1000);
       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
     }
 
-    @Then("^selects the 'Summary Details (Carousel)' tile$")
-    public void select_summaryDetails_carousel_tile() {
-      driver.findElement(By.xpath("")).click();
+    @Then("^selects the 'Summary Details Carousel' tile$")
+    public void select_summaryDetails_carousel_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div")).click();
     }
 
     @Then("^selects the 'Control Panel' tile$")
-    public void select_controlPanel_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_controlPanel_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div")).click();
     }
 
     @Then("^selects the 'In Flight' tile$")
-    public void select_inFlight_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_inFlight_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div")).click();
     }
 
     @Then("^selects the 'Component Counts' tile$")
-    public void select_componentCounts_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_componentCounts_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[5]/div")).click();
     }
 
     @Then("^selects the 'Message Counts Chart' tile$")
-    public void select_messageCount_charts_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_messageCount_charts_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[6]/div")).click();
     }
 
     @Then("^selects the 'Daily Message Counts Chart' tile$")
-    public void select_dailyMessage_countsChart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_dailyMessage_countsChart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[7]/div")).click();
     }
 
     @Then("^selects the 'Message Counts Pie Chart' tile$")
-    public void select_messageCounts_pieChart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_messageCounts_pieChart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[8]/div")).click();
     }
 
     @Then("^selects the 'Failed Messages Table' tile$")
-    public void select_failedMessage_table_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_failedMessage_table_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[9]/div")).click();
     }
 
     @Then("^selects the 'Platform Heap Memory Details' tile$")
-    public void select_platformHeap_memoryDetails_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformHeap_memoryDetails_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[10]/div")).click();
     }
 
     @Then("^selects the 'Platform Non Heap Memory Details' tile$")
-    public void select_platformNon_heapMemory_details_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformNon_heapMemory_details_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[11]/div")).click();
     }
 
     @Then("^selects the 'Platform Memory Heap Chart' tile$")
-    public void select_platformMemory_heapChart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformMemory_heapChart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[12]/div")).click();
     }
 
     @Then("^selects the 'Platform Memory Non Heap Chart' tile$")
-    public void select_platformMemory_nonHeap_chart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformMemory_nonHeap_chart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[13]/div")).click();
     }
 
     @Then("^selects the 'Platform Runtime Path Details' tile$")
-    public void select_platformRuntime_pathDetails_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformRuntime_pathDetails_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[14]/div")).click();
     }
 
     @Then("^selects the 'Platform Runtime Details' tile$")
-    public void select_platformRuntime_details_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformRuntime_details_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[15]/div")).click();
     }
 
     @Then("^selects the 'Platform Runtime System Details' tile$")
-    public void select_platformRuntime_systemDetails_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformRuntime_systemDetails_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[16]/div")).click();
     }
 
     @Then("^selects the 'Platform Operating System Details' tile$")
-    public void select_platformOperating_systemDetails_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformOperating_systemDetails_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[17]/div")).click();
     }
 
     @Then("^selects the 'Platform JVM Process Load Chart' tile$")
-    public void select_platformJVM_processLoad_chart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformJVM_processLoad_chart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[18]/div")).click();
     }
 
     @Then("^selects the 'Platform System CPU Load Chart' tile$")
-    public void select_platformSystem_cpuLoad_chart_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformSystem_cpuLoad_chart_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[19]/div")).click();
     }
 
     @Then("^selects the 'Platform Thread Details' tile$")
-    public void select_platformThread_details_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_platformThread_details_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[20]/div")).click();
     }
 
     @Then("^selects the 'Consumer Messages Remaining' tile$")
-    public void select_consumerMessages_remaining_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_consumerMessages_remaining_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[21]/div")).click();
     }
 
     @Then("^selects the 'Logs Table - JMX Log Appender' tile$")
-    public void select_logsTable_jmxLog_appender_tile() {
-      driver.findElement(By.xpath("")).click();
+    public void select_logsTable_jmxLog_appender_tile() throws InterruptedException {
+      Thread.sleep(1000);
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[22]/div")).click();
     }
 
     /////////
