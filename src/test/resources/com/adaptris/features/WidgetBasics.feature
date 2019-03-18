@@ -3,6 +3,7 @@ Feature: Widget Basics
   Background: User is Logged In
     Given on a login page
     When the user enters username and password
+    Then the user dismisses the 'Welcome Modal'
     Then the user is on the Dashboard
 
   @AddWidgets

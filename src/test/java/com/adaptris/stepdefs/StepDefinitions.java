@@ -153,6 +153,7 @@ public class StepDefinitions {
 
     @Then("^the user dismisses the 'Welcome Modal'$")
     public void dismiss_welcomeModal() throws InterruptedException {
+      Thread.sleep(1000);
       driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div")).click();
       driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/button[2]")).click();
     }
@@ -246,10 +247,119 @@ public class StepDefinitions {
 
     }
 
+    //Adapter Widget tiles
+
     @Then("^selects the 'Summary Details' tile$")
     public void select_summaryDetail_tile() {
       driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
     }
+
+    @Then("^selects the 'Summary Details (Carousel)' tile$")
+    public void select_summaryDetails_carousel_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Control Panel' tile$")
+    public void select_controlPanel_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'In Flight' tile$")
+    public void select_inFlight_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Component Counts' tile$")
+    public void select_componentCounts_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Message Counts Chart' tile$")
+    public void select_messageCount_charts_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Daily Message Counts Chart' tile$")
+    public void select_dailyMessage_countsChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Message Counts Pie Chart' tile$")
+    public void select_messageCounts_pieChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Failed Messages Table' tile$")
+    public void select_failedMessage_table_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Heap Memory Details' tile$")
+    public void select_platformHeap_memoryDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Non Heap Memory Details' tile$")
+    public void select_platformNon_heapMemory_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Memory Heap Chart' tile$")
+    public void select_platformMemory_heapChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Memory Non Heap Chart' tile$")
+    public void select_platformMemory_nonHeap_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Runtime Path Details' tile$")
+    public void select_platformRuntime_pathDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Runtime Details' tile$")
+    public void select_platformRuntime_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Runtime System Details' tile$")
+    public void select_platformRuntime_systemDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Operating System Details' tile$")
+    public void select_platformOperating_systemDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform JVM Process Load Chart' tile$")
+    public void select_platformJVM_processLoad_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform System CPU Load Chart' tile$")
+    public void select_platformSystem_cpuLoad_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Platform Thread Details' tile$")
+    public void select_platformThread_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Consumer Messages Remaining' tile$")
+    public void select_consumerMessages_remaining_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @Then("^selects the 'Logs Table - JMX Log Appender' tile$")
+    public void select_logsTable_jmxLog_appender_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    /////////
 
     @Then("^the user sees the Open config button$")
     public void openConfig_btn() throws InterruptedException {
@@ -658,6 +768,119 @@ public class StepDefinitions {
       Assert.assertEquals("fa fa-check", driver.findElement(By.xpath("/html/body/div[5]/div/div/div[3]/div/button[2]/i")).getAttribute("class"));
 
     }
+
+    //Adapter Widget tiles
+
+    @And("^finds the 'Summary Details' tile$")
+    public void finds_summaryDetail_tile() {
+      driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
+    }
+
+    @And("^finds the 'Summary Details (Carousel)' tile$")
+    public void finds_summaryDetails_carousel_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Control Panel' tile$")
+    public void finds_controlPanel_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'In Flight' tile$")
+    public void finds_inFlight_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Component Counts' tile$")
+    public void finds_componentCounts_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Message Counts Chart' tile$")
+    public void finds_messageCount_charts_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Daily Message Counts Chart' tile$")
+    public void finds_dailyMessage_countsChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Message Counts Pie Chart' tile$")
+    public void finds_messageCounts_pieChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Failed Messages Table' tile$")
+    public void finds_failedMessage_table_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Heap Memory Details' tile$")
+    public void finds_platformHeap_memoryDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Non Heap Memory Details' tile$")
+    public void finds_platformNon_heapMemory_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Memory Heap Chart' tile$")
+    public void finds_platformMemory_heapChart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Memory Non Heap Chart' tile$")
+    public void finds_platformMemory_nonHeap_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Runtime Path Details' tile$")
+    public void finds_platformRuntime_pathDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Runtime Details' tile$")
+    public void finds_platformRuntime_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Runtime System Details' tile$")
+    public void finds_platformRuntime_systemDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Operating System Details' tile$")
+    public void finds_platformOperating_systemDetails_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform JVM Process Load Chart' tile$")
+    public void finds_platformJVM_processLoad_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform System CPU Load Chart' tile$")
+    public void finds_platformSystem_cpuLoad_chart_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Platform Thread Details' tile$")
+    public void finds_platformThread_details_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Consumer Messages Remaining' tile$")
+    public void finds_consumerMessages_remaining_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
+    @And("^finds the 'Logs Table - JMX Log Appender' tile$")
+    public void finds_logsTable_jmxLog_appender_tile() {
+      driver.findElement(By.xpath("")).click();
+    }
+
 
 
 //    Using this method as a testing ground
