@@ -12,6 +12,7 @@ Feature: Widget Basics
     Then the user sees the 'Widgets Modal'
     And sees the Interlok Widgets label
     Then selects the Local Adapter - config-001-basic-components adapter in the 'Widgets Modal'
+    And sees the available widgets
     Then selects the 'Summary Details' tile
     Then bulk adds all the widgets bar 'Consumer Messages Remaining'
 

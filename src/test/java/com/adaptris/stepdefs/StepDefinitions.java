@@ -213,27 +213,41 @@ public class StepDefinitions {
     @Then("^the user sees the 'Widgets Modal'$")
     public void widgets_modal_isDisplayed() throws InterruptedException {
       Thread.sleep(2000);
+
+      //Modal itself
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div")).isDisplayed());
+
+      //Page header
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).isDisplayed());
       Assert.assertEquals("fa fa-bar-chart-o", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3/i")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3")).isDisplayed());
       Assert.assertEquals("Add a Runtime Widget", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/h3")).getText());
 
+      //Aggregated Adapter Widgets option
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[1]/div/div/label")).isDisplayed());
       Assert.assertEquals("checkbox-label", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[1]/div/div/label")).getAttribute("class"));
 
+      //Adapter selector form
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/span/i")).isDisplayed());
       Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/span/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[1]/div/select")).isDisplayed());
 
+      //Custom tile
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div")).isDisplayed());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/i")).isDisplayed());
       Assert.assertEquals("fa fa-code", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[1]/div/i")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[3]/a/i")).isDisplayed());
       Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[3]/a/i")).getAttribute("class"));
-
       Assert.assertEquals("Custom", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/h4")).getText());
       Assert.assertEquals("Platform", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/h5/span")).getText());
 
+      //Close, dismiss and need help buttons
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[3]/div/a")).isDisplayed());
+      Assert.assertEquals("Need Help?", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[3]/div/a")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[3]/button")).isDisplayed());
+      Assert.assertEquals("Close", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[3]/button")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/a")).isDisplayed());
+      Assert.assertEquals("×", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/a")).getText());
 
     }
 
@@ -544,8 +558,7 @@ public class StepDefinitions {
     @And("^sees (.*) started channels$")
     public void sees_started_channels(String channels) throws InterruptedException {
         //Element refreshes and requires a wait
-        Thread.sleep(2000);
-        //Cannot select via xpath/ changes name each time a new adapter is created
+        Thread.sleep(3000);
         Assert.assertEquals(channels, driver.findElement(By.cssSelector("#channels-state-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:first-child")).getText());
     }
 
@@ -993,6 +1006,84 @@ public class StepDefinitions {
       driver.findElement(By.xpath("")).click();
     }
 
+    @And("^sees the available widgets$")
+    public void sees_all_available_widgets() {
+      //Header and selection refinement
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/select")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/span/i")).isDisplayed());
+      Assert.assertEquals("fa fa-channel", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/span/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[1]")).isDisplayed());
+      Assert.assertEquals("Viewing Widgets for selected Adapter", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[1]")).getText());
+
+      //Sees all 21 selectable tiles and the 'Consumer Messages Remaining' disabled
+        //Summary Details
+
+
+        //Summary Details(Carousel)
+
+
+        //Control Panel
+
+
+        //In Flight
+
+
+        //Component Counts
+
+
+        //Message Counts Chart
+
+
+        //Daily Message Counts Chart
+
+
+        //Message Counts Pie Chart
+
+
+        //Failed Messages Table
+
+
+        //Platform Heap Memory Details
+
+
+        //Platform Non Heap Memory Details
+
+
+        //Platform Memory Heap Chart
+
+
+        //Platform Memory Non Heap Chart
+
+
+        //Platform Runtime Path Details
+
+
+        //Platform Runtime Details
+
+
+        //Platform Runtime System Details
+
+
+        //Platform Operating System Details
+
+
+        //Platform JVM Process Load Chart
+
+
+        //Platform System CPU Load Chart
+
+
+        //Platform Thread Details
+
+
+        //Consumer Messages Remaining(Disabled)
+
+
+        //Logs Table - JMX Log Appender
+
+
+
+    }
 
 
 //    Using this method as a testing ground
