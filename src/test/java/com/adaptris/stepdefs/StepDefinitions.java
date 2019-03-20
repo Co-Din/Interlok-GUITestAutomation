@@ -1007,7 +1007,7 @@ public class StepDefinitions {
     }
 
     @And("^sees the available widgets$")
-    public void sees_all_available_widgets() {
+    public void sees_all_widgets() {
       //Header and selection refinement
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/select")).isDisplayed());
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]/div[3]/div[2]/div/span/i")).isDisplayed());
@@ -1019,85 +1019,85 @@ public class StepDefinitions {
 
       //Summary Details
         //Tile
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]")).isDisplayed());
         //Icons
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[1]/div/i")).isDisplayed());
+        Assert.assertEquals("fa fa-th-large", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[1]/div/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[3]/a/i")).isDisplayed());
+        Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[3]/a/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[2]/h4")).isDisplayed());
+        Assert.assertEquals("Summary Details", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[2]/h4")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[2]/h5/span")).isDisplayed());
+        Assert.assertEquals("Details", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[2]/h5/span")).getText());
 
       //Summary Details(Carousel)
         //Tile
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]")).isDisplayed());
         //Icons
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[1]/div/i")).isDisplayed());
+        Assert.assertEquals("fa fa-th-large", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[1]/div/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[3]/a/i")).isDisplayed());
+        Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[3]/a/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[2]/h4")).isDisplayed());
+        Assert.assertEquals("Summary Details (carousel)", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[2]/h4")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[2]/h5/span")).isDisplayed());
+        Assert.assertEquals("Details", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div[2]/h5/span")).getText());
 
 
     //Control Panel
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]")).isDisplayed());
       //Icons
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[1]/div/i")).isDisplayed());
+      Assert.assertEquals("fa fa-gamepad", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[1]/div/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[3]/a/i")).isDisplayed());
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[3]/a/i")).getAttribute("class"));
       //Text
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[2]/h4")).isDisplayed());
+      Assert.assertEquals("Control Panel", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[2]/h4")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[2]/h5/span")).isDisplayed());
+      Assert.assertEquals("Dashboard", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[3]/div/div[2]/h5/span")).getText());
 
 
 
     //In Flight
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]")).isDisplayed());
       //Icons
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[1]/div/i")).isDisplayed());
+      Assert.assertEquals("fa fa-paper-plane-o", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[1]/div/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[3]/a/i")).isDisplayed());
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[3]/a/i")).getAttribute("class"));
       //Text
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[2]/h4")).isDisplayed());
+      Assert.assertEquals("In Flight", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[2]/h4")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[2]/h5/span")).isDisplayed());
+      Assert.assertEquals("Dashboard", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[4]/div/div[2]/h5/span")).getText());
 
     //Component Counts
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[5]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getText());
 
     //Message Counts Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[6]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1106,12 +1106,12 @@ public class StepDefinitions {
 
     //Daily Message Counts Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[7]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1120,12 +1120,12 @@ public class StepDefinitions {
 
     //Message Counts Pie Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[8]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1134,12 +1134,12 @@ public class StepDefinitions {
 
     //Failed Messages Table
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[9]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1148,12 +1148,12 @@ public class StepDefinitions {
 
     //Platform Heap Memory Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[10]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1162,12 +1162,12 @@ public class StepDefinitions {
 
     //Platform Non Heap Memory Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[11]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1176,12 +1176,12 @@ public class StepDefinitions {
 
     //Platform Memory Heap Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[12]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1190,12 +1190,12 @@ public class StepDefinitions {
 
     //Platform Memory Non Heap Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[13]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1204,12 +1204,12 @@ public class StepDefinitions {
 
     //Platform Runtime Path Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[14]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1218,12 +1218,12 @@ public class StepDefinitions {
 
     //Platform Runtime Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[15]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1232,12 +1232,12 @@ public class StepDefinitions {
 
     //Platform Runtime System Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[16]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1246,12 +1246,12 @@ public class StepDefinitions {
 
     //Platform Operating System Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[17]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1260,12 +1260,12 @@ public class StepDefinitions {
 
     //Platform JVM Process Load Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[18]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1274,12 +1274,12 @@ public class StepDefinitions {
 
     //Platform System CPU Load Chart
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[19]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1288,12 +1288,12 @@ public class StepDefinitions {
 
     //Platform Thread Details
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[20]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1302,12 +1302,12 @@ public class StepDefinitions {
 
     //Consumer Messages Remaining(Disabled)
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[21]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
@@ -1316,12 +1316,12 @@ public class StepDefinitions {
 
     //Logs Table - JMX Log Appender
       //Tile
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[22]")).isDisplayed());
       //Icons
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+      Assert.assertEquals("fa fa-info-circle action-icon component-action", driver.findElement(By.xpath("")).getAttribute("class"));
       //Text
       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
       Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
