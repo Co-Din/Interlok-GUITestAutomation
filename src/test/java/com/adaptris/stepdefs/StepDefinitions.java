@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Adaptris Ltd.
+ * Copyright 2019 Adaptris Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,8 +25,6 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//For FireFox driver uncomment below
-//import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -40,6 +38,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import static com.adaptris.stepdefs.EnvVar.*;
+import static com.adaptris.stepdefs.GUIDirectoryTools.theChosenOne;
 
 public class StepDefinitions {
 
@@ -47,16 +46,9 @@ public class StepDefinitions {
     private String configAddress = "interlok/config/config.html";
 
     public void driverInit(String domainUrl) {
-//	For FireFox driver uncomment below
-//	    System.setProperty("webdriver.gecko.driver", "src/resources/geckodriver-v0.24.0-win64.exe");
 
-//	For Chrome leave the below uncommented, significantly fewer bugs.
-        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win32.exe");
+        theChosenOne();
 
-//	For FireFox driver uncomment below
-//	    driver = new FirefoxDriver();
-
-//	For Chrome leave the below uncommented, significantly fewer bugs.
         driver = new ChromeDriver();
 
 //	Opens page in full size and waits 10 secs before t-out
@@ -134,7 +126,7 @@ public class StepDefinitions {
     @Then("^the user sees the 'Welcome Modal'$")
     public void welcome_one_and_all_to_the_show() throws InterruptedException {
       Thread.sleep(2000);
-      Assert.assertTrue(driver.findElement(By.id("modal-welcome-splash")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"modal-welcome-splash\"]")).isDisplayed());
 
       //Header
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[8]/div/div/div[1]/div/h1")).isDisplayed());
@@ -186,7 +178,8 @@ public class StepDefinitions {
     }
 
     @Then("^clicks the stop button$")
-    public void controlBar_stopBtn_click() {
+    public void controlBar_stopBtn_click() throws InterruptedException {
+      Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/div")).click();
     }
 

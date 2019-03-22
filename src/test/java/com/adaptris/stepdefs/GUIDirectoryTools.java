@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Adaptris Ltd.
+ * Copyright 2019 Adaptris Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,16 @@ public class GUIDirectoryTools {
             f.delete();
         }
         adapterDBLocation.delete();
+    }
+
+    public static void theChosenOne() {
+        if (System.getProperty("os.name").contains("Windows")) {
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win32.exe");
+        } else if (System.getProperty("os.name").contains("Mac")) {
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_mac64");
+        } else if (System.getProperty("os.name").contains("Linux")) {
+            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_linux64");
+        }
     }
 
 }

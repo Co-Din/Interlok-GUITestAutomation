@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Adaptris Ltd.
+ * Copyright 2019 Adaptris Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ public class TestRunner {
     GUIDirectoryTools.adapterIdReset(ADAPTER_DB_DIRECTORY);
     Thread.sleep(2000);
     GUIDirectoryTools.InterlokBoot();
-    Thread.sleep(40000);
+    Thread.sleep(35000);
   }
 
 }
