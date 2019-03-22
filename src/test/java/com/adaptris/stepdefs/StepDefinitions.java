@@ -51,7 +51,7 @@ public class StepDefinitions {
 
         driver = new ChromeDriver();
 
-//	Opens page in full size and waits 10 secs before t-out
+//	Opens page in full size and waits 10 secs bgit efore t-out
         driver.get(domainUrl);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
