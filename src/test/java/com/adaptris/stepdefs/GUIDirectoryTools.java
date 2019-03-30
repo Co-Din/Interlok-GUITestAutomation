@@ -32,7 +32,7 @@ import java.nio.file.Files;
 
 
 import static com.adaptris.stepdefs.EnvVar.ADAPTER_STARTUP;
-import static org.assertj.core.util.Files.delete;
+import static org.openqa.selenium.io.FileHandler.delete;
 
 
 public class GUIDirectoryTools {
