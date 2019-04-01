@@ -29,6 +29,53 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
 
 <br />
 
+##Setup
+<br />
+
+   * ####Setup a compatible version of a Java 8 Open JDK
+   
+     * Begin by opening your command terminal and entering the command **`java -version`** <br />
+          This should either return that you have no version of Java installed or any version that you have installed. <br />
+     *If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
+     * Follow the steps provided install install **Zulu** the **[Azul Open JDK](https://www.azul.com/downloads/zulu)**.
+     
+     * #####Windows
+       
+        Following the download of your JDK you'll need to supply windows a JAVA_HOME and a JAVA_PATH <br />
+        To do so open your file browser and navigate to: **`Control Panel\System and Security\System`** using the address bar. <br />
+        Once there select the **'Advanced system settings'** which should open a separate window _(System Properties)_ on the 'Advanced' tab. <br />
+        Select the 'Environmental Variables...' button at the bottom right hand of the window. This should open yet another window for your 'Environment Variables' you'll then want to do the following in the **'System Variables'** Segment. <br />
+        Double click on the **Path** variable and then select 'new' and enter the location of your Java JDK i.e `C:\Java\zulu8.33.0.1-jdk8.0.192-win_x64\bin` making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
+        Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `JAVA_HOME` and the JDKs location as the 'Variable Value'(_this time without 'bin'_). <br /> 
+        Finally we need to confirm that our installation has worked. Open the command terminal and once again enter the command **`java -version`** this should return the Java version you've installed or `Java is not recognized as an internal or external command` if the latter is the case please scroll to the bottom of this guide and follow the links supplied. <br />
+                     
+     * #####Mac
+     
+        For Mac OSs start by running the command **`java -version`** to see if a Java JDK is already installed if one is you should still install the 'Azul Zulu' JDK and then switch to that JDK version. <br />
+        To switch to the 'Zulu JDK' ope you command terminal and run the following `/usr/libexec/java_home -V` this should show you which Java versions you have installed. <br />
+        Then you can select which version of Java you want using `export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'` this needn't be the exact version it can be a major version. <br />
+        Finally confirm which version is running with **`java -version`** <br />
+                
+     * #####Linux
+        
+        For the Linux start by opening the command terminal and running the command **`sudo apt update`** then once this has completed **`java -version`** to confirm whether or not there is a version of Java already installed. <br />
+        If one has already been installed and is not an open copy of the Java 8 JDK install the following JDK and then switch the version default. <br />
+        Run the **`sudo apt-get install zulu-8`** command to install the JDK finally check the version by running the command **`java -version`** if it is not the openJDK you can switch using the following: <br />
+        **`sudo update-alternatives --display java`** shows you which alternatives are available and then **`sudo update-alternatives --config java`** which should give you the JDK options to select from. <br />
+        Finally confirm that the correct version of Java is being used by running the command **`java -version`**. <br />
+         
+   <br />
+    
+   * ####Install one of the following IDEs following the instructions provided on their sites:
+     *(Both are compatible with Linux, Mac & Windows)*
+     * Intellij: [Download IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
+     * Eclipse: [Eclipse IDE](https://www.eclipse.org/downloads/)
+        
+   *
+
+
+<br />
+
 ## Summary
 <br />
 
@@ -110,6 +157,23 @@ confirm there is a blank error bar to begin with.
 ## Related Reading Materials
 <br />
 
+###Java JDK
+  > #####Azul Docs
+   * __[Azul Installation Guide](https://docs.azul.com/zulu/zuludocs/)__
+
+  > #####Windows
+   * __[Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf60/setting-the-java_home-variable-in-windows-852732596.html)__
+   * __[How to set JAVA_HOME on Windows 10](https://www.mkyong.com/java/how-to-set-java_home-on-windows-10/)__
+   * __[Java Not Recognized StackOverflow](https://stackoverflow.com/questions/15796855/java-is-not-recognized-as-an-internal-or-external-command)__
+   
+   > #####Unix systems
+   * __[Setting JAVA_HOME](https://confluence.atlassian.com/crowd030beta/setting-java_home-907281613.html)__
+   * __[How to set or change the default Java (JDK) version on OS X?](https://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x)__
+   * __[How To Install Java with 'apt'](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)__
+   * __[How to change default Java version on Linux](http://ask.xmodulo.com/change-default-java-version-linux.html)__
+<br />
+
+###Syntactic Cheat Sheets
 * __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
 * __[Selenium cheatsheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
 
