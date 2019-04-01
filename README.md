@@ -48,13 +48,13 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         Select the 'Environmental Variables...' button at the bottom right hand of the window. This should open yet another window for your 'Environment Variables' you'll then want to do the following in the **'System Variables'** Segment. <br />
         Double click on the **Path** variable and then select 'new' and enter the location of your Java JDK i.e `C:\Java\zulu8.33.0.1-jdk8.0.192-win_x64\bin` making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
         Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `JAVA_HOME` and the JDKs location as the 'Variable Value'(_this time without 'bin'_). <br /> 
-        Finally we need to confirm that our installation has worked. Open the command terminal and once again enter the command **`java -version`** this should return the Java version you've installed or `Java is not recognized as an internal or external command` if the latter is the case please scroll to the bottom of this guide and follow the links supplied. <br />
+        Finally we need to confirm that our installation has worked. Open the command terminal and once again enter the command **`java -version`** this should return the Java version you've installed or **`Java is not recognized as an internal or external command`** if the latter is the case please scroll to the bottom of this guide and follow the links supplied. <br />
                      
      * ##### Mac
      
         For Mac OSs start by running the command **`java -version`** to see if a Java JDK is already installed if one is you should still install the 'Azul Zulu' JDK and then switch to that JDK version. <br />
-        To switch to the 'Zulu JDK' ope you command terminal and run the following `/usr/libexec/java_home -V` this should show you which Java versions you have installed. <br />
-        Then you can select which version of Java you want using `export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'` this needn't be the exact version it can be a major version. <br />
+        To switch to the 'Zulu JDK' ope you command terminal and run the following **`/usr/libexec/java_home -V`** this should show you which Java versions you have installed. <br />
+        Then you can select which version of Java you want using **`export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'`** this needn't be the exact version it can be a major version. <br />
         Finally confirm which version is running with **`java -version`** <br />
                 
      * ##### Linux
