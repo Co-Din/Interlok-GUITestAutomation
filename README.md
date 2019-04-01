@@ -36,8 +36,8 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
    * #### Setup a compatible version of a Java 8 Open JDK
    
      * Begin by opening your command terminal and entering the command **`java -version`** <br />
-          This should either return that you have no version of Java installed or any version that you have installed. <br />
-     *If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
+       This should either return that you have no version of Java installed or any version that you have installed. <br />
+     * If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
      * Follow the steps provided install install **Zulu** the **[Azul Open JDK](https://www.azul.com/downloads/zulu)**.
      
      * ##### Windows
@@ -71,8 +71,29 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
      *(Both are compatible with Linux, Mac & Windows)*
      * Intellij: [Download IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
      * Eclipse: [Eclipse IDE](https://www.eclipse.org/downloads/)
+     
+   <br />
         
-   *
+   * #### Install Maven
+    
+        To run this project we also need to install **[Apache Maven](https://maven.apache.org/download.cgi)**. <br />
+        Start by opening your command terminal and running **`mvn -version`** this should either return a version which may have been already installed or **`mvn is not recognized as an internal or external command`**. <br />
+        Download the appropriate format of 'Apache Maven 3.6.0' and then follow the instructions below for installation and config. <br />
+   
+   * ##### Windows
+        
+        Once downloaded extract the Zip or Tar.gz file to its final destination. <br />
+        After finishing the extraction open your file browser and navigate to: **`Control Panel\System and Security\System`** using the address bar. <br />
+        Once there select the **'Advanced system settings'** which should open a separate window _(System Properties)_ on the 'Advanced' tab. <br />
+        Select the 'Environmental Variables...' button at the bottom right hand of the window. This should open yet another window for your 'Environment Variables' you'll then want to do the following in the **'System Variables'** Segment. <br />
+        Double click on the **Path** variable and then select 'new' and enter the location of your Apache Maven i.e `C:\Programs\Apache\Maven\apache-maven-3.6.0\bin` making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
+        Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `M2_HOME` and Maven's location as the 'Variable Value'(_this time without 'bin'_). <br />
+        Repeat the above step and create another **'System Variables'** this time with the 'Variable Name' `M2` and yet again Maven's location as the 'Variable Value' i.e **`C:\Programs\Apache\Maven\apache-maven-3.6.0`**. <br />
+        Finally check the setup has succeeded by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
+   
+   * ##### Mac
+   
+   * ##### Linux
 
 
 <br />
