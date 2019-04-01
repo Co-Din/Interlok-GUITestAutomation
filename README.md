@@ -99,9 +99,20 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         Switch the Maven contents: **`mv Downloads/apache-maven* /opt/apache-maven`** and archive the Admin session by running: **`exit`** <br /> 
         Add Maven binaries to the path and append using **`nano $HOME/.profile`** and then **`export PATH=$PATH:/opt/apache-maven/bin`** then hit **`Ctrl+x`** to **Save and Exit from 'nano'*. <br />
         Finally check the setup has been successfully completed by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
+        *Alternatively* you can also install Maven on Mac using the following terminal commands `brew update` followed by `brew install maven`. <br />
    
    * ##### Linux
-
+   
+     You can download the appropriate Maven version using the following commands on terminal: **`wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz -P /tmp`**. <br />
+     Following this you can extract the file with **`sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt`**. <br />
+     ```
+      export M2_HOME=/usr/local/apache-maven/apache-maven-3.6.0
+      export M2=$M2_HOME/bin
+      export MAVEN_OPTS=-Xms256m -Xmx512m
+      export PATH=$M2:$PATH
+     ```
+     Finally check the setup has been successfully completed by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
+     *Alternatively* you can also install Maven on Linux system using the following terminal commands **`sudo apt update`** followed by **`apt-cache search maven`** and then **`sudo apt install maven`**. <br />
 
 <br />
 
