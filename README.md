@@ -214,7 +214,6 @@ confirm there is a blank error bar to begin with.
 <br />
 
 ### Maven
-
    * __[How to install Maven on Windows, Linux, Mac](https://www.baeldung.com/install-maven-on-windows-linux-mac)__
 
 ### Syntactic Cheat Sheets
