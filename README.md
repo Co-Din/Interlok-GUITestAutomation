@@ -57,7 +57,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         Then you can select which version of Java you want using `export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'` this needn't be the exact version it can be a major version. <br />
         Finally confirm which version is running with **`java -version`** <br />
                 
-     * #####Linux
+     * ##### Linux
         
         For the Linux start by opening the command terminal and running the command **`sudo apt update`** then once this has completed **`java -version`** to confirm whether or not there is a version of Java already installed. <br />
         If one has already been installed and is not an open copy of the Java 8 JDK install the following JDK and then switch the version default. <br />
