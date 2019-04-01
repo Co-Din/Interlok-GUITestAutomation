@@ -29,18 +29,18 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
 
 <br />
 
-##Setup
+## Setup
 
 <br />
 
-   * ####Setup a compatible version of a Java 8 Open JDK
+   * #### Setup a compatible version of a Java 8 Open JDK
    
      * Begin by opening your command terminal and entering the command **`java -version`** <br />
           This should either return that you have no version of Java installed or any version that you have installed. <br />
      *If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
      * Follow the steps provided install install **Zulu** the **[Azul Open JDK](https://www.azul.com/downloads/zulu)**.
      
-     * #####Windows
+     * ##### Windows
        
         Following the download of your JDK you'll need to supply windows a JAVA_HOME and a JAVA_PATH <br />
         To do so open your file browser and navigate to: **`Control Panel\System and Security\System`** using the address bar. <br />
@@ -50,7 +50,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `JAVA_HOME` and the JDKs location as the 'Variable Value'(_this time without 'bin'_). <br /> 
         Finally we need to confirm that our installation has worked. Open the command terminal and once again enter the command **`java -version`** this should return the Java version you've installed or `Java is not recognized as an internal or external command` if the latter is the case please scroll to the bottom of this guide and follow the links supplied. <br />
                      
-     * #####Mac
+     * ##### Mac
      
         For Mac OSs start by running the command **`java -version`** to see if a Java JDK is already installed if one is you should still install the 'Azul Zulu' JDK and then switch to that JDK version. <br />
         To switch to the 'Zulu JDK' ope you command terminal and run the following `/usr/libexec/java_home -V` this should show you which Java versions you have installed. <br />
@@ -67,7 +67,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
          
    <br />
     
-   * ####Install one of the following IDEs following the instructions provided on their sites:
+   * #### Install one of the following IDEs following the instructions provided on their sites:
      *(Both are compatible with Linux, Mac & Windows)*
      * Intellij: [Download IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
      * Eclipse: [Eclipse IDE](https://www.eclipse.org/downloads/)
