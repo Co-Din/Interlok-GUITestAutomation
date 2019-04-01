@@ -158,23 +158,23 @@ confirm there is a blank error bar to begin with.
 ## Related Reading Materials
 <br />
 
-###Java JDK
-  > #####Azul Docs
+### Java JDK
+  > ##### Azul Docs
    * __[Azul Installation Guide](https://docs.azul.com/zulu/zuludocs/)__
 
-  > #####Windows
+  > ##### Windows
    * __[Setting the JAVA_HOME Variable in Windows](https://confluence.atlassian.com/conf60/setting-the-java_home-variable-in-windows-852732596.html)__
    * __[How to set JAVA_HOME on Windows 10](https://www.mkyong.com/java/how-to-set-java_home-on-windows-10/)__
    * __[Java Not Recognized StackOverflow](https://stackoverflow.com/questions/15796855/java-is-not-recognized-as-an-internal-or-external-command)__
    
-   > #####Unix systems
+   > ##### Unix systems
    * __[Setting JAVA_HOME](https://confluence.atlassian.com/crowd030beta/setting-java_home-907281613.html)__
    * __[How to set or change the default Java (JDK) version on OS X?](https://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x)__
    * __[How To Install Java with 'apt'](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)__
    * __[How to change default Java version on Linux](http://ask.xmodulo.com/change-default-java-version-linux.html)__
 <br />
 
-###Syntactic Cheat Sheets
+### Syntactic Cheat Sheets
 * __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
 * __[Selenium cheatsheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
 
