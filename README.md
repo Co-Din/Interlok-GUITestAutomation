@@ -30,6 +30,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
 <br />
 
 ##Setup
+
 <br />
 
    * ####Setup a compatible version of a Java 8 Open JDK
