@@ -218,7 +218,8 @@ confirm there is a blank error bar to begin with.
 
 ### Syntactic Cheat Sheets
 * __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
-* __[Selenium cheatsheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
+* __[Maven Cheat Sheet](https://www.roguewave.com/sites/rw/files/resources/maven-cheat-sheet_0.pdf)__
+* __[Selenium Cheat Sheet for: CSS, DOM, and XPATH](https://www.red-gate.com/simple-talk/dotnet/.net-framework/xpath,-css,-dom-and-selenium-the-rosetta-stone/)__
 
 <br />
 
