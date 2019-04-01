@@ -46,7 +46,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         To do so open your file browser and navigate to: **`Control Panel\System and Security\System`** using the address bar. <br />
         Once there select the **'Advanced system settings'** which should open a separate window _(System Properties)_ on the 'Advanced' tab. <br />
         Select the 'Environmental Variables...' button at the bottom right hand of the window. This should open yet another window for your 'Environment Variables' you'll then want to do the following in the **'System Variables'** Segment. <br />
-        Double click on the **Path** variable and then select 'new' and enter the location of your Java JDK i.e `C:\Java\zulu8.33.0.1-jdk8.0.192-win_x64\bin` making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
+        Double click on the **Path** variable and then select 'new' and enter the location of your Java JDK i.e **`C:\Java\zulu8.33.0.1-jdk8.0.192-win_x64\bin`** making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
         Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `JAVA_HOME` and the JDKs location as the 'Variable Value'(_this time without 'bin'_). <br /> 
         Finally we need to confirm that our installation has worked. Open the command terminal and once again enter the command **`java -version`** this should return the Java version you've installed or **`Java is not recognized as an internal or external command`** if the latter is the case please scroll to the bottom of this guide and follow the links supplied. <br />
                      
@@ -54,7 +54,8 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
      
         For Mac OSs start by running the command **`java -version`** to see if a Java JDK is already installed if one is you should still install the 'Azul Zulu' JDK and then switch to that JDK version. <br />
         To switch to the 'Zulu JDK' ope you command terminal and run the following **`/usr/libexec/java_home -V`** this should show you which Java versions you have installed. <br />
-        Then you can select which version of Java you want using **`export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'`** this needn't be the exact version it can be a major version. <br />
+        Then you can select which version of Java you want using: <br />
+        **`export JAVA_HOME='/usr/libexec/java_home -v *Replace with Java Version Here*'`** this needn't be the exact version it can be a major version. <br />
         Finally confirm which version is running with **`java -version`** <br />
                 
      * ##### Linux
@@ -79,19 +80,25 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         To run this project we also need to install **[Apache Maven](https://maven.apache.org/download.cgi)**. <br />
         Start by opening your command terminal and running **`mvn -version`** this should either return a version which may have been already installed or **`mvn is not recognized as an internal or external command`**. <br />
         Download the appropriate format of 'Apache Maven 3.6.0' and then follow the instructions below for installation and config. <br />
+        Once downloaded extract the Zip or Tar.gz file to its final destination. <br />
    
    * ##### Windows
         
-        Once downloaded extract the Zip or Tar.gz file to its final destination. <br />
         After finishing the extraction open your file browser and navigate to: **`Control Panel\System and Security\System`** using the address bar. <br />
         Once there select the **'Advanced system settings'** which should open a separate window _(System Properties)_ on the 'Advanced' tab. <br />
         Select the 'Environmental Variables...' button at the bottom right hand of the window. This should open yet another window for your 'Environment Variables' you'll then want to do the following in the **'System Variables'** Segment. <br />
-        Double click on the **Path** variable and then select 'new' and enter the location of your Apache Maven i.e `C:\Programs\Apache\Maven\apache-maven-3.6.0\bin` making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
+        Double click on the **Path** variable and then select 'new' and enter the location of your Apache Maven i.e **`C:\Programs\Apache\Maven\apache-maven-3.6.0\bin`** making sure to include the 'bin' in the location and then dismiss the window by hitting the 'OK' button. <br />
         Then click on the **New...** button in the **'System Variables'** segment and in the 'Variable Name' input `M2_HOME` and Maven's location as the 'Variable Value'(_this time without 'bin'_). <br />
         Repeat the above step and create another **'System Variables'** this time with the 'Variable Name' `M2` and yet again Maven's location as the 'Variable Value' i.e **`C:\Programs\Apache\Maven\apache-maven-3.6.0`**. <br />
         Finally check the setup has succeeded by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
    
    * ##### Mac
+   
+        Open the command terminal and navigate to where the files were extracted to and then login as Super – User.<br />
+        Run **`rm Downloads/apache-maven*bin.tar.gz`** and then ammend the permissions: **`chown -R root:wheel Downloads/apache-maven*`**. <br /> 
+        Switch the Maven contents: **`mv Downloads/apache-maven* /opt/apache-maven`** and archive the Admin session by running: **`exit`** <br /> 
+        Add Maven binaries to the path and append using **`nano $HOME/.profile`** and then **`export PATH=$PATH:/opt/apache-maven/bin`** then hit **`Ctrl+x`** to **Save and Exit from 'nano'*. <br />
+        Finally check the setup has been successfully completed by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
    
    * ##### Linux
 
@@ -194,6 +201,10 @@ confirm there is a blank error bar to begin with.
    * __[How To Install Java with 'apt'](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)__
    * __[How to change default Java version on Linux](http://ask.xmodulo.com/change-default-java-version-linux.html)__
 <br />
+
+### Maven
+
+   * __[How to install Maven on Windows, Linux, Mac](https://www.baeldung.com/install-maven-on-windows-linux-mac)__
 
 ### Syntactic Cheat Sheets
 * __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
