@@ -3,10 +3,1175 @@
     "line": 2,
     "elements": [
       {
+        "line": 3,
+        "name": "User is Logged In",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13389300,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "on a login page",
+            "match": {
+              "location": "StepDefinitions.given_on_a_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1887927300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters username and password",
+            "match": {
+              "location": "StepDefinitions.enters_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 18691000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is on the Dashboard",
+            "match": {
+              "location": "StepDefinitions.reaches_Dashboard()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
         "before": [
           {
             "result": {
-              "duration": 5101877700,
+              "duration": 5012298200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Auto discovered adapter is present",
+        "description": "",
+        "id": "dashboard-basics;auto-discovered-adapter-is-present",
+        "after": [
+          {
+            "result": {
+              "duration": 736388800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2663114900,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user sees the \u0027Welcome Modal\u0027",
+            "match": {
+              "location": "StepDefinitions.welcome_one_and_all_to_the_show()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2168790000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user dismisses the \u0027Welcome Modal\u0027",
+            "match": {
+              "location": "StepDefinitions.dismiss_welcomeModal()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 35496200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "sees the auto discovered adapter",
+            "match": {
+              "location": "StepDefinitions.auto_discovered_adapter()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 200153700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "sees the adapters unique id",
+            "match": {
+              "location": "StepDefinitions.adapters_unique_id()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 29339800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "sees the JMX URL address",
+            "match": {
+              "location": "StepDefinitions.JMX_URL_address()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 45234300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "sees the adapter in \u0027Started\u0027 state",
+            "match": {
+              "location": "StepDefinitions.adapter_in_started_state()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20263300,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "sees a check icon",
+            "match": {
+              "location": "StepDefinitions.check_icon()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3045262900,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "sees 4 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1048909500,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "sees the total number of 4 adapter channels expected",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinitions.total_adapted_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51285400,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "sees the Up Time section",
+            "match": {
+              "location": "StepDefinitions.upTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 48829400,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "sees the Last Started section",
+            "match": {
+              "location": "StepDefinitions.lastStarted_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 27088900,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "sees UI version Interlok UI  3.8.3-RELEASE",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Interlok UI  3.8.3-RELEASE",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.ui_version(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 26408100,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "sees 0 failed messages",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.failed_msgs(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25795700,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "sees 0 in-flight messages",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.inFlight_msgs(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24366100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "sees the table mode button",
+            "match": {
+              "location": "StepDefinitions.table_mode_btn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 24378200,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "sees the add adapter button",
+            "match": {
+              "location": "StepDefinitions.add_adapter_btn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28591600,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "sees the \u0027Refresh\u0027 button",
+            "match": {
+              "location": "StepDefinitions.refresh_adapter_btn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 23608300,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "sees the control bar",
+            "match": {
+              "location": "StepDefinitions.adapter_controlBar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 665045200,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "sees the control-bar buttons",
+            "match": {
+              "location": "StepDefinitions.controlBar_btns()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 59324700,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "sees the error bar is blank",
+            "match": {
+              "location": "StepDefinitions.blank_errorBar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25908700,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "sees the Interlok Dashboard label",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Interlok Dashboard",
+                  "offset": 9
+                }
+              ],
+              "location": "StepDefinitions.page_label(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@DashboardBasics"
+          },
+          {
+            "name": "@AutoDiscoveredAdapterPresent"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "User is Logged In",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6144400,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "on a login page",
+            "match": {
+              "location": "StepDefinitions.given_on_a_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1341950500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters username and password",
+            "match": {
+              "location": "StepDefinitions.enters_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 221319100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is on the Dashboard",
+            "match": {
+              "location": "StepDefinitions.reaches_Dashboard()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4070946100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 34,
+        "name": "Control button functionality works",
+        "description": "",
+        "id": "dashboard-basics;control-button-functionality-works",
+        "after": [
+          {
+            "result": {
+              "duration": 773845900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3042545500,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "sees 4 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 35159400,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "sees the control bar",
+            "match": {
+              "location": "StepDefinitions.adapter_controlBar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 600197700,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "sees the control-bar buttons",
+            "match": {
+              "location": "StepDefinitions.controlBar_btns()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1103318700,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "clicks the stop button",
+            "match": {
+              "location": "StepDefinitions.controlBar_stopBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3037312100,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "sees 0 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1040754700,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "sees the total number of 4 adapter channels expected",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinitions.total_adapted_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 51932300,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "sees the Down Time section",
+            "match": {
+              "location": "StepDefinitions.downTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 49941600,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "sees the Last Stopped section",
+            "match": {
+              "location": "StepDefinitions.lastStopped_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 64607900,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "clicks the start button",
+            "match": {
+              "location": "StepDefinitions.controlBar_startBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3042192000,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "sees 4 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 56530900,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "sees the Up Time section",
+            "match": {
+              "location": "StepDefinitions.upTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 55445800,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "sees the Last Started section",
+            "match": {
+              "location": "StepDefinitions.lastStarted_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 57750900,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "clicks the pause button",
+            "match": {
+              "location": "StepDefinitions.controlBar_pauseBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3036366600,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "sees 0 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1040753700,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "sees the total number of 4 adapter channels expected",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinitions.total_adapted_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 38294400,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "sees the Down Time section",
+            "match": {
+              "location": "StepDefinitions.downTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33992000,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "sees the Last Stopped section",
+            "match": {
+              "location": "StepDefinitions.lastStopped_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 45982000,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "clicks the start button",
+            "match": {
+              "location": "StepDefinitions.controlBar_startBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3038309200,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "sees 4 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 37717700,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "sees the Up Time section",
+            "match": {
+              "location": "StepDefinitions.upTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33793900,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "sees the Last Started section",
+            "match": {
+              "location": "StepDefinitions.lastStarted_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1066006300,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "clicks the stop button",
+            "match": {
+              "location": "StepDefinitions.controlBar_stopBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 90643400,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "clicks the pause button",
+            "match": {
+              "location": "StepDefinitions.controlBar_pauseBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3033367800,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "sees 0 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1022423400,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "sees the total number of 4 adapter channels expected",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinitions.total_adapted_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 32913400,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "sees the Down Time section",
+            "match": {
+              "location": "StepDefinitions.downTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 32997300,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "sees the Last Stopped section",
+            "match": {
+              "location": "StepDefinitions.lastStopped_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 40751700,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "clicks the start button",
+            "match": {
+              "location": "StepDefinitions.controlBar_startBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 91257600,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "clicks the control bar drop down menu",
+            "match": {
+              "location": "StepDefinitions.controlBar_dropDown_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 325358000,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "sees the dropdown menu buttons and icons",
+            "match": {
+              "location": "StepDefinitions.controlBar_dropDownMenu_btns_icons()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 99253200,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "clicks the \u0027Force-Stop\u0027 button",
+            "match": {
+              "location": "StepDefinitions.controlBar_forceStopBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3043403900,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "sees 0 started channels",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "StepDefinitions.sees_started_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1037157500,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "sees the total number of 4 adapter channels expected",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinitions.total_adapted_channels(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 37842500,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "sees the Down Time section",
+            "match": {
+              "location": "StepDefinitions.downTime_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 35955900,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "sees the Last Stopped section",
+            "match": {
+              "location": "StepDefinitions.lastStopped_container()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 45179100,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "clicks the start button",
+            "match": {
+              "location": "StepDefinitions.controlBar_startBtn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 86924100,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "clicks the information button",
+            "match": {
+              "location": "StepDefinitions.controlBar_infoBtn()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2040468000,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "sees the \u0027Adapter Information\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.adapterInfo_modal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1118168800,
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "sees the Adapter details",
+            "match": {
+              "location": "StepDefinitions.adapterInfo_modal_details()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1077422100,
+              "status": "passed"
+            },
+            "line": 74,
+            "name": "clicks the close button to shut the \u0027Adapter Information\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.infoModal_shut()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2020825300,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
+            "match": {
+              "location": "StepDefinitions.adapterInfo_modal_shut()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 41930300,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "clicks the information button",
+            "match": {
+              "location": "StepDefinitions.controlBar_infoBtn()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1068838100,
+              "status": "passed"
+            },
+            "line": 77,
+            "name": "clicks the dismiss button to shut the \u0027Adapter Information\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.infoModal_dismiss()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2033672200,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
+            "match": {
+              "location": "StepDefinitions.adapterInfo_modal_shut()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@DashboardBasics"
+          },
+          {
+            "name": "@BasicAdapterOperations"
+          }
+        ]
+      }
+    ],
+    "name": "Dashboard Basics",
+    "description": "",
+    "id": "dashboard-basics",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/com/adaptris/features/DashboardBasics.feature",
+    "tags": [
+      {
+        "name": "@FunctionalTests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@DashboardBasics",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4145531600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Attempt login with false credentials",
+        "description": "",
+        "id": "login-tests;attempt-login-with-false-credentials",
+        "after": [
+          {
+            "result": {
+              "duration": 704275000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6872000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "on a login page",
+            "match": {
+              "location": "StepDefinitions.given_on_a_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 519241900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user enters an incorrect username or password",
+            "match": {
+              "location": "StepDefinitions.enters_an_incorrect_username_or_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 34894800,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user reaches the failed login page",
+            "match": {
+              "location": "StepDefinitions.reaches_failed_login_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@LoginTests"
+          },
+          {
+            "name": "@FailedLogin"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4116318100,
               "status": "passed"
             },
             "match": {
@@ -21,7 +1186,7 @@
         "after": [
           {
             "result": {
-              "duration": 837049000,
+              "duration": 727845300,
               "status": "passed"
             },
             "match": {
@@ -34,7 +1199,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11799500,
+              "duration": 5894200,
               "status": "passed"
             },
             "line": 13,
@@ -46,7 +1211,7 @@
           },
           {
             "result": {
-              "duration": 1688483200,
+              "duration": 1163022000,
               "status": "passed"
             },
             "line": 14,
@@ -58,7 +1223,7 @@
           },
           {
             "result": {
-              "duration": 173305800,
+              "duration": 151570500,
               "status": "passed"
             },
             "line": 15,
@@ -98,6 +1263,474 @@
       },
       {
         "name": "@LoginTests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 18
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 3,
+        "name": "User is Logged In",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 5551400,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "on a login page",
+            "match": {
+              "location": "StepDefinitions.given_on_a_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1192550800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters username and password",
+            "match": {
+              "location": "StepDefinitions.enters_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 152538500,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is on the Dashboard",
+            "match": {
+              "location": "StepDefinitions.reaches_Dashboard()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3993683800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 9,
+        "name": "Adds all the widgets",
+        "description": "",
+        "id": "widget-basics;adds-all-the-widgets",
+        "after": [
+          {
+            "result": {
+              "duration": 770907600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2811140000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the user clicks the \u0027Widgets\u0027 button",
+            "match": {
+              "location": "StepDefinitions.clicks_widgetsBtn()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 24940400,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user lands on the \u0027Widgets\u0027 page",
+            "match": {
+              "location": "StepDefinitions.lands_on_widgetsPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2587744300,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user sees the \u0027Widgets Modal\u0027",
+            "match": {
+              "location": "StepDefinitions.widgets_modal_isDisplayed()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 26773200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "sees the Interlok Widgets label",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Interlok Widgets",
+                  "offset": 9
+                }
+              ],
+              "location": "StepDefinitions.page_label(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4204660500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "selects the Local Adapter - config-001-basic-components adapter in the \u0027Widgets Modal\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Local Adapter - config-001-basic-components",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinitions.select_adapter_for_widgets(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4826602400,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "sees the available widgets",
+            "match": {
+              "location": "StepDefinitions.sees_all_widgets()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1132885000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "selects the \u0027Summary Details\u0027 tile",
+            "match": {
+              "location": "StepDefinitions.select_summaryDetail_tile()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 100655922100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "bulk adds all the widgets bar \u0027Consumer Messages Remaining\u0027",
+            "match": {
+              "location": "StepDefinitions.adds_all_widgets_except_consumerMessages_remaining()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@WidgetBasics"
+          },
+          {
+            "name": "@AddWidgets"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "User is Logged In",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6510200,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "on a login page",
+            "match": {
+              "location": "StepDefinitions.given_on_a_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1078269300,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "the user enters username and password",
+            "match": {
+              "location": "StepDefinitions.enters_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 17497200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user is on the Dashboard",
+            "match": {
+              "location": "StepDefinitions.reaches_Dashboard()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4113704800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.before(Scenario)"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Changes to config with failing messages",
+        "description": "",
+        "id": "widget-basics;changes-to-config-with-failing-messages",
+        "after": [
+          {
+            "result": {
+              "duration": 1172603000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinitions.after(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3179795100,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "the user navigates to the config page",
+            "match": {
+              "location": "StepDefinitions.nav_toConfigPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 4575700,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "the user reaches the config page",
+            "match": {
+              "location": "StepDefinitions.reached_configPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2058341200,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "the user sees the Open config button",
+            "match": {
+              "location": "StepDefinitions.openConfig_btn()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 66121000,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "clicks the \u0027Open Config\u0027 button",
+            "match": {
+              "location": "StepDefinitions.openConfig_btn_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2618914200,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "sees the \u0027Config Modal\u0027 and its options",
+            "match": {
+              "location": "StepDefinitions.sees_openConfig_modal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 75233100,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "clicks the \u0027Saved Project\u0027 tile",
+            "match": {
+              "location": "StepDefinitions.savedProject_click()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2266845000,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "sees the \u0027Interlok Container Saved Config Projects\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.interlok_savedConfig_projectsModal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2079186300,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "selects the \u0027config-002-generates-dumb-data-with-fs\u0027 config",
+            "match": {
+              "location": "StepDefinitions.selects_config()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3662053300,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "sees the \u0027Active Adapters\u0027 modal",
+            "match": {
+              "location": "StepDefinitions.activeAdapter_modal()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 132624800,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "selects option Local Adapter - config-001-basic-components in \u0027Adapter Instance\u0027 in the \u0027Active Adapters\u0027 modal to apply the config to",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Local Adapter - config-001-basic-components",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinitions.select_adapterInstance(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 181410700,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "selects the default \u0027Variable-Set\u0027 in the \u0027Active Adapters\u0027 modal to apply with the config",
+            "match": {
+              "arguments": [
+                {
+                  "val": "default",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinitions.select_variableSet(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 109007600,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "clicks Ok to apply the config",
+            "match": {
+              "location": "StepDefinitions.clicks_ok_to_applyConfig()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FunctionalTests"
+          },
+          {
+            "name": "@WidgetBasics"
+          },
+          {
+            "name": "@FailingMessages"
+          }
+        ]
+      }
+    ],
+    "name": "Widget Basics",
+    "description": "",
+    "id": "widget-basics",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/com/adaptris/features/WidgetBasics.feature",
+    "tags": [
+      {
+        "name": "@FunctionalTests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      },
+      {
+        "name": "@WidgetBasics",
         "type": "Tag",
         "location": {
           "line": 1,

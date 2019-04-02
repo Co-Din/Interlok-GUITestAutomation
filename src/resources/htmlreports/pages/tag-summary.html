@@ -36,7 +36,7 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
   <meta name="description" content="Cluecumber Report Plugin version 1.7.0 - Tag Summary"> 
   <meta name="author" content="Cluecumber Report Plugin version 1.7.0"> 
-  <title>Tag Summary - 2019/04/02 17:19:01</title> 
+  <title>Tag Summary - 2019/04/02 17:35:55</title> 
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber.css" type="text/css"> 
   <link rel="stylesheet" href="css/cluecumber_custom.css"> 
@@ -79,18 +79,39 @@ limitations under the License.
         var chart = new Chart(ctx, eval({
   "data": {
     "labels": [
+      "@AutoDiscoveredAdapterPresent",
       "@SuccessfulLogin",
+      "@AddWidgets",
       "@FunctionalTests",
-      "@LoginTests"
+      "@LoginTests",
+      "@WidgetBasics",
+      "@BasicAdapterOperations",
+      "@FailedLogin",
+      "@DashboardBasics",
+      "@FailingMessages"
     ],
     "datasets": [
       {
         "data": [
           1,
           1,
+          1,
+          6,
+          2,
+          2,
+          1,
+          1,
+          2,
           1
         ],
         "backgroundColor": [
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
+          "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)",
           "rgba(40, 167, 69, 1.000)"
@@ -101,9 +122,23 @@ limitations under the License.
         "data": [
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
+          "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)",
           "rgba(220, 53, 69, 1.000)"
@@ -114,9 +149,23 @@ limitations under the License.
         "data": [
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0
         ],
         "backgroundColor": [
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
+          "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)",
           "rgba(255, 193, 7, 1.000)"
@@ -136,7 +185,7 @@ limitations under the License.
           "stacked": true,
           "scaleLabel": {
             "display": true,
-            "labelString": "3 Tag(s)"
+            "labelString": "10 Tag(s)"
           },
           "stepSize": 0.0
         }
@@ -206,7 +255,7 @@ limitations under the License.
      <li class="nav-item"> <a class="nav-link" href="pages/scenario-sequence.html">Scenario Sequence</a> </li> 
      <li class="nav-item"> <a class="nav-link" href="index.html">All Scenarios</a> </li> 
     </ul> 
-    <span class="text-light">2019/04/02 17:19:01</span> 
+    <span class="text-light">2019/04/02 17:35:55</span> 
    </div> 
   </nav> 
   <main role="main" class="container"> 
@@ -234,8 +283,8 @@ limitations under the License.
        </div> 
        <div class="card-body"> 
         <ul class="list-group list-group-flush" data-cluecumber-item="tag-summary"> 
-         <li class="list-group-item">3 Tag(s) in<br> 1 Tagged Scenario(s) </li> 
-         <li class="list-group-item"> 1 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"></i> </li> 
+         <li class="list-group-item">10 Tag(s) in<br> 6 Tagged Scenario(s) </li> 
+         <li class="list-group-item"> 6 <i class="text-success cluecumber-icon icon-passed" data-toggle="tooltip" title="passed"></i> 0 <i class="text-danger cluecumber-icon icon-failed" data-toggle="tooltip" title="failed"></i> 0 <i class="text-warning cluecumber-icon icon-skipped" data-toggle="tooltip" title="skipped"></i> </li> 
         </ul> 
        </div> 
       </div> 
@@ -260,6 +309,13 @@ limitations under the License.
          </thead> 
          <tbody> 
           <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_AutoDiscoveredAdapterPresent.html">@AutoDiscoveredAdapterPresent</a></td> 
+           <td class="text-right"><strong>1</strong></td> 
+           <td class="text-right">1</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
            <td class="text-left"><a href="pages/tag-scenarios/tag_SuccessfulLogin.html">@SuccessfulLogin</a></td> 
            <td class="text-right"><strong>1</strong></td> 
            <td class="text-right">1</td> 
@@ -267,14 +323,56 @@ limitations under the License.
            <td class="text-right">0</td> 
           </tr> 
           <tr> 
-           <td class="text-left"><a href="pages/tag-scenarios/tag_FunctionalTests.html">@FunctionalTests</a></td> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_AddWidgets.html">@AddWidgets</a></td> 
            <td class="text-right"><strong>1</strong></td> 
            <td class="text-right">1</td> 
            <td class="text-right">0</td> 
            <td class="text-right">0</td> 
           </tr> 
           <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_FunctionalTests.html">@FunctionalTests</a></td> 
+           <td class="text-right"><strong>6</strong></td> 
+           <td class="text-right">6</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
            <td class="text-left"><a href="pages/tag-scenarios/tag_LoginTests.html">@LoginTests</a></td> 
+           <td class="text-right"><strong>2</strong></td> 
+           <td class="text-right">2</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_WidgetBasics.html">@WidgetBasics</a></td> 
+           <td class="text-right"><strong>2</strong></td> 
+           <td class="text-right">2</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_BasicAdapterOperations.html">@BasicAdapterOperations</a></td> 
+           <td class="text-right"><strong>1</strong></td> 
+           <td class="text-right">1</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_FailedLogin.html">@FailedLogin</a></td> 
+           <td class="text-right"><strong>1</strong></td> 
+           <td class="text-right">1</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_DashboardBasics.html">@DashboardBasics</a></td> 
+           <td class="text-right"><strong>2</strong></td> 
+           <td class="text-right">2</td> 
+           <td class="text-right">0</td> 
+           <td class="text-right">0</td> 
+          </tr> 
+          <tr> 
+           <td class="text-left"><a href="pages/tag-scenarios/tag_FailingMessages.html">@FailingMessages</a></td> 
            <td class="text-right"><strong>1</strong></td> 
            <td class="text-right">1</td> 
            <td class="text-right">0</td> 
@@ -290,7 +388,7 @@ limitations under the License.
   </main> 
   <footer class="footer navbar-dark bg-dark"> 
    <div class="container-fluid"> 
-    <span>Cluecumber Report Plugin version 1.7.0 - 2019/04/02 17:19:01.</span> 
+    <span>Cluecumber Report Plugin version 1.7.0 - 2019/04/02 17:35:55.</span> 
    </div> 
   </footer>   
  </body>
