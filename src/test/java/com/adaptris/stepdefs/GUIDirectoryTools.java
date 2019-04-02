@@ -27,11 +27,13 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
-import static com.adaptris.stepdefs.EnvVar.ADAPTER_STARTUP;
+import static com.adaptris.stepdefs.ENVVAR.ADAPTER_STARTUP;
 import static org.openqa.selenium.io.FileHandler.delete;
 
 
@@ -58,7 +60,7 @@ public class GUIDirectoryTools {
 
     public static void adapterIdReset(File adapterDBLocation) throws IOException {
 
-        if(adapterDBLocation.listFiles() != null) {
+        if (adapterDBLocation.listFiles() != null) {
             try {
                 for (File childFile : adapterDBLocation.listFiles()) {
 
@@ -71,8 +73,7 @@ public class GUIDirectoryTools {
 
             }
         }
-        for (final File f : adapterDBLocation.listFiles())
-        {
+        for (final File f : adapterDBLocation.listFiles()) {
             f.delete();
         }
         adapterDBLocation.delete();

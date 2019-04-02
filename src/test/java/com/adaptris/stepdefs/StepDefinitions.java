@@ -21,12 +21,12 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 import cucumber.api.java.en.Given;
@@ -37,7 +37,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import static com.adaptris.stepdefs.EnvVar.*;
+import static com.adaptris.stepdefs.ENVVAR.*;
 import static com.adaptris.stepdefs.GUIDirectoryTools.theChosenOne;
 
 public class StepDefinitions {
@@ -91,8 +91,8 @@ public class StepDefinitions {
 
     @When("^the user enters username and password$")
     public void enters_username_and_password() {
-        driver.findElement(By.name("username")).sendKeys(EnvVar.USERNAME);
-        driver.findElement(By.name("password")).sendKeys(EnvVar.PASSWORD);
+        driver.findElement(By.name("username")).sendKeys(ENVVAR.USERNAME);
+        driver.findElement(By.name("password")).sendKeys(ENVVAR.PASSWORD);
         driver.findElement(By.xpath("/html/body/section/div[2]/div[2]/section/div[2]/div/div/form/fieldset/div/div[3]/div/div[1]/button")).click();
     }
 

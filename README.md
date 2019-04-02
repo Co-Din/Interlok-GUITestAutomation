@@ -35,10 +35,10 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
 
    * #### Setup a compatible version of a Java 8 Open JDK
    
-     * Begin by opening your command terminal and entering the command **`java -version`** <br />
-       This should either return that you have no version of Java installed or any version that you have installed. <br />
-     * If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
-     * Follow the steps provided install install **Zulu** the **[Azul Open JDK](https://www.azul.com/downloads/zulu)**.
+      Begin by opening your command terminal and entering the command **`java -version`** <br />
+      This should either return that you have no version of Java installed or any version that you have installed. <br />
+      If this has returned a version which is not Java 8 and you are running Windows I highly recommend removing the other version and starting with a fresh installation the same goes for any Oracle copies of Java 8. <br />
+      Follow the steps provided install install **Zulu** the **[Azul Open JDK](https://www.azul.com/downloads/zulu)**.
      
      * ##### Windows
        
@@ -111,8 +111,44 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
       export MAVEN_OPTS=-Xms256m -Xmx512m
       export PATH=$M2:$PATH
      ```
+     
      Finally check the setup has been successfully completed by running **`mvn -version`** this should now return the 'Maven' version and its location. <br />
      *Alternatively* you can also install Maven on Linux system using the following terminal commands **`sudo apt update`** followed by **`apt-cache search maven`** and then **`sudo apt install maven`**. <br />
+
+<br />
+
+   * #### Install Interlok 3.8.3
+   
+     To install **[Interlok 3.8.3](https://development.adaptris.net/installers/Interlok/3.8.3/)** click on the link and follow the guide. <br />
+     Begin by downloading the appropriate format of the 'interlok-install-3.8.3-RELEASE' file for your OS and then run the installation. <br />
+     *Make sure to replace the directory name when prompted to __'Interlok3.8.3'__ for ease of use*. <br />
+
+<br />
+
+   * #### Clone this repo to your local wokspace
+   
+      Finally open your command terminal or IDE and navigate to either your workspace or location in which you'd like to setup this project.
+      Then use the following to clone **`git clone https://github.com/Co-Din/Interlok-GUITestAutomation.git`** this should clone the whole repo to your local workspace.
+      
+<br />
+
+   * ### Final notes on setup:
+   
+     * This project has been created with a copy of **[Chromedriver](http://chromedriver.chromium.org/)** already supplied and should run out the box.
+     * You will however need to create your own EnvVar file in the following location**`Interlok-GUITestAutomation\src\test\java\com\adaptris\stepdefs\ENVVAR.java`** and populate the following with the corresponding details:
+     ```
+        public class ENVVAR {
+          static String LOGIN_PAGE = "DOMAIN/interlok/login.html";
+          static String USERNAME = "USERNAME HERE";
+          static String PASSWORD = "PASSWORD HERE";
+          static String ADAPTRIS_INSTANCE_PATH = "LOCATION OF YOUR INTERLOK 3.8.3/config";
+          static String ADAPTER_DB_PATH = "LOCATION OF YOUR INTERLOK 3.8.3/ui-resources/adapter_gui_db";
+          public static File ADAPTER_DB_DIRECTORY = (Paths.get(ADAPTER_DB_PATH).toFile());
+          static String ADAPTER_STARTUP = TO BE ADDED;
+        }
+     ```
+     
+
 
 <br />
 
