@@ -252,6 +252,8 @@ confirm there is a blank error bar to begin with.
 ### Maven
    * __[How to install Maven on Windows, Linux, Mac](https://www.baeldung.com/install-maven-on-windows-linux-mac)__
 
+<br />
+
 ### Syntactic Cheat Sheets
 * __[Gherkin Syntax](https://docs.cucumber.io/gherkin/)__
 * __[Maven Cheat Sheet](https://www.roguewave.com/sites/rw/files/resources/maven-cheat-sheet_0.pdf)__
