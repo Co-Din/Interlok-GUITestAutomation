@@ -135,7 +135,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
    * ### Final notes on setup:
    
      * This project has been created with a copy of **[Chromedriver](http://chromedriver.chromium.org/)** already supplied and should run out the box.
-     * You will however need to create your own EnvVar file in the following location**`Interlok-GUITestAutomation\src\test\java\com\adaptris\stepdefs\ENVVAR.java`** and populate the following with the corresponding details:
+     * You will however need to create your own EnvVar file in the following location **`Interlok-GUITestAutomation\src\test\java\com\adaptris\stepdefs\ENVVAR.java`** and populate the following with the corresponding details:
      ```
         public class ENVVAR {
           static String LOGIN_PAGE = "DOMAIN/interlok/login.html";
