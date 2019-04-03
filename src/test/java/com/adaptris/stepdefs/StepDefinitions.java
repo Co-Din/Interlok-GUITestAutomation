@@ -33,6 +33,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -1346,6 +1347,7 @@ public class StepDefinitions {
 
     @And("^sees the 21 widgets added to the adapter$")
     public void sees_added_widgets() throws InterruptedException {
+      Actions action = new Actions(driver);
       Thread.sleep(3000);
       //Header and selection refinement
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/i")).isDisplayed());
@@ -1369,6 +1371,49 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
+        //Adapter Status
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div[1]/span/span/span/i")).isDisplayed());
+        Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div[1]/span/span/span/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div[2]/span")).isDisplayed());
+        Assert.assertEquals("STARTED", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div[2]/span")).getText());
+        //Channel(s) on adapter
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/span")).isDisplayed());
+        Assert.assertEquals("4", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/span")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/span")).isDisplayed());
+        Assert.assertEquals("Channel(s)", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/span")).getText());
+        //Failed Messages
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[1]/span/i")).isDisplayed());
+        Assert.assertEquals("fa fa-envelope-o text-muted", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[1]/span/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[1]/span/span")).isDisplayed());
+        Assert.assertEquals("0", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[1]/span/span")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[2]")).isDisplayed());
+        Assert.assertEquals("Failed Messages", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div[2]")).getText());
+        //Last Started
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[4]/div/div[1]/span")).isDisplayed());
+//        Assert.assertEquals("", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[4]/div/div[1]/span")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[4]/div/div[2]")).isDisplayed());
+        Assert.assertEquals("Last Started", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div[4]/div/div[2]")).getText());
+        //Tile Action Buttons
+        //Hidden
+        Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div")).isDisplayed());
+        Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[3]")).isDisplayed());
+        Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[2]")).isDisplayed());
+        //Visible
+        action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).perform();
+        Thread.sleep(2000);
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[1]/a")).isDisplayed());
+        Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[1]/a/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-times", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[3]")).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[3]")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[2]")).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[2]")).getAttribute("class"));
+
+
 
 
       //Summary Details(Carousel)
