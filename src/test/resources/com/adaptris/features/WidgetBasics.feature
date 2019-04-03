@@ -15,6 +15,7 @@ Feature: Widget Basics
     And sees the available widgets
     Then selects the 'Summary Details' tile
     Then bulk adds all the widgets bar 'Consumer Messages Remaining'
+    And sees the 21 widgets added to the adapter
 
 
 

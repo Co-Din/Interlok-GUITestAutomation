@@ -148,6 +148,11 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
         }
      ```
      
+     * Commands needed to run Maven:
+        * **`mvn clean`** **:** This deletes the target directory which 'cleans' any obsolete class files, java docs, jars, reports and so on
+        * **`mvn install`** **:** This installs the packages into the local repository
+        * **`mvn test`** **:** This run all the tests
+     
 
 
 <br />

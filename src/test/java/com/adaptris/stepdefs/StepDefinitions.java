@@ -1344,6 +1344,334 @@ public class StepDefinitions {
 
     }
 
+    @And("^sees the 21 widgets added to the adapter$")
+    public void sees_added_widgets() {
+      //Header and selection refinement
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/i")).isDisplayed());
+        Assert.assertEquals("fa fa-object-group", driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/span")).isDisplayed());
+        Assert.assertEquals("Default", driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/span")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/span")).isDisplayed());
+        Assert.assertEquals("The default widget group", driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/span")).getText());
+
+
+      //Summary Details
+      //Tile is displayed
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Summary Details(Carousel)
+      //Tile is displayed
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Control Panel
+      //Tile is displayed
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //In Flight
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Component Counts
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Message Counts Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Daily Message Counts Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Message Counts Pie Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Failed Messages Table
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Heap Memory Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Non Heap Memory Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Memory Heap Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Memory Non Heap Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Runtime Path Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Runtime Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Runtime System Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Operating System Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+       //Icon
+       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform JVM Process Load Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform System CPU Load Chart
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Platform Thread Details
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+      //Logs Table - JMX Log Appender
+      //Tile is displayed
+      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      //Tile header bar
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Text
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+      //Tile content
+
+
+    }
+
 
 //    Using this method as a testing ground
 //    @And("^testing search details$")
