@@ -1345,7 +1345,8 @@ public class StepDefinitions {
     }
 
     @And("^sees the 21 widgets added to the adapter$")
-    public void sees_added_widgets() {
+    public void sees_added_widgets() throws InterruptedException {
+      Thread.sleep(3000);
       //Header and selection refinement
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/i")).isDisplayed());
         Assert.assertEquals("fa fa-object-group", driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/button/b/i")).getAttribute("class"));
@@ -1357,316 +1358,316 @@ public class StepDefinitions {
 
       //Summary Details
       //Tile is displayed
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-      Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Summary Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Summary Details(Carousel)
       //Tile is displayed
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Summary Details (carousel)", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Control Panel
       //Tile is displayed
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Control Panel", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //In Flight
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("In Flight", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Component Counts
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Component Counts", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Message Counts Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Message Counts Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Daily Message Counts Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Daily Message Counts Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Message Counts Pie Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Message Counts Pie Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Failed Messages Table
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Failed Messages Table", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Heap Memory Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Heap Memory Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Non Heap Memory Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Non Heap Memory Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Memory Heap Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Memory Heap Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Memory Non Heap Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Memory Non Heap Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Runtime Path Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Runtime Path Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Runtime Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Runtime Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Runtime System Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Runtime System Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Operating System Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]")).isDisplayed());
       //Tile header bar
-       //Icon
-       Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        //Icon
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Operating System Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform JVM Process Load Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform JVM Process Load Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform System CPU Load Chart
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform System CPU Load Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Platform Thread Details
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Platform Thread Details", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
       //Logs Table - JMX Log Appender
       //Tile is displayed
-      Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]")).isDisplayed());
       //Tile header bar
         //Icon
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+        Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
-        Assert.assertTrue(driver.findElement(By.xpath("")).isDisplayed());
-        Assert.assertEquals("", driver.findElement(By.xpath("")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+        Assert.assertEquals("Logs Table - Jmx Log Appender", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+        Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
 
 
