@@ -1400,6 +1400,10 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]")).isDisplayed());
       //Tile header bar
         //Icon
+        Assert.assertTrue(driver.findElement(By.cssSelector(".glyphicon-chevron-left")).isDisplayed());
+        Assert.assertEquals("glyphicon glyphicon-chevron-left", driver.findElement(By.cssSelector(".glyphicon-chevron-left")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.cssSelector(".glyphicon-chevron-right")).isDisplayed());
+        Assert.assertEquals("glyphicon glyphicon-chevron-right", driver.findElement(By.cssSelector(".glyphicon-chevron-right")).getAttribute("class"));
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
         Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
         //Text
@@ -1439,8 +1443,8 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div/span[1]")).isDisplayed());
         Assert.assertEquals("Last Started", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div/span[1]")).getText());
         driver.findElement(By.xpath("/html/body/section/div[2]/section[2]/div/div[1]/div/span")).click();
-        //Tile Action Buttons
-        //Hidden
+      //Tile Action Buttons
+        // Hidden
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[3]/div")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[3]")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[2]")).isDisplayed());
@@ -1472,7 +1476,41 @@ public class StepDefinitions {
         Assert.assertEquals("Control Panel", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[1]/span[2]")).getText());
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[1]/div[2]/span[2]")).getText());
-      //Tile content
+        //Tile content
+          //Adapter Status
+          Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/span/span/span/i")).isDisplayed());
+          Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/span/span/span/i")).getAttribute("class"));
+          Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/p/span")).isDisplayed());
+          Assert.assertEquals("STARTED", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/p/span")).getText());
+          //Control Buttons
+            //Start
+            Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[1]/i")).isDisplayed());
+            Assert.assertEquals("fa fa-play", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[1]/i")).getAttribute("class"));
+            //Pause
+            Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[2]/i")).isDisplayed());
+            Assert.assertEquals("fa fa-pause", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[2]/i")).getAttribute("class"));
+            //Stop
+           Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[3]/i")).isDisplayed());
+           Assert.assertEquals("fa fa-stop", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/button[3]/i")).getAttribute("class"));
+      //Tile Action Buttons
+      //Hidden
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div")).isDisplayed());
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[3]")).isDisplayed());
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[2]")).isDisplayed());
+      //Visible
+      action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[2]/div[2]/div"))).build().perform();
+      Thread.sleep(2000);
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/a/i")).isDisplayed());
+      Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[1]/a/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-times", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[3]")).isDisplayed());
+      Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[3]")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[2]")).isDisplayed());
+      Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[2]")).getAttribute("class"));
 
 
       //In Flight
@@ -1487,8 +1525,30 @@ public class StepDefinitions {
         Assert.assertEquals("In Flight", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[1]/span[2]")).getText());
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[1]/div[2]/span[2]")).getText());
-      //Tile content
-
+        //Tile content
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/i")).isDisplayed());
+        Assert.assertEquals("fa fa-paper-plane-o text-muted", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/i")).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/span")).isDisplayed());
+        Assert.assertEquals("0", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div/span")).getText());
+      //Tile Action Buttons
+      //Hidden
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div")).isDisplayed());
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[3]")).isDisplayed());
+      Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[2]")).isDisplayed());
+      //Visible
+      action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[2]/div[2]/div"))).build().perform();
+      Thread.sleep(2000);
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[1]/a/i")).isDisplayed());
+      Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[1]/a/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-times", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[1]/i")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]")).isDisplayed());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[3]")).isDisplayed());
+      Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[3]")).getAttribute("class"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[2]")).isDisplayed());
+      Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[2]")).getAttribute("class"));
 
       //Component Counts
       //Tile is displayed
