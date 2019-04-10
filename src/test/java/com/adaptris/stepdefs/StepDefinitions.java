@@ -263,6 +263,7 @@ public class StepDefinitions {
 
     @Then("^bulk adds all the widgets bar 'Consumer Messages Remaining'$")
     public void adds_all_widgets_except_consumerMessages_remaining() throws InterruptedException {
+      //TODO refactor create list of widgets for each/ has next click the add and wait then add and wait
       Thread.sleep(2000);
       driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
       Thread.sleep(1000);
@@ -617,6 +618,7 @@ public class StepDefinitions {
 
     @And("^sees the control-bar buttons$")
     public void controlBar_btns() {
+       //TODO create an Assert icon method, takes icon name and location as args
         Assert.assertTrue(driver.findElement(By.id("show-channel-label")).isDisplayed());
         Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[2]")).getAttribute("class"));
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[2]/button[1]")).isDisplayed());
@@ -769,6 +771,8 @@ public class StepDefinitions {
          Thread.sleep(2000);
          Assert.assertTrue(driver.findElement(By.id("open-config")).isDisplayed());
          Assert.assertEquals("Open Interlok Container Config", driver.findElement(By.xpath("//*[@id=\"open-config\"]/div/div[1]/h3/span")).getText());
+
+         //TODO Refactor into guiTool method args: div container, tile name,
 
         //Active Adapter
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[1]")).isDisplayed());
@@ -1008,6 +1012,7 @@ public class StepDefinitions {
       Assert.assertEquals("Viewing Widgets for selected Adapter", driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[1]")).getText());
 
       //Sees all 21 selectable tiles and the 'Consumer Messages Remaining' disabled
+      //TODO Refactor!
 
       //Summary Details
         //Tile
@@ -1501,27 +1506,9 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
-      //Channel(s)
-//        Assert.assertTrue(driver.findElement(By.xpath("//*[starts-with(@id,'child-state-gauge_component_counts_config_001_basic_components_2bulrw')]")).isDisplayed());
-//        Assert.assertEquals("0", driver.findElement(By.cssSelector("#child-state-gauge_component_counts_config_001_basic_components_dc1bx9 > svg:nth-child(1) > text:tspan")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[1]")).isDisplayed());
-//        Assert.assertEquals("4", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[1]")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[2]")).isDisplayed());
-//        Assert.assertEquals("Channel(s)", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[2]")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[4]")).isDisplayed());
-//        Assert.assertEquals("4", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div/svg/text[4]")).getText());
-//        //Workflows(s)
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[3]")).isDisplayed());
-//        Assert.assertEquals("0", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[3]")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[1]")).isDisplayed());
-//        Assert.assertEquals("10", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[1]")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[2]")).isDisplayed());
-//        Assert.assertEquals("Workflow(s)", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[2]")).getText());
-//        Assert.assertTrue(driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[4]")).isDisplayed());
-//        Assert.assertEquals("10", driver.findElement(By.cssSelector("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[2]/div[2]/div/div/div[3]/div/div/svg/text[4]")).getText());
-      //Tile Action Buttons
-      tileHiddenActions("5");
-      tileBasicVisibleActions("5");
+        //Tile Action Buttons
+        tileHiddenActions("5");
+        tileBasicVisibleActions("5");
 
 
       //Message Counts Chart
@@ -1537,11 +1524,7 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
-        //Graph
-//        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[2]/div[2]/div/div/div/svg/g[1]/g[3]/g[1]")).isDisplayed());
-//        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[2]/div[2]/div/div/div/svg/g[3]/g[1]/text")).isDisplayed());
-//        Assert.assertEquals("basic-workflow-1@basic-channel-1", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div/div[2]/div[2]/div/div/div/svg/g[3]/g[1]/text")).getText());
-        //Tile Action Buttons
+        // Tile Action Buttons
         tileHiddenActions("6");
         tileAdvancedVisibleActions("6", "fa fa-eraser", "fa fa-refresh", "fa fa-times");
 
@@ -1595,8 +1578,10 @@ public class StepDefinitions {
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
         Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div/div[1]/div[2]/span[2]")).getText());
       //Tile content
-      tileHiddenActions("9");
-      tileBasicVisibleActions("9");
+        //Tile Action Buttons
+        tileHiddenActions("9");
+        tileBasicVisibleActions("9");
+
 
       //Platform Heap Memory Details
       //Tile is displayed
@@ -1667,8 +1652,6 @@ public class StepDefinitions {
         Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[3]"))).getAttribute("class"));
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[2]")).isDisplayed());
         Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[2]")).getAttribute("class"));
-
-
 
 
       //Platform Memory Non Heap Chart
@@ -1759,8 +1742,6 @@ public class StepDefinitions {
         Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[2]")).getAttribute("class"));
 
 
-
-
       //Platform Operating System Details
       //Tile is displayed
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]")).isDisplayed());
@@ -1777,6 +1758,7 @@ public class StepDefinitions {
         //Tile Action Buttons
         tileHiddenActions("17");
         tileBasicVisibleActions("17");
+
 
       //Platform JVM Process Load Chart
       //Tile is displayed
@@ -1880,7 +1862,6 @@ public class StepDefinitions {
         Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[2]")).getAttribute("class"));
 
     }
-
 
 //    Using this method as a testing ground
 //    @And("^testing search details$")
