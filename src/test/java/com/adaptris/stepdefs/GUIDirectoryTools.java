@@ -18,12 +18,11 @@
 package com.adaptris.stepdefs;
 
 
-import org.apache.commons.collections.CollectionUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -35,9 +34,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -66,7 +62,7 @@ public class GUIDirectoryTools {
 
     driver = new ChromeDriver();
 
-//	Opens page in full size and waits 10 secs bgit efore t-out
+//	Opens page in full size and waits 10 secs before t-out
     driver.get(domainUrl);
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -114,45 +110,71 @@ public class GUIDirectoryTools {
         }
     }
 
-    public static void carouselSelector(String carouselXpath) {
-        //This will get the number of items in the carousel
-
-        List<WebElement> items = driver.findElements(By.cssSelector(carouselXpath));
-
-        ArrayList list1 = new ArrayList();
-        String name;
-
-        for (int i = 0; i < items.size(); i++) {
-            int index = i + 1;
-
-            //This will get the name of each item in carousel
-            name = driver.findElement(By.cssSelector(carouselXpath + "[" + index + "]")).getText();
-            list1.add(name);
-        }
-
-        //Next we click on the arrow of the carousel
-        driver.findElement(By.cssSelector("div[class^=a-carousel-col] a")).click();
-
-        //Then we new items are loaded in the carousel following the click,
-        //we get the names again
-
-        List<WebElement> nextItems = driver.findElements(By.cssSelector(carouselXpath));
-
-        ArrayList list2 = new ArrayList();
-
-        String newName;
-
-        for (int i = 0; i < nextItems.size(); i++) {
-            int index = i + 1;
-
-            //This will get the name of each item in carousel
-            newName = driver.findElement(By.cssSelector(carouselXpath + "[" + index + "]")).getText();
-            list2.add(newName);
-        }
-
-        //Then we compare the two arrayLists are not the same
-        Collection commonList = CollectionUtils.retainAll(list1, list2);
-
-        Assert.assertTrue(commonList.size() == 0);
+    public static void tileHiddenActions(String divcontainerNumber) throws InterruptedException {
+        //Tile Action Buttons
+        //Hidden
+        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div", divcontainerNumber))).isDisplayed());
+        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
     }
+
+    public static void tileBasicVisibleActions(String divcontainerNumber) throws InterruptedException {
+        Actions action = new Actions(driver);
+        //Visible
+        action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
+        Thread.sleep(2000);
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-times", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+    }
+
+    public static void tileAdvancedVisibleActions(String divcontainerNumber, String leftIcon, String centralIcon, String rightIcon) throws InterruptedException {
+        Actions action = new Actions(driver);
+        //Visible
+        action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
+        Thread.sleep(2000);
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals(leftIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals(centralIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals(rightIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+        Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+
+    }
+
+public static void tileAdvancedVisibleMirroredActions(String divcontainerNumber, String leftIcon, String centralIcon, String rightIcon) throws InterruptedException {
+    Actions action = new Actions(driver);
+    //Visible
+    action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/div/button/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(leftIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/div/button/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(centralIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(rightIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+
+}
 }
