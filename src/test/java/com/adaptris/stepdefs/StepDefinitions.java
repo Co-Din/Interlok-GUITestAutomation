@@ -263,6 +263,7 @@ public class StepDefinitions {
 
     @Then("^bulk adds all the widgets bar 'Consumer Messages Remaining'$")
     public void adds_all_widgets_except_consumerMessages_remaining() throws InterruptedException {
+
       //TODO refactor create list of widgets for each/ has next click the add and wait then add and wait
       Thread.sleep(2000);
       driver.findElement(By.xpath("//*[@id=\"control-add-btn\"]")).click();
@@ -528,14 +529,14 @@ public class StepDefinitions {
 
     // And Section
 
-    @And("^sees the adapters unique id$")
-    public void adapters_unique_id() throws IOException, SAXException, ParserConfigurationException {
-        Assert.assertEquals(" Local Adapter - " + GUIDirectoryTools.searchFileDetails(ADAPTRIS_INSTANCE_PATH, "adapter.xml", "unique-id"), driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
+    @And("^sees the adapters unique id: (.*)$")
+    public void adapters_unique_id(String adapterID) throws IOException, SAXException, ParserConfigurationException {
+        Assert.assertEquals(adapterID, driver.findElement(By.xpath("//*[@id=\"adapter-data-areas\"]/div[1]/div/div[1]/h4/span[2]")).getText());
     }
 
-    @And("^sees the JMX URL address$")
-    public void JMX_URL_address() {
-        Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/h4/span[4]/span")).getText().contains("service:jmx:jmxmp://"));
+    @And("^sees the JMX URL address: (.*)$")
+    public void JMX_URL_address(String jmxURL) {
+        Assert.assertEquals(jmxURL, driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/h4/span[4]/span")).getText());
     }
 
     @And("^sees the adapter in 'Started' state$")
@@ -546,6 +547,15 @@ public class StepDefinitions {
     @And("^sees a check icon$")
     public void check_icon() {
         Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[3]/div/div[1]/div[1]/div/div[1]/span/span/span/i")).getAttribute("class"));
+    }
+
+    @And("^sees a low Heap Memory$")
+    public void low_heap_Memory() throws InterruptedException {
+      Thread.sleep(2000);
+      Integer memoryHeapValue = Integer.parseInt(driver.findElement(By.cssSelector("#heap-memory-gauge_1 > svg:nth-child(1) > text:nth-child(5) > tspan:nth-child(1)")).getText());
+      Thread.sleep(1000);
+      Assert.assertTrue(0 <= memoryHeapValue);
+      Assert.assertTrue(memoryHeapValue <= 999);
     }
 
     @And("^sees (.*) started channels$")

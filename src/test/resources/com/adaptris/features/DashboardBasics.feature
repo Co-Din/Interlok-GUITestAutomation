@@ -11,17 +11,18 @@ Feature: Dashboard Basics
     Then the user sees the 'Welcome Modal'
     Then the user dismisses the 'Welcome Modal'
     Then sees the auto discovered adapter
-    And sees the adapters unique id
-    And sees the JMX URL address
+    And sees the adapters unique id:  Local Adapter - config-001-basic-components
+    And sees the JMX URL address: service:jmx:jmxmp://localhost:5555
     And sees the adapter in 'Started' state
     And sees a check icon
+    And sees a low Heap Memory
     And sees 4 started channels
     And sees the total number of 4 adapter channels expected
+    And sees 0 failed messages
+    And sees 0 in-flight messages
     And sees the Up Time section
     And sees the Last Started section
     And sees UI version Interlok UI  3.8.3-RELEASE
-    And sees 0 failed messages
-    And sees 0 in-flight messages
     And sees the table mode button
     And sees the add adapter button
     And sees the 'Refresh' button
