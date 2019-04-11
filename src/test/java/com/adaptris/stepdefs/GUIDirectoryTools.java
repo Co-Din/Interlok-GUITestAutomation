@@ -34,6 +34,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 
@@ -45,6 +47,19 @@ public class GUIDirectoryTools {
 
  static WebDriver driver;
  static String configAddress = "interlok/config/config.html";
+
+
+ public static String startedStoppedTime() {
+     String pattern = "dd/MM/yy HH:mm";
+     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+     return simpleDateFormat.format(new Date());
+ }
+
+ public static String threadDumpDate() {
+     String pattern = "yyyy/MM/dd HH:mm";
+     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+     return simpleDateFormat.format(new Date());
+ }
 
     public static void InterlokBoot() {
         try {
