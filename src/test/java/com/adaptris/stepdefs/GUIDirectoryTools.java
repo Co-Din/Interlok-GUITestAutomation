@@ -18,6 +18,8 @@
 package com.adaptris.stepdefs;
 
 
+import com.google.common.io.Resources;
+import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +35,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,6 +43,7 @@ import java.util.concurrent.TimeUnit;
 
 
 import static com.adaptris.stepdefs.ENVVAR.ADAPTER_STARTUP;
+import static com.google.common.io.Resources.*;
 import static org.openqa.selenium.io.FileHandler.delete;
 
 

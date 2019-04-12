@@ -21,8 +21,10 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
+import org.apache.commons.io.IOUtils;
 import org.openqa.selenium.By;
 
+import java.io.File;
 import java.io.IOException;
 
 import cucumber.api.java.en.Given;
@@ -887,7 +889,7 @@ public class StepDefinitions {
     }
 
     @And("^sees the 'Config XML' modal$")
-    public void config_xmlModal() throws InterruptedException {
+    public void config_xmlModal() throws InterruptedException, IOException {
       Thread.sleep(2000);
       //Modal
       Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"modal-config\"]")).isDisplayed());
@@ -907,7 +909,16 @@ public class StepDefinitions {
       Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[3]/button")).isDisplayed());
       Assert.assertEquals("Close", driver.findElement(By.xpath("/html/body/div[6]/div/div/div[3]/button")).getText());
       //Xml Content
-//      System.out.print(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div")).getText());
+      //TODO Refactor to take xml arguements
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("</adapter>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-channel-4</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-channel-3</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-channel-2</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-channel-1</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-workflow-4e-InFlight</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>basic-workflow-2c-MessageMetrics</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("<unique-id>config-001-basic-components</unique-id>"));
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[1]/div/div[6]/div[1]/div/div/div/div[5]")).getText().contains("  <start-up-event-imp>com.adaptris.core.event.StandardAdapterStartUpEvent</start-up-event-imp>\n"));
     }
 
     @And("^sees the 'Config Modal' and its options$")
