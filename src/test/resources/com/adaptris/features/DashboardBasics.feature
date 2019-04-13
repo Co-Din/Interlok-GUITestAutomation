@@ -26,7 +26,7 @@ Feature: Dashboard Basics
     And sees the table mode button
     And sees the add adapter button
     And sees the 'Refresh' button
-    And sees the control bar
+    And sees the control-bar
     And sees the control-bar buttons
     And sees the error bar is blank
     And sees the Interlok Dashboard label
@@ -34,7 +34,7 @@ Feature: Dashboard Basics
   @BasicAdapterOperations
   Scenario:  Control button functionality works
     And sees 4 started channels
-    And sees the control bar
+    And sees the control-bar
     And sees the control-bar buttons
     Then clicks the stop button
     And sees a closed icon
@@ -67,9 +67,11 @@ Feature: Dashboard Basics
     And sees the Down Time section
     And sees the Last Stopped section
     Then clicks the start button
-    Then clicks the control bar drop down menu
+    Then clicks the control-bar drop down menu
     And sees the dropdown menu buttons and icons
     Then clicks the 'Force-Stop' button
+    And sees the 'Interrupted Exception' alert box
+    Then dismisses the 'Interrupted Exception' alert box
     And sees the adapter in 'Closed' state
     And sees a closed icon
     And sees 0 started channels
@@ -85,15 +87,27 @@ Feature: Dashboard Basics
     Then clicks the information button
     Then clicks the dismiss button to shut the 'Adapter Information' modal
     And sees the 'Adapter Information' modal has been shut
-    Then clicks the control bar drop down menu
+    Then clicks the control-bar drop down menu
     Then clicks the 'Thread Dump' button
     And sees the 'Thread Dump' Modal
     Then clicks the dismiss button to shut the 'Thread Dump' modal
     And sees the 'Thread Dump' modal has been shut
-    Then clicks the control bar drop down menu
+    Then clicks the control-bar drop down menu
     Then clicks the 'Thread Dump' button
     Then clicks the close button to shut the 'Thread Dump' modal
     And sees the 'Thread Dump' modal has been shut
     Then clicks the control-bar 'Config' button
     Then expands the config xml
-    And sees the 'Config XML' modal
+    And sees the 'Config' modal
+    Then clicks the dismiss button to dismiss the control-bar'Config' modal
+    And sees the control-bar 'Config' modal has been shut
+    Then clicks the control-bar 'Config' button
+    Then expands the config xml
+    And sees the 'Config' modal
+    Then clicks the close button to shut the control-bar'Config' modal
+    And sees the control-bar 'Config' modal has been shut
+    Then clicks the control-bar drop down menu
+    Then clicks the 'Run Garbage Collector' button
+    And sees the 'Garbage Collector' alert box
+    Then clicks the dismiss button to shut the 'Garbage Collector' alert box
+    And sees the 'Garbage Collector' alert box has dismissed

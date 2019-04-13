@@ -49,33 +49,33 @@ import static org.openqa.selenium.io.FileHandler.delete;
 
 public class GUIDirectoryTools {
 
- static WebDriver driver;
- static String configAddress = "interlok/config/config.html";
+static WebDriver driver;
+static String configAddress = "interlok/config/config.html";
 
 
- public static String startedStoppedTime() {
-     String pattern = "dd/MM/yy HH:mm";
-     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-     return simpleDateFormat.format(new Date());
- }
+public static String startedStoppedTime() {
+    String pattern = "dd/MM/yy HH:mm";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    return simpleDateFormat.format(new Date());
+}
 
- public static String threadDumpDate() {
-     String pattern = "yyyy/MM/dd HH:mm";
-     SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-     return simpleDateFormat.format(new Date());
- }
+public static String threadDumpDate() {
+    String pattern = "yyyy/MM/dd HH:mm";
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    return simpleDateFormat.format(new Date());
+}
 
-    public static void InterlokBoot() {
-        try {
-            Runtime.getRuntime().exec(ADAPTER_STARTUP);
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+public static void InterlokBoot() {
+    try {
+        Runtime.getRuntime().exec(ADAPTER_STARTUP);
+    } catch (final IOException e) {
+        e.printStackTrace();
     }
+}
 
 
 
- static void driverInit(String domainUrl) {
+static void driverInit(String domainUrl) {
 
     theChosenOne();
 
@@ -87,94 +87,94 @@ public class GUIDirectoryTools {
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
 
-    protected static String searchFileDetails(String directoryPath, String fileName, String tagTitle) throws ParserConfigurationException, IOException, SAXException {
+protected static String searchFileDetails(String directoryPath, String fileName, String tagTitle) throws ParserConfigurationException, IOException, SAXException {
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        Document doc = builder.parse(directoryPath + "\\" + fileName);
-        doc.getDocumentElement().normalize();
-        NodeList nList = doc.getElementsByTagName(tagTitle);
-        Node nNode = nList.item(0);
-        return nNode.getFirstChild().getNodeValue();
-    }
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder builder = factory.newDocumentBuilder();
+    Document doc = builder.parse(directoryPath + "\\" + fileName);
+    doc.getDocumentElement().normalize();
+    NodeList nList = doc.getElementsByTagName(tagTitle);
+    Node nNode = nList.item(0);
+    return nNode.getFirstChild().getNodeValue();
+}
 
-    public static void adapterIdReset(File adapterDBLocation) throws IOException {
+public static void adapterIdReset(File adapterDBLocation) throws IOException {
 
-        if (adapterDBLocation.listFiles() != null) {
-            try {
-                for (File childFile : adapterDBLocation.listFiles()) {
+    if (adapterDBLocation.listFiles() != null) {
+        try {
+            for (File childFile : adapterDBLocation.listFiles()) {
 
-                    if (childFile.isDirectory()) {
-                        delete(childFile);
-                    }
+                if (childFile.isDirectory()) {
+                    delete(childFile);
                 }
-                Files.delete(adapterDBLocation.toPath());
-            } catch (IOException e) {
-
             }
-        }
-        for (final File f : adapterDBLocation.listFiles()) {
-            f.delete();
-        }
-        adapterDBLocation.delete();
-    }
+            Files.delete(adapterDBLocation.toPath());
+        } catch (IOException e) {
 
-    public static void theChosenOne() {
-        if (System.getProperty("os.name").contains("Windows")) {
-            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win32.exe");
-        } else if (System.getProperty("os.name").contains("Mac")) {
-            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_mac64");
-        } else if (System.getProperty("os.name").contains("Linux")) {
-            System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_linux64");
         }
     }
-
-    public static void tileHiddenActions(String divcontainerNumber) throws InterruptedException {
-        //Tile Action Buttons
-        //Hidden
-        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div", divcontainerNumber))).isDisplayed());
-        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
-        Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+    for (final File f : adapterDBLocation.listFiles()) {
+        f.delete();
     }
+    adapterDBLocation.delete();
+}
 
-    public static void tileBasicVisibleActions(String divcontainerNumber) throws InterruptedException {
-        Actions action = new Actions(driver);
-        //Visible
-        action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
-        Thread.sleep(2000);
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("fa fa-times", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+public static void theChosenOne() {
+    if (System.getProperty("os.name").contains("Windows")) {
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_win32.exe");
+    } else if (System.getProperty("os.name").contains("Mac")) {
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_mac64");
+    } else if (System.getProperty("os.name").contains("Linux")) {
+        System.setProperty("webdriver.chrome.driver", "src/resources/chromedriver_linux64");
     }
+}
 
-    public static void tileAdvancedVisibleActions(String divcontainerNumber, String leftIcon, String centralIcon, String rightIcon) throws InterruptedException {
-        Actions action = new Actions(driver);
-        //Visible
-        action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
-        Thread.sleep(2000);
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals(leftIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals(centralIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals(rightIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
-        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
-        Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+public static void tileHiddenActions(String divcontainerNumber) throws InterruptedException {
+    //Tile Action Buttons
+    //Hidden
+    Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div", divcontainerNumber))).isDisplayed());
+    Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertFalse(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+}
 
-    }
+public static void tileBasicVisibleActions(String divcontainerNumber) throws InterruptedException {
+    Actions action = new Actions(driver);
+    //Visible
+    action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("fa fa-times", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+}
+
+public static void tileAdvancedVisibleActions(String divcontainerNumber, String leftIcon, String centralIcon, String rightIcon) throws InterruptedException {
+    Actions action = new Actions(driver);
+    //Visible
+    action.moveToElement(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[2]/div[2]/div", divcontainerNumber)))).build().perform();
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i",divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("fa fa-ellipsis-h", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[1]/a/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(leftIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[1]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(centralIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[2]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals(rightIcon, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]/div/div[2]/div/button[3]/i", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[1]/div/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[3]", divcontainerNumber))).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).isDisplayed());
+    Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
+
+}
 
 public static void tileAdvancedVisibleMirroredActions(String divcontainerNumber, String leftIcon, String centralIcon, String rightIcon) throws InterruptedException {
     Actions action = new Actions(driver);
