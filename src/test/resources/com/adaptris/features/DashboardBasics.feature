@@ -102,8 +102,9 @@ Feature: Dashboard Basics
     Then clicks the dismiss button to dismiss the control-bar'Config' modal
     And sees the control-bar 'Config' modal has been shut
     Then clicks the control-bar 'Config' button
-    Then expands the config xml
-    And sees the 'Config' modal
+    And sees the 'config unique-id' tag is expanded
+    Then clicks the arrow to collapse the 'config unique-id' tag
+    And sees the 'config unique-id' has been collapsed
     Then clicks the close button to shut the control-bar'Config' modal
     And sees the control-bar 'Config' modal has been shut
     Then clicks the control-bar drop down menu
@@ -111,3 +112,7 @@ Feature: Dashboard Basics
     And sees the 'Garbage Collector' alert box
     Then clicks the dismiss button to shut the 'Garbage Collector' alert box
     And sees the 'Garbage Collector' alert box has dismissed
+    Then checks the 'Show Channels box'
+    And sees all four channels
+    Then unchecks the 'Show Channels box'
+    And sees all four channels have been hidden
