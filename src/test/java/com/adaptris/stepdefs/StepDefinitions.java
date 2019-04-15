@@ -2359,18 +2359,25 @@ public class StepDefinitions {
     Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[2]")).getAttribute("class"));
   }
 
-  @And("^sees the 'Workflow' for channels 2 and 4$")
+  @And("^sees the 'Workflows' for channels 2 and 4$")
   public void  multiple_workflowsVisible() throws InterruptedException {
     Thread.sleep(2000);
-    adapterChannelworkFlowAssertion("1", "1", "basic-workflow-2a");
-    adapterChannelworkFlowAssertion("1", "2", "basic-workflow-2b");
-    adapterChannelworkFlowAssertion("1", "3", "basic-workflow-2c");
-    adapterChannelworkFlowAssertion("4", "1", "basic-workflow-4a");
-    adapterChannelworkFlowAssertion("4", "2", "basic-workflow-4b");
-    adapterChannelworkFlowAssertion("4", "3", "basic-workflow-4c");
-    adapterChannelworkFlowAssertion("4", "4", "basic-workflow-4d");
-    adapterChannelworkFlowAssertion("4", "5", "basic-workflow-4e");
+    adapterChannelworkFlowVisibleAssertion("1", "1", "basic-workflow-2a");
+    adapterChannelworkFlowVisibleAssertion("1", "2", "basic-workflow-2b");
+    adapterChannelworkFlowVisibleAssertion("1", "3", "basic-workflow-2c");
+    adapterChannelworkFlowVisibleAssertion("4", "1", "basic-workflow-4a");
+    adapterChannelworkFlowVisibleAssertion("4", "2", "basic-workflow-4b");
+    adapterChannelworkFlowVisibleAssertion("4", "3", "basic-workflow-4c");
+    adapterChannelworkFlowVisibleAssertion("4", "4", "basic-workflow-4d");
+    adapterChannelworkFlowVisibleAssertion("4", "5", "basic-workflow-4e");
 
+  }
+
+  @And("^sees the 'Workflows' for channels 2 and 4 have been hidden$")
+  public void multiple_workflowsHidden() throws InterruptedException {
+    Thread.sleep(2000);
+    adapterChannelworkFlowHiddenAssertion("1", "1");
+    adapterChannelworkFlowHiddenAssertion("4", "1");
   }
 
 //*******************************************************************************************
