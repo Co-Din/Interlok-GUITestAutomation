@@ -116,3 +116,8 @@ Feature: Dashboard Basics
     And sees all four channels
     Then unchecks the 'Show Channels box'
     And sees all four channels have been hidden
+    Then checks the 'Show Channels box'
+    And sees all four channels
+    Then checks the 'Show Workflows' box for Basic channel: 2 and 4
+    And sees the 'Workflow' for channels 2 and 4
+    Then unchecks the 'Show Workflows' box for Basic channel: 2 and 4

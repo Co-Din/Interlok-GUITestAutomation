@@ -21,6 +21,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en_scouse.An;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
@@ -2134,8 +2135,21 @@ public class StepDefinitions {
     driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[1]")).click();
   }
 
+  @Then("^checks the 'Show Workflows' box for Basic channel: 2 and 4$")
+  public void tick_showWorkflows_channelTwoFour() throws InterruptedException {
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/label/i[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[4]/div/div[1]/div[2]/div[1]/label/i[2]")).click();
+  }
+
+  @Then("^unchecks the 'Show Workflows' box for Basic channel: 2 and 4$")
+  public void untick_showWorkflows_channelTwoFour() {
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[4]/div/div[1]/div[2]/div[1]/label/i[1]")).click();
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/label/i[1]")).click();
+  }
+
   @And("^sees all four channels$")
-  public void fourChannels_showChannel_checked_isVisible() {
+  public void fourChannels_channels_isVisible() {
     //Checkbox is ticked
     Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[1]")).isDisplayed());
     Assert.assertEquals("fa fa-fw fa-check-square-o", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[1]")).getAttribute("class"));
@@ -2337,7 +2351,7 @@ public class StepDefinitions {
   }
 
   @And("^sees all four channels have been hidden$")
-  public void fourChannels_showChannel_unchecked_isHidden() throws InterruptedException {
+  public void fourChannels_channels_isHidden() throws InterruptedException {
     Thread.sleep(2000);
     Assert.assertFalse(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div")).isDisplayed());
     //Sees the unchecked show channels box
@@ -2345,7 +2359,25 @@ public class StepDefinitions {
     Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[2]")).getAttribute("class"));
   }
 
+  @And("^sees the 'Workflow' for channels 2 and 4$")
+  public void  multiple_workflowsVisible() throws InterruptedException {
+    Thread.sleep(2000);
+    adapterChannelworkFlowAssertion("1", "1", "basic-workflow-2a");
+    adapterChannelworkFlowAssertion("1", "2", "basic-workflow-2b");
+    adapterChannelworkFlowAssertion("1", "3", "basic-workflow-2c");
+    adapterChannelworkFlowAssertion("4", "1", "basic-workflow-4a");
+    adapterChannelworkFlowAssertion("4", "2", "basic-workflow-4b");
+    adapterChannelworkFlowAssertion("4", "3", "basic-workflow-4c");
+    adapterChannelworkFlowAssertion("4", "4", "basic-workflow-4d");
+    adapterChannelworkFlowAssertion("4", "5", "basic-workflow-4e");
 
+  }
+
+  ///html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[1]
+  ///html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[2]
+  ///html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[2]/div[1]/div[3]
+  ///html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[4]/div/div[2]/div[1]/div[1]
+  ///html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[4]/div/div[2]/div[1]/div[2]
 
 //*******************************************************************************************
 //*******************************************************************************************

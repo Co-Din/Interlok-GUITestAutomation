@@ -194,4 +194,59 @@ public class GUIDirectoryTools {
         Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div[%s]/div[2]", divcontainerNumber))).getAttribute("class"));
 
     }
+
+    public static void adapterChannelworkFlowAssertion(String divChannelContainerNumber, String divWorkflowContainerNumber, String workFlowName) throws InterruptedException {
+        Thread.sleep(1000);
+        //Workflow panel
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        //Workflow Icon
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[1]/div/div/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-workflow workflow-title-name-icon", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[1]/div/div/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //Workflow Title/Name
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[1]/div/div", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals(" Workflow :  " + workFlowName, driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[1]/div/div", divChannelContainerNumber , divWorkflowContainerNumber))).getText());
+        //Last started
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[1]/div[1]/span[1]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("Last Started: ", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[1]/div[1]/span[1]", divChannelContainerNumber, divWorkflowContainerNumber))).getText());
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[1]/div[1]/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        //Uptime
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[2]/div[1]/span[1]", divChannelContainerNumber , divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("Up Time: ", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[2]/div[1]/span[1]", divChannelContainerNumber, divWorkflowContainerNumber))).getText());
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[2]/div[1]/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        //Failed Messages Icon and Count
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[3]/div/span[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-envelope-o", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[3]/div/span[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[3]/div/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("0", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[3]/div/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).getText());
+        //InFlight Messages Icon and Count
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[4]/div/span[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-paper-plane-o", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[4]/div/span[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[4]/div/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("0", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[2]/div[4]/div/span[2]", divChannelContainerNumber, divWorkflowContainerNumber))).getText());
+        //Action buttons
+        //Start
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-play", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[1]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //Pause
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[2]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-pause", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[2]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //Stop
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[3]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-stop", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[3]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //Refresh
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[4]/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-refresh", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[4]/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //
+        //Components Toggle
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[5]/i[2]", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-plus", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[2]/div[1]/button[5]/i[2]", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+        //Workflow status icon
+        Assert.assertTrue(driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[1]/span/span/span/i", divChannelContainerNumber, divWorkflowContainerNumber))).isDisplayed());
+        Assert.assertEquals("fa fa-check text-success", driver.findElement(By.xpath(String.format("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[%s]/div/div[2]/div[1]/div[%s]/div[3]/div[1]/span/span/span/i", divChannelContainerNumber, divWorkflowContainerNumber))).getAttribute("class"));
+
+    }
+
+
+
+
 }
