@@ -144,7 +144,7 @@ The documents found at this site are __authored__ by __[HiggyFella](https://gith
           static String ADAPTRIS_INSTANCE_PATH = "LOCATION OF YOUR INTERLOK 3.8.3/config";
           static String ADAPTER_DB_PATH = "LOCATION OF YOUR INTERLOK 3.8.3/ui-resources/adapter_gui_db";
           public static File ADAPTER_DB_DIRECTORY = (Paths.get(ADAPTER_DB_PATH).toFile());
-          static String ADAPTER_STARTUP = TO BE ADDED;
+          static String ADAPTER_STARTUP = TO BE ADDED;"cmd.exe /c cd \"LOCATION OF INTERLOK 3.8.3" & start cmd.exe /k \"java -cp .;./config;./lib/*; com.adaptris.core.management.SimpleBootstrap\"";
         }
      ```
      
