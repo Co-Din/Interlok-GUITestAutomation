@@ -16,6 +16,19 @@ Feature: Widget Basics
     Then selects the 'Summary Details' tile
     Then bulk adds all the widgets bar 'Consumer Messages Remaining'
     And sees the 21 widgets added to the adapter
+    Then clicks the 'Remove Widget' button
+    And sees the 'Remove this Widget' modal
+    Then clicks the dismiss button on the 'Remove Widget' modal
+    Then clicks the 'Remove Widget' button
+    And sees the 'Remove this Widget' modal
+    Then clicks the Cancel button on the 'Remove Widget' modal
+    Then clicks the 'Remove Widget' button
+    And sees the 'Remove this Widget' modal
+    Then clicks the OK button on the 'Remove Widget' modal
+    And sees only 20 widgets
+    Then then removes all 20 widgets remaining widgets
+    Then selects the Local Adapter - config-001-basic-components adapter in the 'Widgets Modal'
+    And sees the available widgets
 
 
 

@@ -21,7 +21,6 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
-import cucumber.api.java.en_scouse.An;
 import org.openqa.selenium.By;
 
 import java.io.IOException;
@@ -108,7 +107,6 @@ public class StepDefinitions {
     String ExpectedHeader = "Failed to authenticate user";
     Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("//*[@id=\"login_container\"]/div[1]/div/section/div/p")).getText());
     Assert.assertEquals("http://localhost:8080/interlok/login.html?failed=", driver.getCurrentUrl());
-
   }
 
   @Then("^the user sees the 'Welcome Modal'$")
@@ -145,7 +143,6 @@ public class StepDefinitions {
     Assert.assertEquals("fa fa-fw fa-square-o", driver.findElement(By.xpath("/html/body/div[8]/div/div/div[3]/div/label/i[2]")).getAttribute("class"));
     Assert.assertTrue(driver.findElement(By.id("welcome-dismis-label")).isDisplayed());
     Assert.assertEquals(" Don't show me this again",driver.findElement(By.id("welcome-dismis-label")).getText());
-
   }
 
   @Then("^the user dismisses the 'Welcome Modal'$")
@@ -566,7 +563,174 @@ public class StepDefinitions {
     driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[22]/div")).click();
   }
 
-  /////////
+  @Then("^clicks the 'Remove Widget' button$")
+  public void remove_single_widgetBtn() {
+    Actions action = new Actions(driver);
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[2]/div[2]/div"))).build().perform();
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]/i")).click();
+  }
+
+  @Then("^clicks the dismiss button on the 'Remove Widget' modal$")
+  public void removeWidget_dismissBtn() {
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/button")).click();
+  }
+
+  @Then("^clicks the Cancel button on the 'Remove Widget' modal$")
+  public void removeWidget_cancelBtn() {
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[1]")).click();
+  }
+
+  @Then("^clicks the OK button on the 'Remove Widget' modal$")
+  public void removeWidget_okBtn() {
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+  }
+
+  @Then("^then removes all 20 widgets remaining widgets$")
+  public void remove_allWidgets() throws InterruptedException {
+    Actions action = new Actions(driver);
+    Thread.sleep(2000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[3]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]/div/div[3]/div/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+    action.moveToElement(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div"))).build().perform();
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[3]/div/div[2]/div/form/div[2]/div/button[2]")).click();
+    Thread.sleep(1000);
+    driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).click();
+    Thread.sleep(1000);
+
+  }
 
   @Then("^the user sees the Open config button$")
   public void openConfig_btn() throws InterruptedException {
@@ -605,7 +769,6 @@ public class StepDefinitions {
     String selectOption = String.format("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select/option[text() = '%s']", option);
     driver.findElement(By.xpath("/html/body/div[5]/div/div/div[2]/div[3]/div/div/div[2]/div[1]/select")).click();
     driver.findElement(By.xpath(selectOption)).click();
-
   }
 
   @Then("^clicks Ok to apply the config$")
@@ -1152,111 +1315,6 @@ public class StepDefinitions {
     driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div[3]/div[2]/div[1]/div")).click();
   }
 
-  @And("^finds the 'Summary Details (Carousel)' tile$")
-  public void finds_summaryDetails_carousel_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Control Panel' tile$")
-  public void finds_controlPanel_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'In Flight' tile$")
-  public void finds_inFlight_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Component Counts' tile$")
-  public void finds_componentCounts_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Message Counts Chart' tile$")
-  public void finds_messageCount_charts_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Daily Message Counts Chart' tile$")
-  public void finds_dailyMessage_countsChart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Message Counts Pie Chart' tile$")
-  public void finds_messageCounts_pieChart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Failed Messages Table' tile$")
-  public void finds_failedMessage_table_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Heap Memory Details' tile$")
-  public void finds_platformHeap_memoryDetails_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Non Heap Memory Details' tile$")
-  public void finds_platformNon_heapMemory_details_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Memory Heap Chart' tile$")
-  public void finds_platformMemory_heapChart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Memory Non Heap Chart' tile$")
-  public void finds_platformMemory_nonHeap_chart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Runtime Path Details' tile$")
-  public void finds_platformRuntime_pathDetails_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Runtime Details' tile$")
-  public void finds_platformRuntime_details_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Runtime System Details' tile$")
-  public void finds_platformRuntime_systemDetails_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Operating System Details' tile$")
-  public void finds_platformOperating_systemDetails_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform JVM Process Load Chart' tile$")
-  public void finds_platformJVM_processLoad_chart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform System CPU Load Chart' tile$")
-  public void finds_platformSystem_cpuLoad_chart_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Platform Thread Details' tile$")
-  public void finds_platformThread_details_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Consumer Messages Remaining' tile$")
-  public void finds_consumerMessages_remaining_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
-  @And("^finds the 'Logs Table - JMX Log Appender' tile$")
-  public void finds_logsTable_jmxLog_appender_tile() {
-    driver.findElement(By.xpath("")).click();
-  }
-
   @And("^sees the available widgets$")
   public void sees_all_widgets() {
     //Header and selection refinement
@@ -1788,14 +1846,14 @@ public class StepDefinitions {
     //Tile is displayed
     Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]")).isDisplayed());
     //Tile header bar
-    //Icon
-    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
-    Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
-    //Text
-    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
-    Assert.assertEquals("Daily Message Counts Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).getText());
-    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
-    Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).getText());
+      //Icon
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).isDisplayed());
+      Assert.assertEquals("fa fa-adapter", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[1]/i")).getAttribute("class"));
+      //Text
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).isDisplayed());
+      Assert.assertEquals("Daily Message Counts Chart", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div/div[1]/div[1]/span[2]")).getText());
+      Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).isDisplayed());
+      Assert.assertEquals("Local Adapter - config-001-basic-components", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div/div[1]/div[2]/span[2]")).getText());
     //Tile content
     //Tile Action Buttons
     tileHiddenActions("7");
@@ -2115,6 +2173,50 @@ public class StepDefinitions {
     Assert.assertEquals("ui-resizable-handle ui-resizable-sw", driver.findElement(By.xpath(("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[3]"))).getAttribute("class"));
     Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[2]")).isDisplayed());
     Assert.assertEquals("ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se", driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[21]/div[2]")).getAttribute("class"));
+
+  }
+
+  @And("^sees the 'Remove this Widget' modal$")
+  public void sees_remove_widgetModal() throws InterruptedException {
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[7]")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/div")).isDisplayed());
+    Assert.assertEquals("Are you sure you want to remove this Widget?", driver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/div")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/button")).isDisplayed());
+    Assert.assertEquals("×", driver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/button")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[1]")).isDisplayed());
+    Assert.assertEquals("Cancel", driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[1]")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).isDisplayed());
+    Assert.assertEquals("OK", driver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/button[2]")).getText());
+  }
+
+  @And("^sees only 20 widgets$")
+  public void sees_twentyWidgets() throws InterruptedException {
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[1]/div[1]")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[2]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[3]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[4]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[5]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[6]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[7]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[8]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[9]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[10]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[11]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[12]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[13]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[14]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[15]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[16]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[17]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[18]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[19]/div[1]/div")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div[20]/div[1]/div")).isDisplayed());
+  }
+
+  @And("^sees no widgets$")
+  public void sees_no_widgets() {
 
   }
 
