@@ -2225,8 +2225,6 @@ public class StepDefinitions {
 
   //                    Show channels and workflow stop start
 
-
-
   @Then("^checks the 'Show Channels box'$")
   public void tick_showChannels() {
     driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[1]/div/div[1]/label/i[2]")).click();
@@ -2249,6 +2247,12 @@ public class StepDefinitions {
     driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[4]/div/div[1]/div[2]/div[1]/label/i[1]")).click();
     driver.findElement(By.xpath("/html/body/section/div[2]/section[3]/div[1]/div/div[4]/div/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/label/i[1]")).click();
   }
+
+  @Then("^clicks the 'Diagram' tab$")
+  public void config_diagram_tabClick() {
+    driver.findElement(By.xpath("/html/body/div[6]/div/div/div[1]/ul/li[2]/a")).click();
+  }
+
 
   @And("^sees all four channels$")
   public void fourChannels_channels_isVisible() {
@@ -2480,6 +2484,20 @@ public class StepDefinitions {
     Thread.sleep(2000);
     adapterChannelworkFlowHiddenAssertion("1", "1");
     adapterChannelworkFlowHiddenAssertion("4", "1");
+  }
+
+  @And("^sees the 'Diagram tab'$")
+  public void sees_diagramTab() throws InterruptedException {
+    Thread.sleep(2000);
+    Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"config-diagram\"]")).isDisplayed());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/i")).isDisplayed());
+    Assert.assertEquals("fa fa-plus", driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[1]/i")).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[2]/i")).isDisplayed());
+    Assert.assertEquals("fa fa-minus", driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[2]/i")).getAttribute("class"));
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[3]/i")).isDisplayed());
+    Assert.assertEquals("fa fa-download", driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[2]/div[3]/i")).getAttribute("class"));
+
+    Assert.assertEquals("Basic Workflow 2c", driver.findElement(By.xpath("/html/body/div[6]/div/div/div[2]/div[2]/div/div[2]/div[4]/svg/text[50]/tspan")).getText());
   }
 
 //*******************************************************************************************
