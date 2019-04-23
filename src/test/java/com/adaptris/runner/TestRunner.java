@@ -28,7 +28,7 @@ import static com.adaptris.stepdefs.ENVVAR.ADAPTER_DB_DIRECTORY;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@DashboardBasics",
+        tags = "@FunctionalTests",
         features = "src/test/resources/com/adaptris/features/",
         glue = { "com/adaptris/stepdefs/" },
         plugin = { "json:src/resources/htmlreports/cucumber.json" }

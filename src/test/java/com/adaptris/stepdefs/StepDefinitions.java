@@ -1162,7 +1162,7 @@ public class StepDefinitions {
 
   @And("^sees the 'Garbage Collector' alert box$")
   public void garbageCollector_alertBox_isVisible() throws InterruptedException {
-    Thread.sleep(2000);
+    Thread.sleep(3000);
     //Alertbox
     Assert.assertTrue(driver.findElement(By.xpath("/html/body/section/div[2]/section[1]/div[1]")).isDisplayed());
     //Header
