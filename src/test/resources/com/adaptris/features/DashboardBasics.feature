@@ -1,7 +1,9 @@
 @FunctionalTests @DashboardBasics
 Feature: Dashboard Basics
   Background: User is Logged In
-    Given on a login page
+    Given on a splash page
+    Then the user sees 'Welcome Page'
+    Then clicks the 'Web UI' view button
     When the user enters username and password
     Then the user is on the Dashboard
 

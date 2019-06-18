@@ -57,9 +57,9 @@ public class StepDefinitions {
 
   // Given section
 
-  @Given("^on a login page$")
-  public void given_on_a_login() {
-    Assert.assertEquals("http://localhost:8080/interlok/login.html", driver.getCurrentUrl());
+  @Given("^on a splash page$")
+  public void given_on_a_splash() {
+    Assert.assertEquals("http://localhost:8080/", driver.getCurrentUrl());
   }
 
   @Given("^the user clicks the 'Widgets' button$")
@@ -102,11 +102,66 @@ public class StepDefinitions {
 
   // Then Section
 
+  @Then("^the user sees 'Welcome Page'")
+  public void welcome_Page() {
+    //Image header
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[1]/div/img")).isDisplayed());
+    Assert.assertEquals(LOGIN_PAGE + "/welcome.png", driver.findElement(By.xpath("/html/body/div[1]/div/img")).getAttribute("src"));
+
+    //Text
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/h1")).isDisplayed());
+    Assert.assertEquals("Welcome to the Interlok Framework", driver.findElement(By.xpath("/html/body/div[2]/div/h1")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[2]/div/p")).isDisplayed());
+    Assert.assertEquals("If you're already familiar with the adapter and just want to get going, then you can do that; otherwise you might want to have a look at the links and checkout the documentation.", driver.findElement(By.xpath("/html/body/div[2]/div/p")).getText());
+
+
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/h2")).isDisplayed());
+    Assert.assertEquals("Web UI", driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/h2")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[1]")).isDisplayed());
+    Assert.assertEquals("The Local Interlok UI allows you to control, configure and monitor your local Interlok instance, all within your web browser.", driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[1]")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[2]/a")).isDisplayed());
+    Assert.assertEquals("View >>", driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[2]/a")).getText());
+    Assert.assertEquals("btn btn-default", driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[2]/a")).getAttribute("class"));
+
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/h2")).isDisplayed());
+    Assert.assertEquals("Documentation", driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/h2")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/p[1]")).isDisplayed());
+    Assert.assertEquals("Enjoy our documentation website which contains information on all things related to the Interlok container. Getting started guides, advanced topics, developer guide & various cookbooks covering specifics for a host of technologies.", driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/p[1]")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/p[2]/a")).isDisplayed());
+    Assert.assertEquals("View >>", driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/p[2]/a")).getText());
+    Assert.assertEquals("btn btn-default", driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/p[2]/a")).getAttribute("class"));
+
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/h2")).isDisplayed());
+    Assert.assertEquals("Javadocs", driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/h2")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/p[1]")).isDisplayed());
+    Assert.assertEquals("API documentation in HTML format for all our Java source code. Need to know every little detail? you'll find it in here.", driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/p[1]")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/p[2]/a")).isDisplayed());
+    Assert.assertEquals("View >>", driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/p[2]/a")).getText());
+    Assert.assertEquals("btn btn-default", driver.findElement(By.xpath("/html/body/div[3]/div/div[3]/p[2]/a")).getAttribute("class"));
+
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/h2")).isDisplayed());
+    Assert.assertEquals("Extras", driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/h2")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/p[1]")).isDisplayed());
+    Assert.assertEquals("As well as all our core components, we also have lots of documentation regarding optional components. Looking for information regarding Websphere MQ or Interfax? etc, look no further.", driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/p[1]")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/p[2]/a")).isDisplayed());
+    Assert.assertEquals("View >>", driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/p[2]/a")).getText());
+    Assert.assertEquals("btn btn-default", driver.findElement(By.xpath("/html/body/div[3]/div/div[4]/p[2]/a")).getAttribute("class"));
+
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/footer/p")).isDisplayed());
+    Assert.assertEquals("© Adaptris Limited", driver.findElement(By.xpath("/html/body/div[3]/footer/p")).getText());
+    Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[3]/footer/p/a")).isDisplayed());
+  }
+
   @Then("^the user reaches the failed login page$")
   public void reaches_failed_login_page() {
     String ExpectedHeader = "Failed to authenticate user";
     Assert.assertEquals(ExpectedHeader, driver.findElement(By.xpath("//*[@id=\"login_container\"]/div[1]/div/section/div/p")).getText());
     Assert.assertEquals("http://localhost:8080/interlok/login.html?failed=", driver.getCurrentUrl());
+  }
+
+  @Then("^clicks the 'Web UI' view button$")
+  public void clicks_webUI_btn() {
+    driver.findElement(By.xpath("/html/body/div[3]/div/div[1]/p[2]/a")).click();
   }
 
   @Then("^the user sees the 'Welcome Modal'$")
