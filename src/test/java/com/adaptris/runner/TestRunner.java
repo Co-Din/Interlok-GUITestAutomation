@@ -41,7 +41,7 @@ public class TestRunner {
     GUIDirectoryTools.adapterIdReset(ADAPTER_DB_DIRECTORY);
     Thread.sleep(2000);
     GUIDirectoryTools.InterlokBoot();
-    Thread.sleep(35000);
+    Thread.sleep(45000);
   }
 
 }

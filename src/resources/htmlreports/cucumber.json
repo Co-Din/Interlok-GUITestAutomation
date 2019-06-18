@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8428300,
+              "duration": 9871000,
               "status": "passed"
             },
             "line": 4,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 1369989400,
+              "duration": 2239807000,
               "status": "passed"
             },
             "line": 5,
@@ -35,7 +35,7 @@
           },
           {
             "result": {
-              "duration": 273585100,
+              "duration": 21995600,
               "status": "passed"
             },
             "line": 6,
@@ -51,7 +51,7 @@
         "before": [
           {
             "result": {
-              "duration": 5373933800,
+              "duration": 5927010100,
               "status": "passed"
             },
             "match": {
@@ -66,7 +66,7 @@
         "after": [
           {
             "result": {
-              "duration": 692400600,
+              "duration": 886471900,
               "status": "passed"
             },
             "match": {
@@ -79,7 +79,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2608005000,
+              "duration": 2789305800,
               "status": "passed"
             },
             "line": 11,
@@ -91,7 +91,7 @@
           },
           {
             "result": {
-              "duration": 2185774000,
+              "duration": 2316313000,
               "status": "passed"
             },
             "line": 12,
@@ -103,7 +103,7 @@
           },
           {
             "result": {
-              "duration": 29179900,
+              "duration": 90524500,
               "status": "passed"
             },
             "line": 13,
@@ -115,7 +115,7 @@
           },
           {
             "result": {
-              "duration": 31390700,
+              "duration": 78310000,
               "status": "passed"
             },
             "line": 14,
@@ -133,7 +133,7 @@
           },
           {
             "result": {
-              "duration": 33185000,
+              "duration": 51712500,
               "status": "passed"
             },
             "line": 15,
@@ -151,7 +151,7 @@
           },
           {
             "result": {
-              "duration": 29053700,
+              "duration": 55875800,
               "status": "passed"
             },
             "line": 16,
@@ -163,7 +163,7 @@
           },
           {
             "result": {
-              "duration": 3610374400,
+              "duration": 3619213900,
               "status": "passed"
             },
             "line": 17,
@@ -175,7 +175,7 @@
           },
           {
             "result": {
-              "duration": 3046459400,
+              "duration": 3035432100,
               "status": "passed"
             },
             "line": 18,
@@ -187,7 +187,7 @@
           },
           {
             "result": {
-              "duration": 8045315000,
+              "duration": 8035464400,
               "status": "passed"
             },
             "line": 19,
@@ -205,7 +205,7 @@
           },
           {
             "result": {
-              "duration": 1050083100,
+              "duration": 1030692700,
               "status": "passed"
             },
             "line": 20,
@@ -223,7 +223,7 @@
           },
           {
             "result": {
-              "duration": 28155100,
+              "duration": 33552600,
               "status": "passed"
             },
             "line": 21,
@@ -241,7 +241,7 @@
           },
           {
             "result": {
-              "duration": 28300200,
+              "duration": 33838400,
               "status": "passed"
             },
             "line": 22,
@@ -259,7 +259,7 @@
           },
           {
             "result": {
-              "duration": 50355000,
+              "duration": 63026900,
               "status": "passed"
             },
             "line": 23,
@@ -271,7 +271,7 @@
           },
           {
             "result": {
-              "duration": 77835900,
+              "duration": 95868800,
               "status": "passed"
             },
             "line": 24,
@@ -283,15 +283,15 @@
           },
           {
             "result": {
-              "duration": 29899700,
+              "duration": 35376500,
               "status": "passed"
             },
             "line": 25,
-            "name": "sees UI version Interlok UI  3.8.3-RELEASE",
+            "name": "sees UI version Interlok UI  3.8.4-RELEASE",
             "match": {
               "arguments": [
                 {
-                  "val": "Interlok UI  3.8.3-RELEASE",
+                  "val": "Interlok UI  3.8.4-RELEASE",
                   "offset": 16
                 }
               ],
@@ -301,7 +301,7 @@
           },
           {
             "result": {
-              "duration": 25455700,
+              "duration": 33055500,
               "status": "passed"
             },
             "line": 26,
@@ -313,7 +313,7 @@
           },
           {
             "result": {
-              "duration": 24576600,
+              "duration": 34033000,
               "status": "passed"
             },
             "line": 27,
@@ -325,7 +325,7 @@
           },
           {
             "result": {
-              "duration": 24434800,
+              "duration": 31231300,
               "status": "passed"
             },
             "line": 28,
@@ -337,7 +337,7 @@
           },
           {
             "result": {
-              "duration": 24763500,
+              "duration": 32915900,
               "status": "passed"
             },
             "line": 29,
@@ -349,7 +349,7 @@
           },
           {
             "result": {
-              "duration": 595586800,
+              "duration": 775370500,
               "status": "passed"
             },
             "line": 30,
@@ -361,7 +361,7 @@
           },
           {
             "result": {
-              "duration": 44639400,
+              "duration": 75331900,
               "status": "passed"
             },
             "line": 31,
@@ -373,7 +373,7 @@
           },
           {
             "result": {
-              "duration": 28117000,
+              "duration": 35701100,
               "status": "passed"
             },
             "line": 32,
@@ -411,7 +411,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7758800,
+              "duration": 6771400,
               "status": "passed"
             },
             "line": 4,
@@ -423,7 +423,7 @@
           },
           {
             "result": {
-              "duration": 1368152400,
+              "duration": 1656630900,
               "status": "passed"
             },
             "line": 5,
@@ -435,7 +435,7 @@
           },
           {
             "result": {
-              "duration": 188924100,
+              "duration": 189962000,
               "status": "passed"
             },
             "line": 6,
@@ -451,7 +451,7 @@
         "before": [
           {
             "result": {
-              "duration": 4082807000,
+              "duration": 4301914200,
               "status": "passed"
             },
             "match": {
@@ -466,7 +466,7 @@
         "after": [
           {
             "result": {
-              "duration": 703844700,
+              "duration": 884613800,
               "status": "passed"
             },
             "match": {
@@ -479,7 +479,7 @@
         "steps": [
           {
             "result": {
-              "duration": 8046574500,
+              "duration": 8038621200,
               "status": "passed"
             },
             "line": 36,
@@ -497,7 +497,7 @@
           },
           {
             "result": {
-              "duration": 32127800,
+              "duration": 36972700,
               "status": "passed"
             },
             "line": 37,
@@ -509,7 +509,7 @@
           },
           {
             "result": {
-              "duration": 576433600,
+              "duration": 892020600,
               "status": "passed"
             },
             "line": 38,
@@ -521,7 +521,7 @@
           },
           {
             "result": {
-              "duration": 1088373800,
+              "duration": 1111805300,
               "status": "passed"
             },
             "line": 39,
@@ -533,7 +533,7 @@
           },
           {
             "result": {
-              "duration": 3592844600,
+              "duration": 3596169700,
               "status": "passed"
             },
             "line": 40,
@@ -545,7 +545,7 @@
           },
           {
             "result": {
-              "duration": 3050065300,
+              "duration": 3042144400,
               "status": "passed"
             },
             "line": 41,
@@ -557,7 +557,7 @@
           },
           {
             "result": {
-              "duration": 8041846200,
+              "duration": 8042836700,
               "status": "passed"
             },
             "line": 42,
@@ -575,7 +575,7 @@
           },
           {
             "result": {
-              "duration": 1025518700,
+              "duration": 1032685700,
               "status": "passed"
             },
             "line": 43,
@@ -593,7 +593,7 @@
           },
           {
             "result": {
-              "duration": 48830000,
+              "duration": 61118700,
               "status": "passed"
             },
             "line": 44,
@@ -605,7 +605,7 @@
           },
           {
             "result": {
-              "duration": 50301400,
+              "duration": 61962800,
               "status": "passed"
             },
             "line": 45,
@@ -617,7 +617,7 @@
           },
           {
             "result": {
-              "duration": 72632000,
+              "duration": 97230800,
               "status": "passed"
             },
             "line": 46,
@@ -629,7 +629,7 @@
           },
           {
             "result": {
-              "duration": 8047843000,
+              "duration": 8028802900,
               "status": "passed"
             },
             "line": 47,
@@ -647,7 +647,7 @@
           },
           {
             "result": {
-              "duration": 48838800,
+              "duration": 63377100,
               "status": "passed"
             },
             "line": 48,
@@ -659,7 +659,7 @@
           },
           {
             "result": {
-              "duration": 73630500,
+              "duration": 92381400,
               "status": "passed"
             },
             "line": 49,
@@ -671,7 +671,7 @@
           },
           {
             "result": {
-              "duration": 64213900,
+              "duration": 73255600,
               "status": "passed"
             },
             "line": 50,
@@ -683,7 +683,7 @@
           },
           {
             "result": {
-              "duration": 3609572600,
+              "duration": 3592334000,
               "status": "passed"
             },
             "line": 51,
@@ -695,7 +695,7 @@
           },
           {
             "result": {
-              "duration": 3030076000,
+              "duration": 3037222400,
               "status": "passed"
             },
             "line": 52,
@@ -707,7 +707,7 @@
           },
           {
             "result": {
-              "duration": 8048126000,
+              "duration": 8035894000,
               "status": "passed"
             },
             "line": 53,
@@ -725,7 +725,7 @@
           },
           {
             "result": {
-              "duration": 1042578200,
+              "duration": 1033607100,
               "status": "passed"
             },
             "line": 54,
@@ -743,7 +743,7 @@
           },
           {
             "result": {
-              "duration": 48877500,
+              "duration": 68137100,
               "status": "passed"
             },
             "line": 55,
@@ -755,7 +755,7 @@
           },
           {
             "result": {
-              "duration": 47603000,
+              "duration": 63348500,
               "status": "passed"
             },
             "line": 56,
@@ -767,7 +767,7 @@
           },
           {
             "result": {
-              "duration": 69486000,
+              "duration": 94081900,
               "status": "passed"
             },
             "line": 57,
@@ -779,7 +779,7 @@
           },
           {
             "result": {
-              "duration": 8022676900,
+              "duration": 8030271900,
               "status": "passed"
             },
             "line": 58,
@@ -797,7 +797,7 @@
           },
           {
             "result": {
-              "duration": 41547900,
+              "duration": 61622700,
               "status": "passed"
             },
             "line": 59,
@@ -809,7 +809,7 @@
           },
           {
             "result": {
-              "duration": 55390700,
+              "duration": 93242400,
               "status": "passed"
             },
             "line": 60,
@@ -821,7 +821,7 @@
           },
           {
             "result": {
-              "duration": 1061548100,
+              "duration": 1083498200,
               "status": "passed"
             },
             "line": 61,
@@ -833,7 +833,7 @@
           },
           {
             "result": {
-              "duration": 121542000,
+              "duration": 149062300,
               "status": "passed"
             },
             "line": 62,
@@ -845,7 +845,7 @@
           },
           {
             "result": {
-              "duration": 3019263200,
+              "duration": 3035995300,
               "status": "passed"
             },
             "line": 63,
@@ -857,7 +857,7 @@
           },
           {
             "result": {
-              "duration": 3576983100,
+              "duration": 3584439100,
               "status": "passed"
             },
             "line": 64,
@@ -869,7 +869,7 @@
           },
           {
             "result": {
-              "duration": 8051043400,
+              "duration": 8027862700,
               "status": "passed"
             },
             "line": 65,
@@ -887,7 +887,7 @@
           },
           {
             "result": {
-              "duration": 1053248600,
+              "duration": 1026238700,
               "status": "passed"
             },
             "line": 66,
@@ -905,7 +905,7 @@
           },
           {
             "result": {
-              "duration": 47889500,
+              "duration": 43693800,
               "status": "passed"
             },
             "line": 67,
@@ -917,7 +917,7 @@
           },
           {
             "result": {
-              "duration": 50428400,
+              "duration": 44241300,
               "status": "passed"
             },
             "line": 68,
@@ -929,7 +929,7 @@
           },
           {
             "result": {
-              "duration": 59712200,
+              "duration": 67439200,
               "status": "passed"
             },
             "line": 69,
@@ -941,7 +941,7 @@
           },
           {
             "result": {
-              "duration": 111340900,
+              "duration": 155023500,
               "status": "passed"
             },
             "line": 70,
@@ -953,7 +953,7 @@
           },
           {
             "result": {
-              "duration": 353100900,
+              "duration": 786200100,
               "status": "passed"
             },
             "line": 71,
@@ -965,7 +965,7 @@
           },
           {
             "result": {
-              "duration": 98427400,
+              "duration": 140678200,
               "status": "passed"
             },
             "line": 72,
@@ -977,34 +977,10 @@
           },
           {
             "result": {
-              "duration": 2256092600,
+              "duration": 3023028800,
               "status": "passed"
             },
             "line": 73,
-            "name": "sees the \u0027Interrupted Exception\u0027 alert box",
-            "match": {
-              "location": "StepDefinitions.interruptedException_alertBox_isVisible()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 48512000,
-              "status": "passed"
-            },
-            "line": 74,
-            "name": "dismisses the \u0027Interrupted Exception\u0027 alert box",
-            "match": {
-              "location": "StepDefinitions.interruptedException_alertBox_dismiss()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 3047244500,
-              "status": "passed"
-            },
-            "line": 75,
             "name": "sees the adapter in \u0027Closed\u0027 state",
             "match": {
               "location": "StepDefinitions.adapter_in_closed_state()"
@@ -1013,10 +989,10 @@
           },
           {
             "result": {
-              "duration": 3588072400,
+              "duration": 3576992600,
               "status": "passed"
             },
-            "line": 76,
+            "line": 74,
             "name": "sees a closed icon",
             "match": {
               "location": "StepDefinitions.closed_icon()"
@@ -1025,10 +1001,10 @@
           },
           {
             "result": {
-              "duration": 8026711600,
+              "duration": 8027128300,
               "status": "passed"
             },
-            "line": 77,
+            "line": 75,
             "name": "sees 0 started channels",
             "match": {
               "arguments": [
@@ -1043,10 +1019,10 @@
           },
           {
             "result": {
-              "duration": 1044814100,
+              "duration": 1029258300,
               "status": "passed"
             },
-            "line": 78,
+            "line": 76,
             "name": "sees the total number of 4 adapter channels expected",
             "match": {
               "arguments": [
@@ -1061,10 +1037,10 @@
           },
           {
             "result": {
-              "duration": 35369600,
+              "duration": 46242100,
               "status": "passed"
             },
-            "line": 79,
+            "line": 77,
             "name": "sees the Down Time section",
             "match": {
               "location": "StepDefinitions.downTime_container()"
@@ -1073,10 +1049,10 @@
           },
           {
             "result": {
-              "duration": 36117900,
+              "duration": 44750000,
               "status": "passed"
             },
-            "line": 80,
+            "line": 78,
             "name": "sees the Last Stopped section",
             "match": {
               "location": "StepDefinitions.lastStopped_container()"
@@ -1085,10 +1061,10 @@
           },
           {
             "result": {
-              "duration": 43205400,
+              "duration": 63957200,
               "status": "passed"
             },
-            "line": 81,
+            "line": 79,
             "name": "clicks the start button",
             "match": {
               "location": "StepDefinitions.controlBar_startBtn_click()"
@@ -1097,10 +1073,10 @@
           },
           {
             "result": {
-              "duration": 95995900,
+              "duration": 171469800,
               "status": "passed"
             },
-            "line": 82,
+            "line": 80,
             "name": "clicks the information button",
             "match": {
               "location": "StepDefinitions.controlBar_infoBtn()"
@@ -1109,10 +1085,10 @@
           },
           {
             "result": {
-              "duration": 2042278600,
+              "duration": 2035470100,
               "status": "passed"
             },
-            "line": 83,
+            "line": 81,
             "name": "sees the \u0027Adapter Information\u0027 modal",
             "match": {
               "location": "StepDefinitions.adapterInfo_modal()"
@@ -1121,10 +1097,10 @@
           },
           {
             "result": {
-              "duration": 1189506500,
+              "duration": 1609623300,
               "status": "passed"
             },
-            "line": 84,
+            "line": 82,
             "name": "sees the Adapter details",
             "match": {
               "location": "StepDefinitions.adapterInfo_modal_details()"
@@ -1133,10 +1109,10 @@
           },
           {
             "result": {
-              "duration": 1080183800,
+              "duration": 1128343800,
               "status": "passed"
             },
-            "line": 85,
+            "line": 83,
             "name": "clicks the close button to shut the \u0027Adapter Information\u0027 modal",
             "match": {
               "location": "StepDefinitions.infoModal_shut()"
@@ -1145,10 +1121,10 @@
           },
           {
             "result": {
-              "duration": 2019815900,
+              "duration": 2020875000,
               "status": "passed"
             },
-            "line": 86,
+            "line": 84,
             "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.adapterInfo_modal_shut()"
@@ -1157,10 +1133,10 @@
           },
           {
             "result": {
-              "duration": 51220500,
+              "duration": 71580100,
               "status": "passed"
             },
-            "line": 87,
+            "line": 85,
             "name": "clicks the information button",
             "match": {
               "location": "StepDefinitions.controlBar_infoBtn()"
@@ -1169,10 +1145,10 @@
           },
           {
             "result": {
-              "duration": 1077186000,
+              "duration": 1066367500,
               "status": "passed"
             },
-            "line": 88,
+            "line": 86,
             "name": "clicks the dismiss button to shut the \u0027Adapter Information\u0027 modal",
             "match": {
               "location": "StepDefinitions.infoModal_dismiss()"
@@ -1181,10 +1157,10 @@
           },
           {
             "result": {
-              "duration": 2035207000,
+              "duration": 2019344200,
               "status": "passed"
             },
-            "line": 89,
+            "line": 87,
             "name": "sees the \u0027Adapter Information\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.adapterInfo_modal_shut()"
@@ -1193,10 +1169,10 @@
           },
           {
             "result": {
-              "duration": 61893000,
+              "duration": 73096500,
               "status": "passed"
             },
-            "line": 90,
+            "line": 88,
             "name": "clicks the control-bar drop down menu",
             "match": {
               "location": "StepDefinitions.controlBar_dropDown_click()"
@@ -1205,10 +1181,10 @@
           },
           {
             "result": {
-              "duration": 2086320800,
+              "duration": 2086336200,
               "status": "passed"
             },
-            "line": 91,
+            "line": 89,
             "name": "clicks the \u0027Thread Dump\u0027 button",
             "match": {
               "location": "StepDefinitions.clicks_threadDump()"
@@ -1217,10 +1193,10 @@
           },
           {
             "result": {
-              "duration": 2231472900,
+              "duration": 4336527400,
               "status": "passed"
             },
-            "line": 92,
+            "line": 90,
             "name": "sees the \u0027Thread Dump\u0027 Modal",
             "match": {
               "location": "StepDefinitions.sees_threadDump_modal()"
@@ -1229,10 +1205,10 @@
           },
           {
             "result": {
-              "duration": 1074177100,
+              "duration": 1081514600,
               "status": "passed"
             },
-            "line": 93,
+            "line": 91,
             "name": "clicks the dismiss button to shut the \u0027Thread Dump\u0027 modal",
             "match": {
               "location": "StepDefinitions.thread_dumpModal_dismiss()"
@@ -1241,10 +1217,10 @@
           },
           {
             "result": {
-              "duration": 2024713200,
+              "duration": 2019791800,
               "status": "passed"
             },
-            "line": 94,
+            "line": 92,
             "name": "sees the \u0027Thread Dump\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.thread_dumpModal_isShut()"
@@ -1253,10 +1229,10 @@
           },
           {
             "result": {
-              "duration": 55648400,
+              "duration": 72400000,
               "status": "passed"
             },
-            "line": 95,
+            "line": 93,
             "name": "clicks the control-bar drop down menu",
             "match": {
               "location": "StepDefinitions.controlBar_dropDown_click()"
@@ -1265,10 +1241,10 @@
           },
           {
             "result": {
-              "duration": 2084764900,
+              "duration": 2082447500,
               "status": "passed"
             },
-            "line": 96,
+            "line": 94,
             "name": "clicks the \u0027Thread Dump\u0027 button",
             "match": {
               "location": "StepDefinitions.clicks_threadDump()"
@@ -1277,10 +1253,10 @@
           },
           {
             "result": {
-              "duration": 1081428600,
+              "duration": 1089184600,
               "status": "passed"
             },
-            "line": 97,
+            "line": 95,
             "name": "clicks the close button to shut the \u0027Thread Dump\u0027 modal",
             "match": {
               "location": "StepDefinitions.thread_dumpModal_shut()"
@@ -1289,10 +1265,10 @@
           },
           {
             "result": {
-              "duration": 2036884500,
+              "duration": 2022630400,
               "status": "passed"
             },
-            "line": 98,
+            "line": 96,
             "name": "sees the \u0027Thread Dump\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.thread_dumpModal_isShut()"
@@ -1301,10 +1277,10 @@
           },
           {
             "result": {
-              "duration": 65934100,
+              "duration": 77213900,
               "status": "passed"
             },
-            "line": 99,
+            "line": 97,
             "name": "clicks the control-bar \u0027Config\u0027 button",
             "match": {
               "location": "StepDefinitions.cntrlBar_configBtn()"
@@ -1313,10 +1289,10 @@
           },
           {
             "result": {
-              "duration": 12503779000,
+              "duration": 14435421100,
               "status": "passed"
             },
-            "line": 100,
+            "line": 98,
             "name": "expands the config xml",
             "match": {
               "location": "StepDefinitions.configXml_expand()"
@@ -1325,10 +1301,10 @@
           },
           {
             "result": {
-              "duration": 24343210100,
+              "duration": 35624272700,
               "status": "passed"
             },
-            "line": 101,
+            "line": 99,
             "name": "sees the \u0027Config\u0027 modal",
             "match": {
               "location": "StepDefinitions.config_xmlModal()"
@@ -1337,10 +1313,10 @@
           },
           {
             "result": {
-              "duration": 1201969100,
+              "duration": 1174034700,
               "status": "passed"
             },
-            "line": 102,
+            "line": 100,
             "name": "clicks the dismiss button to dismiss the control-bar\u0027Config\u0027 modal",
             "match": {
               "location": "StepDefinitions.cntrlBar_configXml_modalDismiss()"
@@ -1349,10 +1325,10 @@
           },
           {
             "result": {
-              "duration": 2050167900,
+              "duration": 2035404700,
               "status": "passed"
             },
-            "line": 103,
+            "line": 101,
             "name": "sees the control-bar \u0027Config\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.cntrlBar_configXml_modal_isShut()"
@@ -1361,10 +1337,10 @@
           },
           {
             "result": {
-              "duration": 149045300,
+              "duration": 201777500,
               "status": "passed"
             },
-            "line": 104,
+            "line": 102,
             "name": "clicks the control-bar \u0027Config\u0027 button",
             "match": {
               "location": "StepDefinitions.cntrlBar_configBtn()"
@@ -1373,10 +1349,10 @@
           },
           {
             "result": {
-              "duration": 1915256100,
+              "duration": 2281692500,
               "status": "passed"
             },
-            "line": 105,
+            "line": 103,
             "name": "sees the \u0027config unique-id\u0027 tag is expanded",
             "match": {
               "location": "StepDefinitions.config_uidTag_isVisible()"
@@ -1385,10 +1361,10 @@
           },
           {
             "result": {
-              "duration": 49854800,
+              "duration": 71216200,
               "status": "passed"
             },
-            "line": 106,
+            "line": 104,
             "name": "clicks the arrow to collapse the \u0027config unique-id\u0027 tag",
             "match": {
               "location": "StepDefinitions.clicks_configUID_collapseBtn()"
@@ -1397,10 +1373,10 @@
           },
           {
             "result": {
-              "duration": 1097058900,
+              "duration": 1087524100,
               "status": "passed"
             },
-            "line": 107,
+            "line": 105,
             "name": "sees the \u0027config unique-id\u0027 has been collapsed",
             "match": {
               "location": "StepDefinitions.config_uidTag_isCollapsed()"
@@ -1409,10 +1385,10 @@
           },
           {
             "result": {
-              "duration": 1082305100,
+              "duration": 1114635000,
               "status": "passed"
             },
-            "line": 108,
+            "line": 106,
             "name": "clicks the close button to shut the control-bar\u0027Config\u0027 modal",
             "match": {
               "location": "StepDefinitions.cntrlBar_configXml_modalShut()"
@@ -1421,10 +1397,10 @@
           },
           {
             "result": {
-              "duration": 2025160500,
+              "duration": 2019479100,
               "status": "passed"
             },
-            "line": 109,
+            "line": 107,
             "name": "sees the control-bar \u0027Config\u0027 modal has been shut",
             "match": {
               "location": "StepDefinitions.cntrlBar_configXml_modal_isShut()"
@@ -1433,10 +1409,10 @@
           },
           {
             "result": {
-              "duration": 59755100,
+              "duration": 78309600,
               "status": "passed"
             },
-            "line": 110,
+            "line": 108,
             "name": "clicks the control-bar drop down menu",
             "match": {
               "location": "StepDefinitions.controlBar_dropDown_click()"
@@ -1445,10 +1421,10 @@
           },
           {
             "result": {
-              "duration": 1083840700,
+              "duration": 1113868400,
               "status": "passed"
             },
-            "line": 111,
+            "line": 109,
             "name": "clicks the \u0027Run Garbage Collector\u0027 button",
             "match": {
               "location": "StepDefinitions.clicks_garbageCollector_cntrlBar_btn()"
@@ -1457,10 +1433,10 @@
           },
           {
             "result": {
-              "duration": 3207951400,
+              "duration": 3221769400,
               "status": "passed"
             },
-            "line": 112,
+            "line": 110,
             "name": "sees the \u0027Garbage Collector\u0027 alert box",
             "match": {
               "location": "StepDefinitions.garbageCollector_alertBox_isVisible()"
@@ -1469,10 +1445,10 @@
           },
           {
             "result": {
-              "duration": 49825300,
+              "duration": 69411100,
               "status": "passed"
             },
-            "line": 113,
+            "line": 111,
             "name": "clicks the dismiss button to shut the \u0027Garbage Collector\u0027 alert box",
             "match": {
               "location": "StepDefinitions.garbageCollector_dismiss()"
@@ -1481,10 +1457,10 @@
           },
           {
             "result": {
-              "duration": 2031235100,
+              "duration": 2025862300,
               "status": "passed"
             },
-            "line": 114,
+            "line": 112,
             "name": "sees the \u0027Garbage Collector\u0027 alert box has dismissed",
             "match": {
               "location": "StepDefinitions.garbageCollector_alertBox_isDismissed()"
@@ -1493,10 +1469,10 @@
           },
           {
             "result": {
-              "duration": 188457600,
+              "duration": 192264800,
               "status": "passed"
             },
-            "line": 115,
+            "line": 113,
             "name": "checks the \u0027Show Channels box\u0027",
             "match": {
               "location": "StepDefinitions.tick_showChannels()"
@@ -1505,10 +1481,10 @@
           },
           {
             "result": {
-              "duration": 3335510700,
+              "duration": 4176057100,
               "status": "passed"
             },
-            "line": 116,
+            "line": 114,
             "name": "sees all four channels",
             "match": {
               "location": "StepDefinitions.fourChannels_channels_isVisible()"
@@ -1517,10 +1493,10 @@
           },
           {
             "result": {
-              "duration": 63560300,
+              "duration": 92636600,
               "status": "passed"
             },
-            "line": 117,
+            "line": 115,
             "name": "unchecks the \u0027Show Channels box\u0027",
             "match": {
               "location": "StepDefinitions.untick_showChannels()"
@@ -1529,10 +1505,10 @@
           },
           {
             "result": {
-              "duration": 2083481800,
+              "duration": 2080317700,
               "status": "passed"
             },
-            "line": 118,
+            "line": 116,
             "name": "sees all four channels have been hidden",
             "match": {
               "location": "StepDefinitions.fourChannels_channels_isHidden()"
@@ -1541,10 +1517,10 @@
           },
           {
             "result": {
-              "duration": 164812600,
+              "duration": 231256700,
               "status": "passed"
             },
-            "line": 119,
+            "line": 117,
             "name": "checks the \u0027Show Channels box\u0027",
             "match": {
               "location": "StepDefinitions.tick_showChannels()"
@@ -1553,10 +1529,10 @@
           },
           {
             "result": {
-              "duration": 2561589500,
+              "duration": 3504808400,
               "status": "passed"
             },
-            "line": 120,
+            "line": 118,
             "name": "sees all four channels",
             "match": {
               "location": "StepDefinitions.fourChannels_channels_isVisible()"
@@ -1565,10 +1541,10 @@
           },
           {
             "result": {
-              "duration": 1312279800,
+              "duration": 1451611300,
               "status": "passed"
             },
-            "line": 121,
+            "line": 119,
             "name": "checks the \u0027Show Workflows\u0027 box for Basic channel: 2 and 4",
             "match": {
               "location": "StepDefinitions.tick_showWorkflows_channelTwoFour()"
@@ -1577,10 +1553,10 @@
           },
           {
             "result": {
-              "duration": 15685527200,
+              "duration": 17233286700,
               "status": "passed"
             },
-            "line": 122,
+            "line": 120,
             "name": "sees the \u0027Workflows\u0027 for channels 2 and 4",
             "match": {
               "location": "StepDefinitions.multiple_workflowsVisible()"
@@ -1589,10 +1565,10 @@
           },
           {
             "result": {
-              "duration": 174785000,
+              "duration": 323478800,
               "status": "passed"
             },
-            "line": 123,
+            "line": 121,
             "name": "unchecks the \u0027Show Workflows\u0027 box for Basic channel: 2 and 4",
             "match": {
               "location": "StepDefinitions.untick_showWorkflows_channelTwoFour()"
@@ -1601,10 +1577,10 @@
           },
           {
             "result": {
-              "duration": 4085457400,
+              "duration": 4062505600,
               "status": "passed"
             },
-            "line": 124,
+            "line": 122,
             "name": "sees the \u0027Workflows\u0027 for channels 2 and 4 have been hidden",
             "match": {
               "location": "StepDefinitions.multiple_workflowsHidden()"
@@ -1656,7 +1632,7 @@
         "before": [
           {
             "result": {
-              "duration": 4164235700,
+              "duration": 4551091400,
               "status": "passed"
             },
             "match": {
@@ -1671,7 +1647,7 @@
         "after": [
           {
             "result": {
-              "duration": 691791500,
+              "duration": 851993500,
               "status": "passed"
             },
             "match": {
@@ -1684,7 +1660,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4691200,
+              "duration": 5336800,
               "status": "passed"
             },
             "line": 7,
@@ -1696,7 +1672,7 @@
           },
           {
             "result": {
-              "duration": 581078300,
+              "duration": 579476700,
               "status": "passed"
             },
             "line": 8,
@@ -1708,7 +1684,7 @@
           },
           {
             "result": {
-              "duration": 36600800,
+              "duration": 55665200,
               "status": "passed"
             },
             "line": 9,
@@ -1735,7 +1711,7 @@
         "before": [
           {
             "result": {
-              "duration": 4054684200,
+              "duration": 4493056600,
               "status": "passed"
             },
             "match": {
@@ -1750,7 +1726,7 @@
         "after": [
           {
             "result": {
-              "duration": 700403700,
+              "duration": 885202100,
               "status": "passed"
             },
             "match": {
@@ -1763,7 +1739,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4542100,
+              "duration": 5633500,
               "status": "passed"
             },
             "line": 13,
@@ -1775,7 +1751,7 @@
           },
           {
             "result": {
-              "duration": 1171016000,
+              "duration": 1828819000,
               "status": "passed"
             },
             "line": 14,
@@ -1787,7 +1763,7 @@
           },
           {
             "result": {
-              "duration": 36851000,
+              "duration": 81712100,
               "status": "passed"
             },
             "line": 15,
@@ -1847,7 +1823,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7092500,
+              "duration": 5311500,
               "status": "passed"
             },
             "line": 4,
@@ -1859,7 +1835,7 @@
           },
           {
             "result": {
-              "duration": 1238831200,
+              "duration": 1918775400,
               "status": "passed"
             },
             "line": 5,
@@ -1871,7 +1847,7 @@
           },
           {
             "result": {
-              "duration": 191148500,
+              "duration": 201353500,
               "status": "passed"
             },
             "line": 6,
@@ -1887,7 +1863,7 @@
         "before": [
           {
             "result": {
-              "duration": 4078530400,
+              "duration": 4944400600,
               "status": "passed"
             },
             "match": {
@@ -1902,7 +1878,7 @@
         "after": [
           {
             "result": {
-              "duration": 716415000,
+              "duration": 901907800,
               "status": "passed"
             },
             "match": {
@@ -1915,7 +1891,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2815913200,
+              "duration": 2843266500,
               "status": "passed"
             },
             "line": 10,
@@ -1927,7 +1903,7 @@
           },
           {
             "result": {
-              "duration": 8322700,
+              "duration": 138897000,
               "status": "passed"
             },
             "line": 11,
@@ -1939,7 +1915,7 @@
           },
           {
             "result": {
-              "duration": 2548441000,
+              "duration": 2686941500,
               "status": "passed"
             },
             "line": 12,
@@ -1951,7 +1927,7 @@
           },
           {
             "result": {
-              "duration": 25313200,
+              "duration": 33886400,
               "status": "passed"
             },
             "line": 13,
@@ -1969,7 +1945,7 @@
           },
           {
             "result": {
-              "duration": 4259327500,
+              "duration": 4256799800,
               "status": "passed"
             },
             "line": 14,
@@ -1987,7 +1963,7 @@
           },
           {
             "result": {
-              "duration": 4390725100,
+              "duration": 5837546000,
               "status": "passed"
             },
             "line": 15,
@@ -1999,7 +1975,7 @@
           },
           {
             "result": {
-              "duration": 1134932700,
+              "duration": 1230280300,
               "status": "passed"
             },
             "line": 16,
@@ -2011,7 +1987,7 @@
           },
           {
             "result": {
-              "duration": 100307745100,
+              "duration": 101734299400,
               "status": "passed"
             },
             "line": 17,
@@ -2023,7 +1999,7 @@
           },
           {
             "result": {
-              "duration": 62389701200,
+              "duration": 66404542000,
               "status": "passed"
             },
             "line": 18,
@@ -2035,7 +2011,7 @@
           },
           {
             "result": {
-              "duration": 290010200,
+              "duration": 414184200,
               "status": "passed"
             },
             "line": 19,
@@ -2047,7 +2023,7 @@
           },
           {
             "result": {
-              "duration": 2268739900,
+              "duration": 2276612200,
               "status": "passed"
             },
             "line": 20,
@@ -2059,7 +2035,7 @@
           },
           {
             "result": {
-              "duration": 54665000,
+              "duration": 83163300,
               "status": "passed"
             },
             "line": 21,
@@ -2071,7 +2047,7 @@
           },
           {
             "result": {
-              "duration": 558626200,
+              "duration": 630808500,
               "status": "passed"
             },
             "line": 22,
@@ -2083,7 +2059,7 @@
           },
           {
             "result": {
-              "duration": 2243367300,
+              "duration": 2282196400,
               "status": "passed"
             },
             "line": 23,
@@ -2095,7 +2071,7 @@
           },
           {
             "result": {
-              "duration": 61075600,
+              "duration": 122614900,
               "status": "passed"
             },
             "line": 24,
@@ -2107,7 +2083,7 @@
           },
           {
             "result": {
-              "duration": 587842300,
+              "duration": 652983900,
               "status": "passed"
             },
             "line": 25,
@@ -2119,7 +2095,7 @@
           },
           {
             "result": {
-              "duration": 2215168500,
+              "duration": 2264165700,
               "status": "passed"
             },
             "line": 26,
@@ -2131,7 +2107,7 @@
           },
           {
             "result": {
-              "duration": 102841300,
+              "duration": 145712100,
               "status": "passed"
             },
             "line": 27,
@@ -2143,7 +2119,7 @@
           },
           {
             "result": {
-              "duration": 2539345500,
+              "duration": 2747982900,
               "status": "passed"
             },
             "line": 28,
@@ -2155,7 +2131,7 @@
           },
           {
             "result": {
-              "duration": 86357285000,
+              "duration": 87235438300,
               "status": "passed"
             },
             "line": 29,
@@ -2167,7 +2143,7 @@
           },
           {
             "result": {
-              "duration": 4122364300,
+              "duration": 4166127900,
               "status": "passed"
             },
             "line": 30,
@@ -2185,7 +2161,7 @@
           },
           {
             "result": {
-              "duration": 4334158300,
+              "duration": 5617126200,
               "status": "passed"
             },
             "line": 31,
@@ -2217,7 +2193,7 @@
         "steps": [
           {
             "result": {
-              "duration": 5518800,
+              "duration": 6658700,
               "status": "passed"
             },
             "line": 4,
@@ -2229,7 +2205,7 @@
           },
           {
             "result": {
-              "duration": 1284379700,
+              "duration": 1696139700,
               "status": "passed"
             },
             "line": 5,
@@ -2241,7 +2217,7 @@
           },
           {
             "result": {
-              "duration": 32100300,
+              "duration": 20345400,
               "status": "passed"
             },
             "line": 6,
@@ -2257,7 +2233,7 @@
         "before": [
           {
             "result": {
-              "duration": 5441057800,
+              "duration": 4378936200,
               "status": "passed"
             },
             "match": {
@@ -2272,7 +2248,7 @@
         "after": [
           {
             "result": {
-              "duration": 952725400,
+              "duration": 1673599800,
               "status": "passed"
             },
             "match": {
@@ -2285,7 +2261,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3024358900,
+              "duration": 3458617400,
               "status": "passed"
             },
             "line": 37,
@@ -2297,7 +2273,7 @@
           },
           {
             "result": {
-              "duration": 18109900,
+              "duration": 7454700,
               "status": "passed"
             },
             "line": 38,
@@ -2309,7 +2285,7 @@
           },
           {
             "result": {
-              "duration": 2070019500,
+              "duration": 2071827600,
               "status": "passed"
             },
             "line": 39,
@@ -2321,7 +2297,7 @@
           },
           {
             "result": {
-              "duration": 64127200,
+              "duration": 83123500,
               "status": "passed"
             },
             "line": 40,
@@ -2333,7 +2309,7 @@
           },
           {
             "result": {
-              "duration": 2604938600,
+              "duration": 2772440400,
               "status": "passed"
             },
             "line": 41,
@@ -2345,7 +2321,7 @@
           },
           {
             "result": {
-              "duration": 74810800,
+              "duration": 129063800,
               "status": "passed"
             },
             "line": 42,
@@ -2357,7 +2333,7 @@
           },
           {
             "result": {
-              "duration": 2260230300,
+              "duration": 2327715000,
               "status": "passed"
             },
             "line": 43,
@@ -2369,7 +2345,7 @@
           },
           {
             "result": {
-              "duration": 2096694100,
+              "duration": 2084557300,
               "status": "passed"
             },
             "line": 44,
@@ -2381,7 +2357,7 @@
           },
           {
             "result": {
-              "duration": 3645087500,
+              "duration": 3719706600,
               "status": "passed"
             },
             "line": 45,
@@ -2393,7 +2369,7 @@
           },
           {
             "result": {
-              "duration": 123763400,
+              "duration": 169162300,
               "status": "passed"
             },
             "line": 46,
@@ -2411,7 +2387,7 @@
           },
           {
             "result": {
-              "duration": 205717400,
+              "duration": 2195295200,
               "status": "passed"
             },
             "line": 47,
@@ -2429,7 +2405,7 @@
           },
           {
             "result": {
-              "duration": 90741800,
+              "duration": 131371200,
               "status": "passed"
             },
             "line": 48,

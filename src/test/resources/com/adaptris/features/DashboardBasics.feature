@@ -22,7 +22,7 @@ Feature: Dashboard Basics
     And sees 0 in-flight messages
     And sees the 'Up Time' section
     And sees the 'Last Started' section
-    And sees UI version Interlok UI  3.8.3-RELEASE
+    And sees UI version Interlok UI  3.8.4-RELEASE
     And sees the table mode button
     And sees the add adapter button
     And sees the 'Refresh' button
@@ -70,8 +70,6 @@ Feature: Dashboard Basics
     Then clicks the control-bar drop down menu
     And sees the dropdown menu buttons and icons
     Then clicks the 'Force-Stop' button
-    And sees the 'Interrupted Exception' alert box
-    Then dismisses the 'Interrupted Exception' alert box
     And sees the adapter in 'Closed' state
     And sees a closed icon
     And sees 0 started channels
