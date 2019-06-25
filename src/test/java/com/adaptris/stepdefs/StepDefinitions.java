@@ -37,6 +37,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import static com.adaptris.stepdefs.ENVVAR.*;
 import static com.adaptris.stepdefs.GUIDirectoryTools.*;
 
+//TODO Separate into multiple readable files
+
 public class StepDefinitions {
 
   @Before

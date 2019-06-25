@@ -26,6 +26,12 @@ import java.io.IOException;
 
 import static com.adaptris.stepdefs.ENVVAR.ADAPTER_DB_DIRECTORY;
 
+//TODO Update compatibility with Linux
+//TODO Create Generic ENVVAR as template
+//TODO Update Linux Docs
+//TODO Add configs to resources' folder
+//TODO Refactor strings from StepDefinitions 'Welcome Page' function
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         tags = "@FunctionalTests",
